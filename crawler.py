@@ -21,7 +21,7 @@ cities = scraper.getCities(html)
 
 currentPage = cities[0]
 restaurants = []
-while(currentPage is not None):
+while(currentPage):
     browser.get(currentPage)
     html = browser.page_source
 
