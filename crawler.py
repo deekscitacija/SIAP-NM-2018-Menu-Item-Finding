@@ -10,17 +10,29 @@ option.add_argument("--incognito")
 
 browser = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=option)
 
-def goToCityPages():
-    browser.get('https://www.donesi.com/')
+browser.get("https://www.donesi.com/")
 
+html = browser.page_source
+cities = scraper.getCities(html)
+
+#for city in cities:
+    #browser.find_element_by_xpath('//a[@href="'+city+'"]').click()
+    #browser.get(city)
+
+currentPage = cities[0]
+restaurants = []
+while(currentPage is not None):
+    browser.get(currentPage)
     html = browser.page_source
-    cities = scraper.getCityLinks(html)
 
-    #for city in cities:
-        #browser.find_element_by_xpath('//a[@href="'+city+'"]').click()
+    retVal = scraper.getRestaurantsForCity(html)
+    restaurants.extend(retVal["restaurants"])
+    currentPage = retVal["nextPage"]
 
-    browser.find_element_by_xpath('//a[@href="'+cities[0]+'"]').click()
-    
+print(restaurants)
+
+
+
 
 
     
