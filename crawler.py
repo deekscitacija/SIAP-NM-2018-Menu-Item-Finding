@@ -21,6 +21,7 @@ cities = scraper.getCities(html)
 
 currentPage = cities[0]
 restaurants = []
+
 while(currentPage):
     browser.get(currentPage)
     html = browser.page_source
@@ -29,12 +30,24 @@ while(currentPage):
     restaurants.extend(retVal["restaurants"])
     currentPage = retVal["nextPage"]
 
-browser.get(restaurants[0]["link"])
-#restaurants[0]["id"] -> tu je id restorana 
-html = browser.page_source
+x = 0
+reviews = []
+for restaurantData in restaurants:
+    x+=1
+    if x == 5:
+        break
+    currentPage = restaurantData["link"]+"#tab-reviews"
+    browser.get(currentPage)
+    html = browser.page_source
+    currentPage = scraper.getExpandedPageURL(html, "a", "Прикажи све...")["href"]
 
-
-
+    while(currentPage):
+        browser.get(currentPage)
+        html = browser.page_source
+        retVal = scraper.getRecensionData(restaurantData, html)
+        reviews.extend(retVal["reviews"])
+        currentPage = retVal["nextPage"]
+    
 
 
 
