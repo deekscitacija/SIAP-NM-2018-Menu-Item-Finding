@@ -13,10 +13,13 @@ def getRestaurantsForCity(html):
     soup = BeautifulSoup(html, "html.parser")
 
     restaurantsDiv = soup.find("div", {"class" : "tab-content"})
-    restaurants = [restaurant.div.div.find("div", {"class" : None}).div.find("div", {"class" : "span2 text-center"}).a["href"] for restaurant in restaurantsDiv.find("ul").findChildren("li")]
+    restaurants = []
+    for restaurant in restaurantsDiv.find("ul").findChildren("li"):
+        tempRestaurant = restaurant.div.div.find("div", {"class" : None}).div.find("div", {"class" : "span2 text-center"}).a
+        restaurants.append({"link" : tempRestaurant["href"], "id" : tempRestaurant["data-oid"]})
 
     nextPage = soup.find("a", {"class" : "jscroll-next"}) 
-    print(restaurants)
+  
     return {"restaurants" : restaurants, "nextPage" : nextPage["href"] if nextPage is not None else None}
 
 

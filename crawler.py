@@ -29,7 +29,10 @@ while(currentPage):
     restaurants.extend(retVal["restaurants"])
     currentPage = retVal["nextPage"]
 
-print(restaurants)
+browser.get(restaurants[0]["link"])
+#restaurants[0]["id"] -> tu je id restorana 
+html = browser.page_source
+
 
 
 
