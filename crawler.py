@@ -36,17 +36,21 @@ for restaurantData in restaurants:
     x+=1
     if x == 5:
         break
-    currentPage = restaurantData["link"]+"#tab-reviews"
-    browser.get(currentPage)
+    browser.get(restaurantData["link"])
     html = browser.page_source
-    currentPage = scraper.getExpandedPageURL(html, "a", "Prikaži sve...")["href"]
+    scraper.getMenuItemsForRestaurant(restaurantData,html)
 
-    while(currentPage):
-        browser.get(currentPage)
-        html = browser.page_source
-        retVal = scraper.getRecensionData(restaurantData, html)
-        reviews.extend(retVal["reviews"])
-        currentPage = retVal["nextPage"]
+    #currentPage = restaurantData["link"]+"#tab-reviews"
+    #browser.get(currentPage)
+    #html = browser.page_source
+    #currentPage = scraper.getExpandedPageURL(html, "a", "Prikaži sve...")["href"]
+
+    #while(currentPage):
+        #browser.get(currentPage)
+        #html = browser.page_source
+        #retVal = scraper.getRecensionData(restaurantData, html)
+        #reviews.extend(retVal["reviews"])
+        #currentPage = retVal["nextPage"]
     
 
 

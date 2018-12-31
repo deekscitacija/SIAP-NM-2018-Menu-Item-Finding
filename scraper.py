@@ -22,6 +22,16 @@ def getRestaurantsForCity(html):
   
     return {"restaurants" : restaurants, "nextPage" : nextPage["href"] if nextPage is not None else None}
 
+def getMenuItemsForRestaurant(restaurantData, html):
+    soup = BeautifulSoup(html, "html.parser")
+    
+    menuItemCategories = soup.find_all("section", id=lambda x: x and x.startswith('scroll'))
+    menuItems = []
+    for menuItemCategory in menuItemCategories:
+        for menuItem in menuItemCategory.find("div", {"class" : "masonery "}).find_all("div", {"class" : "card food"}):
+            menuItemName = menuItem.find("div", {"class" : "card-heading image"}).find("div", {"class" : "card-heading-header"}).find("h3", {"itemprop" : "name"})
+            menuItems.append(menuItemName.a.text) if menuItemName.a is not None else menuItems.append(menuItemName.text)
+
 def getRecensionData(restaurantData, html):
     soup = BeautifulSoup(html, "html.parser")
 
