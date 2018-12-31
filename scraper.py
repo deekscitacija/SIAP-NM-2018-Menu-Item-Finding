@@ -5,7 +5,7 @@ def getCities(html):
 
     countryNames = ["Serbia"]
     countries = soup.find_all("div", {"class" : "card"})
-    cities = ["https:"+city["href"] for country in countries for city in country.find_all("a") if city["data-gtm-country"] in countryNames]
+    cities = ["https:"+city["href"]+"lat/" for country in countries for city in country.find_all("a") if city["data-gtm-country"] in countryNames]
 
     return cities
 
@@ -34,7 +34,16 @@ def getRecensionData(restaurantData, html):
         title = reviewContainer.find("div", {"class" : "row-fluid"}).find("div", {"class" : "span10"}).find("div", {"class" : "reviewtitle"}).a.text
         reviewBody = reviewContainer.find("span", {"itemprop" : "reviewBody"}).text
         reviewDate = reviewContainer.find("meta", {"itemprop" : "datePublished"})["content"]
-        review = {"restaurantId" : restaurantData["id"], "title" : title, "reviewBody" : reviewBody, "date" : reviewDate}
+        userRankContainer = reviewContainer.find("span", {"class" : "ulev"})
+        reviewUserRank = userRankContainer.text if userRankContainer is not None else None
+
+        ratings = []
+        ratingInfos = reviewContainer.find_all("td", {"class" : "rate-cell-5"})
+        for ratingInfo in ratingInfos:
+            rating = { ratingInfo.small.text : ratingInfo.b.text }
+            ratings.append(rating)
+
+        review = {"restaurantId" : restaurantData["id"], "title" : title, "reviewBody" : reviewBody, "date" : reviewDate, "userRank" : reviewUserRank, "ratings" : ratings}
         reviews.append(review)
 
     return {"reviews" : reviews, "nextPage" : nextPage["href"] if nextPage is not None else None}

@@ -39,7 +39,7 @@ for restaurantData in restaurants:
     currentPage = restaurantData["link"]+"#tab-reviews"
     browser.get(currentPage)
     html = browser.page_source
-    currentPage = scraper.getExpandedPageURL(html, "a", "Прикажи све...")["href"]
+    currentPage = scraper.getExpandedPageURL(html, "a", "Prikaži sve...")["href"]
 
     while(currentPage):
         browser.get(currentPage)
