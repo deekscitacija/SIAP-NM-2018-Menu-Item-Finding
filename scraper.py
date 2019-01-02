@@ -44,10 +44,7 @@ def getMenuItemsForRestaurant(restaurantId, restaurantName, restaurantCity, html
             menuItemName = menuItemDataContainer.find("h3", {"itemprop" : "name"})
 
             menuItem = {}
-            if menuItemName.a is not None:
-                menuItem["name"] = menuItemName.a.text
-            else:
-                menuItem["name"] = menuItemName.text              
+            menuItem["name"] = menuItemName.a.text if menuItemName.a is not None else menuItemName.text            
             menuItem["description"] = menuItemDataContainer.find("span", {"itemprop" : "description"}).text
 
             menuItems.append(menuItem)
