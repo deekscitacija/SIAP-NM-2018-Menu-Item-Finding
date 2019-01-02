@@ -39,11 +39,18 @@ def getMenuItemsForRestaurant(restaurantId, restaurantName, restaurantCity, html
     menuItemCategories = soup.find_all("section", id=lambda x: x and x.startswith("scroll"))
     menuItems = []
     for menuItemCategory in menuItemCategories:
-        for menuItem in menuItemCategory.find("div", {"class" : "masonery "}).find_all("div", {"class" : "card food"}):
-            menuItemName = menuItem.find("div", {"class" : "card-heading image"}).find("div", {"class" : "card-heading-header"}).find("h3", {"itemprop" : "name"})
-            menuItems.append(menuItemName.a.text) if menuItemName.a is not None else menuItems.append(menuItemName.text)
-            
-    print(menuItems)
+        for menuItemContainer in menuItemCategory.find("div", {"class" : "masonery "}).find_all("div", {"class" : "card food"}):
+            menuItemDataContainer = menuItemContainer.find("div", {"class" : "card-heading image"}).find("div", {"class" : "card-heading-header"})
+            menuItemName = menuItemDataContainer.find("h3", {"itemprop" : "name"})
+
+            menuItem = {}
+            if menuItemName.a is not None:
+                menuItem["name"] = menuItemName.a.text
+            else:
+                menuItem["name"] = menuItemName.text              
+            menuItem["description"] = menuItemDataContainer.find("span", {"itemprop" : "description"}).text
+
+            menuItems.append(menuItem)
 
 def getRestaurantData(html):
     soup = BeautifulSoup(html, "html.parser")
