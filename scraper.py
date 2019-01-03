@@ -1,32 +1,17 @@
 from bs4 import BeautifulSoup
 
-def getCities(html):
-    soup = BeautifulSoup(html, "html.parser")
+def hasResults(html):
+    return "Nije dostupno!" not in html
 
-    countryNames = ["Serbia"]
-    countries = soup.find_all("div", {"class" : "card"})
-    cities = ["https:"+city["href"]+"lat/" for country in countries for city in country.find_all("a") if city["data-gtm-country"] in countryNames]
+def hasRevews(html):
+    return "Ne postoji nijedan utisak o ovome restoranu. Budite prvi koji će ga oceniti!" not in html
 
-    return cities
-
-def getRestaurantsForCity(html):
-    soup = BeautifulSoup(html, "html.parser")
-
-    restaurantsDiv = soup.find("div", {"class" : "tab-content"})
-    restaurants = []
-    for restaurant in restaurantsDiv.find("ul").findChildren("li"):
-        tempRestaurant = restaurant.div.div.find("div", {"class" : None}).div.find("div", {"class" : "span2 text-center"}).a
-        restaurants.append({"link" : tempRestaurant["href"], "id" : tempRestaurant["data-oid"]})
-
-    nextPage = soup.find("a", {"class" : "jscroll-next"}) 
-  
-    return {"restaurants" : restaurants, "nextPage" : nextPage["href"] if nextPage is not None else None}
-
-def getRecensionData(restaurantData, html):
+def getReviewData(restaurantId, html):
     soup = BeautifulSoup(html, "html.parser")
 
     reviewContainers = soup.find_all("div", {"class" : "card review reviewcontainer"})
     nextPage = soup.find("a", {"id" : "nav_next_page"})
+
     reviews = []
 
     for reviewContainer in reviewContainers:
@@ -43,12 +28,35 @@ def getRecensionData(restaurantData, html):
             rating = { ratingInfo.small.text : ratingInfo.b.text }
             ratings.append(rating)
 
-        review = {"restaurantId" : restaurantData["id"], "title" : title, "reviewBody" : reviewBody, "date" : reviewDate, "userRank" : reviewUserRank, "ratings" : ratings}
+        review = {"restaurantId" : restaurantId, "title" : title, "reviewBody" : reviewBody, "date" : reviewDate, "userRank" : reviewUserRank, "ratings" : ratings}
         reviews.append(review)
 
-    return {"reviews" : reviews, "nextPage" : nextPage["href"] if nextPage is not None else None}
+    return nextPage["href"] if nextPage is not None else None
 
-def getExpandedPageURL(html, tagName, param):
+def getMenuItemsForRestaurant(restaurantId, restaurantName, restaurantCity, html):
     soup = BeautifulSoup(html, "html.parser")
-    theTag = soup.find(lambda tag:tag.name==tagName and param in tag.text)
-    return theTag
+    
+    menuItemCategories = soup.find_all("section", id=lambda x: x and x.startswith("scroll"))
+    menuItems = []
+    for menuItemCategory in menuItemCategories:
+        for menuItemContainer in menuItemCategory.find("div", {"class" : "masonery "}).find_all("div", {"class" : "card food"}):
+            menuItemDataContainer = menuItemContainer.find("div", {"class" : "card-heading image"}).find("div", {"class" : "card-heading-header"})
+            menuItemName = menuItemDataContainer.find("h3", {"itemprop" : "name"})
+
+            menuItem = {}
+            menuItem["name"] = menuItemName.a.text if menuItemName.a is not None else menuItemName.text            
+            menuItem["description"] = menuItemDataContainer.find("span", {"itemprop" : "description"}).text
+
+            menuItems.append(menuItem)
+
+def getRestaurantData(html):
+    soup = BeautifulSoup(html, "html.parser")
+    tag = soup.find("a", string=lambda x : x and x.startswith("Jelovnik"))
+    
+    restaurantData = {"restaurantName" : None, "restaurantLink" : None}
+
+    if tag is not None:
+        restaurantData["restaurantName"] = tag.text.strip()[9:]
+        restaurantData["restaurantLink"] = tag["href"]
+
+    return restaurantData
