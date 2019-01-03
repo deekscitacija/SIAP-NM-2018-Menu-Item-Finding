@@ -3,7 +3,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import TimeoutException
+from pymongo import MongoClient
 import scraper
+
+client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
+db = client['RestaurantData']
 
 srb = ["Beograd", "Novi Sad", "Nis", "Subotica", "Pancevo", "Zrenjanin", "Kragujevac", "Krusevac", "Kraljevo", "Cacak"]
 
@@ -32,17 +36,19 @@ for city in srb:
 
             if(scraper.hasResults(html)):
                 if(scraper.hasRevews(html)):
-                    currentRestaurantUrl = scraper.getReviewData(restaurantId, html)
+                    currentRestaurantUrl = scraper.getReviewData(restaurantId, html, db)
                     while(currentRestaurantUrl):
                         browser.get(currentRestaurantUrl)
                         html = browser.page_source
-                        currentRestaurantUrl = scraper.getReviewData(restaurantId, html)
+                        currentRestaurantUrl = scraper.getReviewData(restaurantId, html, db)
                     
                     restaurantData = scraper.getRestaurantData(html)
+                    restaurantData["restaurantId"] = restaurantId
+                    db["Restaurants"].insert(restaurantData)
                     browser.get(restaurantData["restaurantLink"])
                     html = browser.page_source
 
-                    scraper.getMenuItemsForRestaurant(restaurantId, restaurantData["restaurantName"], city, html)
+                    scraper.getMenuItemsForRestaurant(restaurantId, restaurantData["restaurantName"], city, html, db)
 
         restaurantId = restaurantId + 1
 
