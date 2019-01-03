@@ -43,8 +43,6 @@ for city in srb:
                         currentRestaurantUrl = scraper.getReviewData(restaurantId, html, db)
                     
                     restaurantData = scraper.getRestaurantData(html)
-                    restaurantData["restaurantId"] = restaurantId
-                    db["Restaurants"].insert(restaurantData)
                     browser.get(restaurantData["restaurantLink"])
                     html = browser.page_source
 

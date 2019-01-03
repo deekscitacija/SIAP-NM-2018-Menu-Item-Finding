@@ -28,15 +28,12 @@ def getReviewData(restaurantId, html, db):
             ratings.append(rating)
 
         review = {"restaurantId" : restaurantId, "title" : cyrilicToLatin(title), "reviewBody" : cyrilicToLatin(reviewBody), "date" : reviewDate, "userRank" : reviewUserRank, "ratings" : ratings}
-        #db['Reviews'].insert(review)
+        db['Reviews'].insert(review)
 
     return nextPage["href"] if nextPage is not None else None
 
 def getMenuItemsForRestaurant(restaurantId, restaurantName, restaurantCity, html, db):
     soup = BeautifulSoup(html, "html.parser")
-    
-    restaurant = db["Restaurants"].find_one({"restaurantId" : restaurantId})
-    print(restaurant)
     
     menuItemCategories = soup.find_all("section", id=lambda x: x and x.startswith("scroll"))
     menuItems = []
@@ -48,10 +45,10 @@ def getMenuItemsForRestaurant(restaurantId, restaurantName, restaurantCity, html
             menuItem = {}
             menuItem["name"] = menuItemName.a.text if menuItemName.a is not None else cyrilicToLatin(menuItemName.text)            
             menuItem["description"] = cyrilicToLatin(menuItemDataContainer.find("span", {"itemprop" : "description"}).text)
-
             menuItems.append(menuItem)
 
-    db["Restaurants"].update_one({"_id" : restaurant["_id"]}, {"$set" : {"menuItems" : menuItems}})
+    restaurant = {"restaurantId" : restaurantId, "restaurantName" : restaurantName, "restaurantCity" : restaurantCity, "menuItems" : menuItems}
+    db["Restaurants"].insert(restaurant)
 
 def getRestaurantData(html):
     soup = BeautifulSoup(html, "html.parser")
@@ -67,16 +64,15 @@ def getRestaurantData(html):
 
 def convertRating(value):
     return {
-        'Kvalitet hrane': 'kvalitet_hrane',
-        'Izbor hrane': 'izbor_hrane',
-        'Cene': 'cene',
-        'Usluga': 'usluga'
+        'Kvalitet hrane': 'food_quality',
+        'Izbor hrane': 'food_choice',
+        'Cene': 'price',
+        'Usluga': 'service'
     }[value]
 
 def cyrilicToLatin(value):
 
     if any(c in "абвгдђежзијклљмнљопрстћуфхцчџшАБВГДЂЕЖЗИЈКЛЉМНЊОПРСТЋУФХЦЧЏШ" for c in value):
-        print('uslooooo')
         retVal = value
         # Mala slova
         retVal = retVal.replace('а', 'a')
