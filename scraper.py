@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+import datetime
 
 def hasResults(html):
     return "Nije dostupno!" not in html
@@ -6,7 +7,7 @@ def hasResults(html):
 def hasRevews(html):
     return "Ne postoji nijedan utisak o ovome restoranu. Budite prvi koji će ga oceniti!" not in html
 
-def getReviewData(restaurantId, html, db):
+def getReviewData(restaurantLink, html, db):
     soup = BeautifulSoup(html, "html.parser")
 
     reviewContainers = soup.find_all("div", {"class" : "card review reviewcontainer"})
@@ -14,25 +15,25 @@ def getReviewData(restaurantId, html, db):
 
     for reviewContainer in reviewContainers:
 
-        title = reviewContainer.find("div", {"class" : "row-fluid"}).find("div", {"class" : "span10"}).find("div", {"class" : "reviewtitle"}).a.text
-        reviewBody = reviewContainer.find("span", {"itemprop" : "reviewBody"}).text
-        reviewDate = reviewContainer.find("meta", {"itemprop" : "datePublished"})["content"]
+        title = reviewContainer.find("div", {"class" : "row-fluid"}).find("div", {"class" : "span10"}).find("div", {"class" : "reviewtitle"}).a.text.strip()
+        reviewBody = reviewContainer.find("span", {"itemprop" : "reviewBody"}).text.strip()
+        reviewDateString = reviewContainer.find("meta", {"itemprop" : "datePublished"})["content"].strip()
         userRankContainer = reviewContainer.find("span", {"class" : "ulev"})
-        reviewUserRank = userRankContainer.text if userRankContainer is not None else None
+        reviewUserRank = userRankContainer.text.strip() if userRankContainer is not None else None
 
         ratings = []
         ratingInfos = reviewContainer.find_all("td", {"class" : "rate-cell-5"})
         for ratingInfo in ratingInfos:
 
-            rating = { convertRating(ratingInfo.small.text) : ratingInfo.b.text }
+            rating = {convertRating(ratingInfo.small.text) : int(ratingInfo.b.text.strip())}
             ratings.append(rating)
 
-        review = {"restaurantId" : restaurantId, "title" : cyrilicToLatin(title), "reviewBody" : cyrilicToLatin(reviewBody), "date" : reviewDate, "userRank" : reviewUserRank, "ratings" : ratings}
+        review = {"restaurantLink" : restaurantLink, "title" : cyrilicToLatin(title), "reviewBody" : cyrilicToLatin(reviewBody), "date" : convertDate(reviewDateString), "userRank" : reviewUserRank, "ratings" : ratings}
         db['Reviews'].insert(review)
 
     return nextPage["href"] if nextPage is not None else None
 
-def getMenuItemsForRestaurant(restaurantId, restaurantName, restaurantCity, html, db):
+def getMenuItemsForRestaurant(restaurantLink, restaurantName, restaurantCountry, restaurantCity, html, db):
     soup = BeautifulSoup(html, "html.parser")
     
     menuItemCategories = soup.find_all("section", id=lambda x: x and x.startswith("scroll"))
@@ -43,11 +44,11 @@ def getMenuItemsForRestaurant(restaurantId, restaurantName, restaurantCity, html
             menuItemName = menuItemDataContainer.find("h3", {"itemprop" : "name"})
 
             menuItem = {}
-            menuItem["name"] = menuItemName.a.text if menuItemName.a is not None else cyrilicToLatin(menuItemName.text)            
-            menuItem["description"] = cyrilicToLatin(menuItemDataContainer.find("span", {"itemprop" : "description"}).text)
+            menuItem["name"] = cyrilicToLatin(menuItemName.a.text.strip()) if menuItemName.a is not None else cyrilicToLatin(menuItemName.text.strip())            
+            menuItem["description"] = cyrilicToLatin(menuItemDataContainer.find("span", {"itemprop" : "description"}).text.strip())
             menuItems.append(menuItem)
 
-    restaurant = {"restaurantId" : restaurantId, "restaurantName" : restaurantName, "restaurantCity" : restaurantCity, "menuItems" : menuItems}
+    restaurant = {"restaurantLink" : restaurantLink, "restaurantName" : restaurantName, "restaurantCountry" : restaurantCountry, "restaurantCity" : restaurantCity, "menuItems" : menuItems}
     db["Restaurants"].insert(restaurant)
 
 def getRestaurantData(html):
@@ -69,6 +70,10 @@ def convertRating(value):
         'Cene': 'price',
         'Usluga': 'service'
     }[value]
+
+def convertDate(dateString):
+    format = "%Y-%m-%d"
+    return datetime.datetime.strptime(dateString,format)
 
 def cyrilicToLatin(value):
 

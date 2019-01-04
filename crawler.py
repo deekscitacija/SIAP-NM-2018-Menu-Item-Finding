@@ -9,9 +9,9 @@ import scraper
 client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
 db = client['RestaurantData']
 
-srb = ["Beograd", "Novi Sad", "Nis", "Subotica", "Pancevo", "Zrenjanin", "Kragujevac", "Krusevac", "Kraljevo", "Cacak"]
+srb =  {"name" : "Srbija", "cities" : ["Beograd", "Novi Sad", "Nis", "Subotica", "Pancevo", "Zrenjanin", "Kragujevac", "Krusevac", "Kraljevo", "Cacak"]}
 
-restaurantsNum = 3000
+restaurantsNum = 3001
 
 option = webdriver.ChromeOptions()
 option.add_argument("--incognito")
@@ -21,33 +21,32 @@ browser = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=op
 def getRestaurantUrl(city, id):
     return "http://www.donesi.com/" + city.lower().replace(" ", "") + "/lat/review.php?objectID=" + str(id)
 
-cityIndex = 0
-for city in srb:
-    if cityIndex == 2:
-        break
+def getRestaurantsForCountry(country):
+    for city in country["cities"]:
+        getRestaurantsForCity(country, city)
 
-    restaurantId = 735
-    while(restaurantId!=739):
-        currentRestaurantUrl = getRestaurantUrl(city, restaurantId)
-        browser.get(currentRestaurantUrl)
-        if currentRestaurantUrl == browser.current_url:
+def getRestaurantsForCity(country, city):
+    for restaurantId in range(1, restaurantsNum):
+        getRestaurantData(country, city, restaurantId)
 
-            html = browser.page_source
-
-            if(scraper.hasResults(html)):
-                if(scraper.hasRevews(html)):
-                    currentRestaurantUrl = scraper.getReviewData(restaurantId, html, db)
-                    while(currentRestaurantUrl):
-                        browser.get(currentRestaurantUrl)
-                        html = browser.page_source
-                        currentRestaurantUrl = scraper.getReviewData(restaurantId, html, db)
-                    
-                    restaurantData = scraper.getRestaurantData(html)
-                    browser.get(restaurantData["restaurantLink"])
+def getRestaurantData(country, city, restaurantId):
+    currentRestaurantUrl = getRestaurantUrl(city, restaurantId)
+    browser.get(currentRestaurantUrl)
+    if currentRestaurantUrl == browser.current_url:
+        html = browser.page_source
+        if(scraper.hasResults(html)):
+            if(scraper.hasRevews(html)):
+                restaurantData = scraper.getRestaurantData(html)
+                restaurantLink = restaurantData["restaurantLink"]
+                currentRestaurantUrl = scraper.getReviewData(restaurantLink, html, db)
+                while(currentRestaurantUrl):
+                    browser.get(currentRestaurantUrl)
                     html = browser.page_source
+                    currentRestaurantUrl = scraper.getReviewData(restaurantLink, html, db)
 
-                    scraper.getMenuItemsForRestaurant(restaurantId, restaurantData["restaurantName"], city, html, db)
+                browser.get(restaurantLink)
+                html = browser.page_source
 
-        restaurantId = restaurantId + 1
+                scraper.getMenuItemsForRestaurant(restaurantLink, restaurantData["restaurantName"], country["name"], city, html, db)
 
-    cityIndex = cityIndex+1   
+getRestaurantsForCountry(srb)
