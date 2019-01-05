@@ -39,7 +39,7 @@ def getMenuItemsForRestaurant(restaurantLink, restaurantName, restaurantCountry,
     menuItemCategories = soup.find_all("section", id=lambda x: x and x.startswith("scroll"))
     menuItems = []
     for menuItemCategory in menuItemCategories:
-        for menuItemContainer in menuItemCategory.find("div", {"class" : "masonery "}).find_all("div", {"class" : "card food"}):
+        for menuItemContainer in menuItemCategory.find("div", lambda x : x and x.startswith("masonery")).find_all("div", {"class" : "card food"}):
             menuItemDataContainer = menuItemContainer.find("div", {"class" : "card-heading image"}).find("div", {"class" : "card-heading-header"})
             menuItemName = menuItemDataContainer.find("h3", {"itemprop" : "name"})
 

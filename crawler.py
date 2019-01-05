@@ -11,7 +11,7 @@ db = client['RestaurantData']
 
 srb =  {"name" : "Srbija", "cities" : ["Beograd", "Novi Sad", "Nis", "Subotica", "Pancevo", "Zrenjanin", "Kragujevac", "Krusevac", "Kraljevo", "Cacak"]}
 
-restaurantsNum = 3001
+restaurantsNum = 2101
 
 option = webdriver.ChromeOptions()
 option.add_argument("--incognito")
