@@ -10,9 +10,9 @@ def hasRevews(html):
 def getReviewData(restaurantLink, html, db):
     soup = BeautifulSoup(html, "html.parser")
 
-    reviewContainers = soup.find_all("div", {"class" : "card review reviewcontainer"})
+    reviewContainers = soup.find_all("div", {"class" : lambda x : x and x.startswith("card review reviewcontainer")})
     nextPage = soup.find("a", {"id" : "nav_next_page"})
-
+    
     for reviewContainer in reviewContainers:
 
         title = reviewContainer.find("div", {"class" : "row-fluid"}).find("div", {"class" : "span10"}).find("div", {"class" : "reviewtitle"}).a.text.strip()
