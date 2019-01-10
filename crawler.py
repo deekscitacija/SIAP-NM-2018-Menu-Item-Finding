@@ -49,4 +49,5 @@ def getRestaurantData(country, city, restaurantId):
 
                 scraper.getMenuItemsForRestaurant(restaurantLink, restaurantData["restaurantName"], country["name"], city, html, db)
 
-getRestaurantsForCountry(srb)
+if __name__ == "__main__":
+        getRestaurantsForCountry(srb)
