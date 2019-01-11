@@ -16,7 +16,7 @@ def filterReviews(startPoint):
             print("Sadrzaj:")
             print("\t"+reviewBody)
             
-            userInput = input("Da li se u recenziji nalazi stavka menija? (Y/N):")
+            userInput = input("Da li se u recenziji spominje neka hrana? (Y/N):")
             if userInput in 'yY':
                 filteredReview = {"restaurantLink" : review["restaurantLink"], "title" : ac.serbianLatinToLatin(reviewTitle), "reviewBody" : ac.serbianLatinToLatin(reviewBody), "date" : review["date"], "userName" : review["userName"], "userRank" : review["userRank"], "ratings" : review["ratings"]}
                 db['FilteredRestaurantReviews'].insert(filteredReview)
