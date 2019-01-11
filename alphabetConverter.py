@@ -2,7 +2,7 @@ def cyrilicToLatin(value):
 
     if any(c in "абвгдђежзијклљмнњопрстћуфхцчџшАБВГДЂЕЖЗИЈКЛЉМНЊОПРСТЋУФХЦЧЏШ" for c in value):
         retVal = value
-        # Mala slova
+        
         retVal = retVal.replace('а', 'a')
         retVal = retVal.replace('б', 'b')
         retVal = retVal.replace('в', 'v')
@@ -33,7 +33,7 @@ def cyrilicToLatin(value):
         retVal = retVal.replace('ч', 'č')
         retVal = retVal.replace('џ', 'dž')
         retVal = retVal.replace('ш', 'š')
-        # Velika slova
+        
         retVal = retVal.replace('А', 'A')
         retVal = retVal.replace('Б', 'B')
         retVal = retVal.replace('В', 'V')

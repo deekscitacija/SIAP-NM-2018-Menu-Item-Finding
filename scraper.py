@@ -19,6 +19,7 @@ def getReviewData(restaurantLink, html, db):
         title = reviewContainer.find("div", {"class" : "row-fluid"}).find("div", {"class" : "span10"}).find("div", {"class" : "reviewtitle"}).a.text.strip()
         reviewBody = reviewContainer.find("span", {"itemprop" : "reviewBody"}).text.strip()
         reviewDateString = reviewContainer.find("meta", {"itemprop" : "datePublished"})["content"].strip()
+        reviewUserName = reviewContainer.find("a", {"itemprop" : "author"}).text.strip()
         userRankContainer = reviewContainer.find("span", {"class" : "ulev"})
         reviewUserRank = userRankContainer.text.strip() if userRankContainer is not None else None
 
@@ -29,8 +30,8 @@ def getReviewData(restaurantLink, html, db):
             rating = {convertRating(ratingInfo.small.text) : int(ratingInfo.b.text.strip())}
             ratings.append(rating)
 
-        review = {"restaurantLink" : restaurantLink, "title" : ac.cyrilicToLatin(title), "reviewBody" : ac.cyrilicToLatin(reviewBody), "date" : convertDate(reviewDateString), "userRank" : reviewUserRank, "ratings" : ratings}
-        db['Reviews'].insert(review)
+        review = {"restaurantLink" : restaurantLink, "title" : ac.cyrilicToLatin(title), "reviewBody" : ac.cyrilicToLatin(reviewBody), "date" : convertDate(reviewDateString), "userName" : reviewUserName, "userRank" : reviewUserRank, "ratings" : ratings}
+        db['RestaurantReviews'].insert(review)
 
     return nextPage["href"] if nextPage is not None else None
 
