@@ -19,7 +19,8 @@ def filterReviews(startPoint):
             userInput = input("Da li se u recenziji spominje neka hrana? (Y/N):")
             if userInput in 'yY':
                 filteredReview = {"restaurantLink" : review["restaurantLink"], "title" : ac.serbianLatinToLatin(reviewTitle), "reviewBody" : ac.serbianLatinToLatin(reviewBody), "date" : review["date"], "userName" : review["userName"], "userRank" : review["userRank"], "ratings" : review["ratings"]}
-                db['FilteredRestaurantReviews'].insert(filteredReview)
+                insertedFilteredReview = db['FilteredRestaurantReviews'].insert_one(filteredReview)
+                print("Unesena recenzija sa identifikatorom: "+str(insertedFilteredReview.inserted_id))
             elif userInput not in 'nN':
                 loop = False
                 break
