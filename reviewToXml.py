@@ -1,5 +1,7 @@
 from pymongo import MongoClient
 import xml.etree.cElementTree as xmlET
+import tkinter as tk
+from tkinter import filedialog
 
 client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
 db = client['RestaurantData']
@@ -10,31 +12,30 @@ def startProgram():
     try:
         startPoint = int(startId)
         endPoint = int(reviewNum)
-        exportXml(startPoint, endPoint)
+        root = tk.Tk()
+        root.withdraw()
+        folderPath = filedialog.askdirectory()
+        exportXml(startPoint, endPoint, folderPath)
     except ValueError:
         print("Unos neuspesan!")
 
-def exportXml(startPoint, endPoint):
+def exportXml(startPoint, endPoint, folderPath):
 
     reviewCount = 0
     while(reviewCount < endPoint):
         reviewCount = reviewCount+1
-        reviews = db['RestaurantReviews'].find()[startPoint:startPoint+1]
-
+        reviews = db['FilteredAndTaggedRestaurantReviews'].find()[startPoint:startPoint+1]
+        
         for review in reviews:
             root = xmlET.Element("ReviewsTask")
             reviewText = xmlET.SubElement(root, "TEXT")
-            reviewText.append(xmlET.Comment(' --><![CDATA[' + getReviewContent(review).replace(']]>', ']]]]><![CDATA[>') + ']]><!-- '))
+            reviewText.append(xmlET.Comment(' --><![CDATA[' + review["text"].replace(']]>', ']]]]><![CDATA[>') + ']]><!-- '))
             tags = xmlET.SubElement(root, "TAGS").text = " "
 
             tree = xmlET.ElementTree(root)
-            tree.write("reviewsXml/"+str(review["_id"])+".xml", encoding='UTF-8', xml_declaration=True)
+            tree.write(folderPath+"/"+str(review["_id"])+".xml", encoding='UTF-8', xml_declaration=True)
 
             startPoint = startPoint+1
-
-def getReviewContent(review):
-    return review["title"]+"\n"+review["reviewBody"].replace('\n', '').replace('\t', '')
         
-
 if __name__ == "__main__":
     startProgram()
