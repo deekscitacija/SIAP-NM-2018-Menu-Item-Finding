@@ -48,8 +48,8 @@ def tagReviews(startPoint, endPoint):
 def getReviewContent(review):
 
     reviewContent = ""
-    reviewTitle = unidecode(review["title"])
-    reviewBody = unidecode(review["reviewBody"])
+    reviewTitle = review["title"]
+    reviewBody = review["reviewBody"]
 
     if reviewTitle!="" and reviewBody!="":
         reviewContent = reviewTitle+"\n"+reviewBody
@@ -58,7 +58,9 @@ def getReviewContent(review):
     elif reviewBody=="":
         reviewContent = reviewTitle
     
-    return reviewContent
-        
+    retVal = unidecode(reviewContent)
+
+    return retVal
+
 if __name__ == "__main__":
     startProgram()
