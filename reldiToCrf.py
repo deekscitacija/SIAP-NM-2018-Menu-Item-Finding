@@ -32,7 +32,7 @@ def exportToTxt(startPoint, endPoint, folderPath, fileName, train):
     
         reviewCount = 0
         while(reviewCount < endPoint):
-            print("Izvrsava se: "+reviewCount)
+            print("Izvrsava se: "+str(reviewCount))
             if reviewCount in train:
                 f = fileTrain
             else:
