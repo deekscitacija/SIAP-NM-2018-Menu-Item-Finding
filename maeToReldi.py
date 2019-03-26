@@ -3,34 +3,60 @@ from bson.objectid import ObjectId
 import tkinter as tk
 from tkinter import filedialog
 import xml.etree.cElementTree as xmlET
-import os
+import os,re
 
 client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
 db = client['RestaurantData']
 
 def convertFromMaeXmlToReldi(maeXmlsPath):
     for filename in os.listdir(maeXmlsPath):
+        print("Processing " + filename)
         filepath = maeXmlsPath + "/" + filename
         if(os.path.isfile(filepath) and filename.endswith(".xml")):
             xmlRoot = xmlET.parse(filepath).getroot()
-            tags = xmlRoot.find("TAGS").getchildren()
+            tagsTag = xmlRoot.find("TAGS")
+            if tagsTag is None:
+                continue
+
+            tags = tagsTag.getchildren()
+            
             if len(tags) == 0:
                 continue
 
-            review = db['FilteredAndTaggedRestaurantReviews'].find_one({"_id" : ObjectId(filename.replace(".xml",""))})
+            reviewId = filename.replace(".xml","")
+            reviewIdQuery = {"_id" : ObjectId(reviewId)}
+            review = db['FilteredAndTaggedRestaurantReviews'].find_one(reviewIdQuery)
             if review is None:
                 continue
 
             sentences = review["sentences"]
             tokens = review["tokens"]
             namedEntities = review["namedEntities"]
+            text = review["text"]
 
+            partEnd = 0
+            allPartEnds = 0
             for sentence in sentences["sentence"]:
                 if(len(tags)==0):
                     break
 
-                sentenceLastToken = findLastSentenceToken(sentence,tokens)
-                sentenceEnd = int(sentenceLastToken["end"])         
+                sentenceFirstToken = findFirstLastSentenceToken(sentence,tokens,True)
+                if int(sentenceFirstToken["start"]) == 1 and partEnd > 0:
+                    allPartEnds += partEnd
+                    sentenceFirstTokenStartInText = text.find(sentenceFirstToken["text"],allPartEnds)
+                    searchText = text[allPartEnds:sentenceFirstTokenStartInText]
+                    partEnd += len(searchText)
+                    allPartEnds += len(searchText)
+                    for tag in tags:
+                        tagOffset = tag.attrib.get("spans").split("~")
+                        tagStart = int(tagOffset[0]) - partEnd
+                        tagEnd = int(tagOffset[1]) - partEnd
+                        tag.set("spans",str(tagStart) + "~" + str(tagEnd))
+                        
+                    partEnd = 0
+
+                sentenceLastToken = findFirstLastSentenceToken(sentence,tokens,False)
+                partEnd = int(sentenceLastToken["end"])
                 tagsToRemove = []
 
                 for tag in tags:
@@ -38,7 +64,7 @@ def convertFromMaeXmlToReldi(maeXmlsPath):
                     tagOffset = tag.attrib.get("spans").split("~")
                     tagStart = int(tagOffset[0])
                     tagEnd = int(tagOffset[1])
-                    if tagStart <= sentenceEnd:
+                    if tagStart < partEnd:
                         tokenNER = findNERtoken(sentence,namedEntities,tokens,tagStart+1,tagEnd)
                         tokenNER["value"] = tagName
                         tagsToRemove.append(tag)
@@ -46,24 +72,20 @@ def convertFromMaeXmlToReldi(maeXmlsPath):
                 for tag in tagsToRemove:
                     tags.remove(tag)
 
-                if len(tags) > 0:
-                    minTagStart = findMinTagStart(tags)
-                    sentenceEnd += minTagStart - sentenceEnd
-
-                    for tag in tags:
-                        tagOffset = tag.attrib.get("spans").split("~")
-                        tagStart = int(tagOffset[0]) - sentenceEnd
-                        tagEnd = int(tagOffset[1]) - sentenceEnd
-                        tag.set("spans",str(tagStart) + "~" + str(tagEnd))
+            namedEntitiesUpdateQuery = {"$set" : {"namedEntities" : namedEntities}}
+            db['FilteredAndTaggedRestaurantReviews'].update_one(reviewIdQuery,namedEntitiesUpdateQuery)
 
         elif(os.path.isdir(filepath)):
             convertFromMaeXmlToReldi(filepath)
 
-def findLastSentenceToken(sentence,tokens):
+def findFirstLastSentenceToken(sentence,tokens,first):
     sentenceTokens = sentence["tokenIDs"].split(" ")
-    sentenceLastTokenId = sentenceTokens[len(sentenceTokens)-1]
+    if first:
+        sentenceTokenId = sentenceTokens[0]
+    else:
+        sentenceTokenId = sentenceTokens[-1]
     for token in tokens["token"]:
-        if token["ID"] == sentenceLastTokenId:
+        if token["ID"] == sentenceTokenId:
             return token
 
 def findTokenInSentence(sentence,token):
@@ -84,18 +106,6 @@ def findNERtoken(sentence,namedEntities,tokens,start,end):
     for namedEntity in namedEntities["entity"]:
         if namedEntity["tokenIDs"] == token["ID"]:
             return namedEntity
-
-def findMinTagStart(tags):
-    minTag = tags[0]
-    minTagOffset = minTag.attrib.get("spans").split("~")
-    minTagStart = int(minTagOffset[0])
-    for tag in tags[1:]:
-        tagOffset = tag.attrib.get("spans").split("~")
-        tagStart = int(tagOffset[0])
-        if tagStart < minTagStart:
-            minTagStart = tagStart
-        
-    return minTagStart
 
 def startConverting():
     root = tk.Tk()
