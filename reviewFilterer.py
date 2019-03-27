@@ -8,7 +8,7 @@ def filterReviews(startPoint):
     loop = True
     while(loop):
         reviews = db['RestaurantReviews'].find()[startPoint:startPoint+1]
-        if len(reviews) == 0:
+        if reviews.count() == 0:
             break
             
         for review in reviews:

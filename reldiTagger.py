@@ -25,6 +25,8 @@ def tagReviews(startPoint, endPoint):
     while(reviewCount < endPoint):
         reviewCount = reviewCount+1
         reviews = db['FilteredRestaurantReviews'].find()[startPoint:startPoint+1]
+        if reviews.count() == 0:
+            break
 
         for review in reviews:
             reviewObject = {"restaurantLink" : review["restaurantLink"], "title" : review["title"], "reviewBody" : review["reviewBody"], "date" : review["date"], "userName" : review["userName"], "userRank" : review["userRank"], "ratings" : review["ratings"]}

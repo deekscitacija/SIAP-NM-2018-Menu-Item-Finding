@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import tkinter as tk
 from tkinter import filedialog
-import random, os
+import random, os, csv
 
 client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
 db = client['RestaurantData']
@@ -15,9 +15,9 @@ def startProgram():
         startPoint = int(startId)
         endPoint = int(reviewNum)
         trainPercent = float(trainNum)
-        if trainPercent <= 0 or trainPercent >=1:
+        if trainPercent <= 0 or trainPercent >1:
             raise ValueError()
-        train = random.sample(range(startPoint,endPoint), int(trainPercent*endPoint))
+        train = random.sample(range(startPoint,startPoint+endPoint), int(trainPercent*endPoint))
         root = tk.Tk()
         root.withdraw()
         folderPath = filedialog.askdirectory()
@@ -28,7 +28,7 @@ def startProgram():
 
 def exportToTxt(startPoint, endPoint, folderPath, fileName, train):
     
-    with open(folderPath+os.path.sep+fileName+"Train", "a", encoding="utf-8") as fileTrain, open(folderPath+os.path.sep+fileName+"Test", "a", encoding="utf-8") as fileTest:
+    with open(folderPath+os.path.sep+fileName+"Train", "w", encoding="utf-8") as fileTrain, open(folderPath+os.path.sep+fileName+"Test", "w", encoding="utf-8") as fileTest:
     
         reviewCount = 0
         while(reviewCount < endPoint):
@@ -37,11 +37,11 @@ def exportToTxt(startPoint, endPoint, folderPath, fileName, train):
                 f = fileTrain
             else:
                 f = fileTest
-
+            
+            tsv_writer = csv.writer(f, delimiter='\t', lineterminator='\n')
             reviewCount = reviewCount+1
             reviews = db['FilteredAndTaggedRestaurantReviews'].find()[startPoint:startPoint+1]
-
-            if len(reviews) == 0:
+            if reviews.count() == 0:
                 break
 
             for review in reviews:
@@ -51,8 +51,12 @@ def exportToTxt(startPoint, endPoint, folderPath, fileName, train):
 
                 for sentence in review['sentences']['sentence']:
                     sentenceId = sentence['ID']
-                    tokenIds = sentence['tokenIDs'].split(' ')
-                
+                    sentenceTokenIDs = sentence['tokenIDs']
+                    if sentenceTokenIDs == "":
+                        continue
+
+                    tokenIds = sentenceTokenIDs.split(' ')
+
                     for tokenId in tokenIds:
                         propertyIdx = propertyIdx+1
                         tempTokenId = propertyValues[propertyIdx][1]['tokenIDs']
@@ -62,17 +66,7 @@ def exportToTxt(startPoint, endPoint, folderPath, fileName, train):
                         tempNer = propertyValues[propertyIdx][3]['value']
 
                         if tempTokenId == tokenId:
-                            f.write(reviewId+"~"+sentenceId+"~"+tokenId+"\t")
-                            f.write(tempText+"\t")
-                            f.write(tempPOS+"\t")
-                            f.write(tempLemma+"\t")
-                            f.write(str(tempText.isdigit())+"\t")
-                            f.write(str(tempPOS == 'Z')+"\t")
-                            f.write(str(tempText.isupper())+"\t")
-                            f.write(str(tempText[0].isupper() and tempText[1:].islower())+"\t")
-                            f.write(str(tempTokenId == tokenIds[-1])+"\t")
-                            f.write(tempNer+"\t")
-                            f.write("\n")
+                            tsv_writer.writerow([reviewId+"~"+sentenceId+"~"+tokenId,tempText,tempPOS,tempLemma,str(tempText.isdigit()),str(tempPOS == 'Z'),str(tempText.isupper()),str(tempText[0].isupper() and tempText[1:].islower()),str(tempTokenId == tokenIds[-1]),tempNer])
                     f.write("\n")  
                 startPoint = startPoint+1
 

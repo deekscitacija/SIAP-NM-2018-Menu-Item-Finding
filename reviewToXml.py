@@ -24,9 +24,8 @@ def exportXml(startPoint, endPoint, folderPath):
     reviewCount = 0
     while(reviewCount < endPoint):
         reviewCount = reviewCount+1
-        reviews = db['FilteredAndTaggedRestaurantReviews'].find()[startPoint:startPoint+1]
-        
-        if len(reviews) == 0:
+        reviews = db['FilteredAndTaggedRestaurantReviews'].find()[startPoint:startPoint+1]   
+        if reviews.count() == 0:
             break
 
         for review in reviews:
