@@ -15,7 +15,7 @@ def startProgram():
         startPoint = int(startId)
         endPoint = int(reviewNum)
         trainPercent = float(trainNum)
-        if trainPercent <= 0 or trainPercent >1:
+        if trainPercent <= 0 or trainPercent > 1:
             raise ValueError()
         train = random.sample(range(startPoint,startPoint+endPoint), int(trainPercent*endPoint))
         root = tk.Tk()
@@ -33,7 +33,7 @@ def exportToTxt(startPoint, endPoint, folderPath, fileName, train):
         reviewCount = 0
         while(reviewCount < endPoint):
             print("Izvrsava se: "+str(reviewCount))
-            if reviewCount in train:
+            if startPoint in train:
                 f = fileTrain
             else:
                 f = fileTest
@@ -65,9 +65,12 @@ def exportToTxt(startPoint, endPoint, folderPath, fileName, train):
                         tempLemma = propertyValues[propertyIdx][1]['text']
                         tempNer = propertyValues[propertyIdx][3]['value']
 
+                        if tempLemma == "" or tempLemma == " ":
+                            tempLemma = tempText
+
                         if tempTokenId == tokenId:
                             tsv_writer.writerow([reviewId+"~"+sentenceId+"~"+tokenId,tempText,tempPOS,tempLemma,str(tempText.isdigit()),str(tempPOS == 'Z'),str(tempText.isupper()),str(tempText[0].isupper() and tempText[1:].islower()),str(tempTokenId == tokenIds[-1]),tempNer])
-                    f.write("\n")  
+                    f.write('\n')  
                 startPoint = startPoint+1
 
 if __name__ == "__main__":
