@@ -88,8 +88,8 @@ def bindNewTag(menuItem, labeledTag, lastTag, offsetPosition, tokenLen):
         return 'END'
 
     elif labeledTag == 'B-FOOD' and (lastTag == 'O' or lastTag == 'U-FOOD'):
-        menuItem.startOffset = offsetPosition-tokenLen
         menuItem.items = [ labeledTag ]
+        menuItem.startOffset = offsetPosition-tokenLen
         return 'CONTINUE'
 
     elif labeledTag == 'I-FOOD' and (lastTag == 'B-FOOD' or lastTag == 'I-FOOD'):
