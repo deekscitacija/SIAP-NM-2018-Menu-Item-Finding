@@ -41,8 +41,8 @@ def parseCrfFile(filePath):
                 if reviewId != str(dbReview['_id']):                    #Get next review from DB and save current to JSON file
                     
                     if dbReview['_id'] != None:
-                        with open(os.path.dirname(filePath)+os.path.sep+reviewId+".json", "w", encoding="utf-8") as outJSON:
-                            jsonData = buildReviewObject(reviewId, dbReview['restaurantLink'], menuItems)
+                        with open(os.path.dirname(filePath)+os.path.sep+str(dbReview['_id'])+".json", "w", encoding="utf-8") as outJSON:
+                            jsonData = buildReviewObject(str(dbReview['_id']), dbReview['restaurantLink'], menuItems)
                             json.dump(jsonData, outJSON)
                     
                     offsetPosition = 0
