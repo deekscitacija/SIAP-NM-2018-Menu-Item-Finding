@@ -36,7 +36,55 @@ public class JsonParseUtil {
 	
 	public static String removeLatinCharacters(String value) {
 		
-		return null;
+		String retVal = "";
+		
+		for(char c : value.toCharArray()) {
+			if(c == 'Č' || c == 'Ć') {
+				retVal+='C';
+				continue;
+			}else if(c == 'č' || c == 'ć') {
+				retVal+='c';
+				continue;
+			}else if(c == 'Š') {
+				retVal+='S';
+				continue;
+			}else if(c == 'š') {
+				retVal+='s';
+				continue;
+			}else if(c == 'Ž') {
+				retVal+='Z';
+				continue;
+			}else if(c == 'ž') {
+				retVal+='z';
+				continue;
+			}else if(c == 'Đ') {
+				retVal+="DJ";
+				continue;
+			}else if(c == 'đ') {
+				retVal+="dj";
+				continue;
+			}else {
+				retVal+=c;
+			}
+		}
+		
+		if(retVal.length() > 9) {
+			if(retVal.substring(retVal.length() - 9).toLowerCase().equals("popularno")) {
+				retVal = retVal.substring(0, retVal.length() - 9);
+			}
+		}
+		
+		if(retVal.length() > 5) {
+			if(retVal.substring(retVal.length() - 5).toLowerCase().equals("posno")) {
+				retVal = retVal.substring(0, retVal.length() - 5);
+			}
+			
+			if(retVal.substring(retVal.length() - 5).toLowerCase().equals("ljuto")) {
+				retVal = retVal.substring(0, retVal.length() - 5);
+			}
+		}
+		
+		return retVal.trim();
 	}
 	
 }

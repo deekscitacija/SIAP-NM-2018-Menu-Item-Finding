@@ -15,8 +15,11 @@ public class Toolbar extends JToolBar {
 		super(SwingConstants.HORIZONTAL);
 		setFloatable(false);
 
-		JButton otvori = new JButton(ActionManager.getInstance().getFileChooserDialogContoller());
-		add(otvori);
+		JButton openDirectory = new JButton(ActionManager.getInstance().getFileChooserDialogContoller());
+		JButton openFile = new JButton(ActionManager.getInstance().getSingleFileChooserDialogContoller());
+		add(openDirectory);
+		addSeparator();
+		add(openFile);
 	}
 
 }

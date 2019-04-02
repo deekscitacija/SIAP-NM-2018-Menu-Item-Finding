@@ -6,6 +6,7 @@ public class ActionManager {
 	private static ActionManager instance = null;
 	
 	private FileChooserDialogContoller fileChooserDialogContoller = null;
+	private SingleFileChooserDialogController singleFileChooserDialogContoller = null;
 	private SubmitController submitController = null;
 	
 	private ActionManager() {
@@ -23,6 +24,7 @@ public class ActionManager {
 	private void initializeActions() {
 		this.fileChooserDialogContoller = new FileChooserDialogContoller();
 		this.submitController = new SubmitController();
+		this.singleFileChooserDialogContoller = new SingleFileChooserDialogController();
 	}
 
 	public FileChooserDialogContoller getFileChooserDialogContoller() {
@@ -39,6 +41,14 @@ public class ActionManager {
 
 	public void setSubmitController(SubmitController submitController) {
 		this.submitController = submitController;
+	}
+
+	public SingleFileChooserDialogController getSingleFileChooserDialogContoller() {
+		return singleFileChooserDialogContoller;
+	}
+
+	public void setSingleFileChooserDialogContoller(SingleFileChooserDialogController singleFileChooserDialogContoller) {
+		this.singleFileChooserDialogContoller = singleFileChooserDialogContoller;
 	}
 	
 }

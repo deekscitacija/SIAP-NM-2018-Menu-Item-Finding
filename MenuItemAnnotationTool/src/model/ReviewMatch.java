@@ -49,8 +49,10 @@ public class ReviewMatch {
 	public String toString() {
 		String retVal = "ReviewMatch [id=" + id + ", restaurantLink=" + restaurantLink + ", foodMatches= ";
 		
-		for(FoodMatch aMatch : menuItems) {
-			retVal+=aMatch.getText()+", ";
+		if(menuItems != null) {
+			for(FoodMatch aMatch : menuItems) {
+				retVal+=aMatch.getText()+", ";
+			}
 		}
 		
 		return retVal+"]";

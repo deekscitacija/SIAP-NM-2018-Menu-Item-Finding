@@ -12,6 +12,7 @@ import com.mongodb.client.MongoDatabase;
 
 import model.MenuItem;
 import model.Restaurant;
+import utils.JsonParseUtil;
 
 public class MongoRepository {
 	
@@ -30,6 +31,10 @@ public class MongoRepository {
 		BasicDBObject query = new BasicDBObject("restaurantLink", restaurantLink);
 		Document restaurantDocument = collection.find(query).first();
 		
+		if(restaurantDocument == null) {
+			return null;
+		}
+		
 		Restaurant retVal = new Restaurant();
 		retVal.setRestaurantLink(restaurantLink);
 		retVal.setRestaurantCountry(restaurantDocument.getString("restaurantCountry"));
@@ -40,7 +45,7 @@ public class MongoRepository {
 		ArrayList<Document> menuItemDocuments = restaurantDocument.get("menuItems", ArrayList.class);
 		
 		for(Document menuItemInfo : menuItemDocuments) {
-			MenuItem tempItem = new MenuItem(menuItemInfo.getString("name"), menuItemInfo.getString("description"));
+			MenuItem tempItem = new MenuItem(JsonParseUtil.removeLatinCharacters(menuItemInfo.getString("name")), menuItemInfo.getString("description"));
 			retVal.getMenuItems().add(tempItem);
 		}
 		
