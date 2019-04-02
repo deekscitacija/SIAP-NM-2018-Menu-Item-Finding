@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import org.apache.commons.io.FilenameUtils;
 import org.json.simple.parser.ParseException;
 
 import model.Restaurant;
@@ -20,11 +21,11 @@ import view.MainFrame;
 import view.MatchingPanel;
 import view.MenuItemDisplay;
 
-public class SingleFileChooserDialogController extends AbstractAction{
+public class MultipleFileChooserDialogController extends AbstractAction{
 	
 	private static final long serialVersionUID = 1L;
 
-	public SingleFileChooserDialogController() {
+	public MultipleFileChooserDialogController() {
 		putValue(AbstractAction.NAME, "Otvorite fajl");
 		putValue(AbstractAction.SHORT_DESCRIPTION, "Otvorite fajl");
 		putValue(AbstractAction.SMALL_ICON, new ImageIcon("resources/icons/file.png"));
@@ -37,6 +38,7 @@ public class SingleFileChooserDialogController extends AbstractAction{
 		
 		JFileChooser chooser = new JFileChooser();
 		chooser.setDialogTitle("Izaberite fajl");
+		chooser.setMultiSelectionEnabled(true);
 		chooser.setFileFilter(new FileNameExtensionFilter("*.json", "json"));
 	    
 	    if(!mf.getDirectoryPath().isEmpty()) {
@@ -44,25 +46,27 @@ public class SingleFileChooserDialogController extends AbstractAction{
 	    }
 	    
 	    if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-	    	File selectedFile = chooser.getSelectedFile();
-	    	String filePath = selectedFile.getAbsolutePath();
-	    	String directoryPath = selectedFile.getParent();
-	    	
-	    	//Add single file path
+	    	File[] selectedFiles = chooser.getSelectedFiles();
 	    	ArrayList<String> tempFiles = new ArrayList<String>();
-	    	tempFiles.add(filePath);
+	    	
+	    	//Add paths to all .json files from directory to list
+	    	for (File file : selectedFiles) {
+			    if (file.isFile()) {
+			    	tempFiles.add(file.getAbsolutePath());
+			    }
+			}
 	    	
 	    	//Save as properties to MainFrame for easier access
-			mf.setDirectoryPath(directoryPath);
+			mf.setDirectoryPath(selectedFiles[0].getParent());
 			mf.setFileNames(tempFiles);
 			
 			//Deserialize first revew file
 			ReviewMatch reviewMatch;
 			
 			try {
-				reviewMatch = JsonParseUtil.parseReviewMatch(filePath);
+				reviewMatch = JsonParseUtil.parseReviewMatch(tempFiles.get(0));
 			} catch (IOException | ParseException e1) {
-				MessageUtils.showParseErrorMessage(filePath);
+				MessageUtils.showParseErrorMessage(tempFiles.get(0));
 				return;
 			}
 			
@@ -73,7 +77,6 @@ public class SingleFileChooserDialogController extends AbstractAction{
 			
 			Restaurant restaurant = mf.getMongoRepository().getRestaurant(reviewMatch.getRestaurantLink());
 			mf.switchView(new MenuItemDisplay(reviewMatch, reviewMatch.getMenuItems().get(0), restaurant.getRestaurantName(), 0, 0), new MatchingPanel(restaurant));
-	    	
 	    }
 		
 	}

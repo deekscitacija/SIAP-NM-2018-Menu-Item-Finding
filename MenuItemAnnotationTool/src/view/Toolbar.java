@@ -16,7 +16,7 @@ public class Toolbar extends JToolBar {
 		setFloatable(false);
 
 		JButton openDirectory = new JButton(ActionManager.getInstance().getFileChooserDialogContoller());
-		JButton openFile = new JButton(ActionManager.getInstance().getSingleFileChooserDialogContoller());
+		JButton openFile = new JButton(ActionManager.getInstance().getMultipleFileChooserDialogController());
 		add(openDirectory);
 		addSeparator();
 		add(openFile);
