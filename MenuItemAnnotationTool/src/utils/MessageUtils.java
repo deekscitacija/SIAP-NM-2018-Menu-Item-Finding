@@ -46,4 +46,11 @@ public class MessageUtils {
 		dialog.setAlwaysOnTop(true);
 		dialog.setVisible(true);
 	}
+	
+	public static void showEmptyFoodMatches(String reviewId) {
+		JOptionPane optionPane = new JOptionPane("U review-u sa id-em : "+reviewId+" nema pronadjene hrane.", JOptionPane.ERROR_MESSAGE);    
+		JDialog dialog = optionPane.createDialog("Nema hrane");
+		dialog.setAlwaysOnTop(true);
+		dialog.setVisible(true);
+	}
 }

@@ -71,14 +71,8 @@ public class SubmitController extends AbstractAction {
 				MessageUtils.showFinishedFolderParsing(mf.getDirectoryPath());
 				return;
 			}else {
-				//More reviews to process, get next review 
-				ReviewMatch reviewMatch;
-				try {
-					reviewMatch = JsonParseUtil.parseReviewMatch(remainingPaths.get(0));
-				} catch (IOException | ParseException e) {
-					MessageUtils.showParseErrorMessage(mf.getDirectoryPath());
-					return;
-				}
+				//More reviews to process, get next valid review 
+				ReviewMatch reviewMatch = getNextValidReview(mf, remainingPaths);
 				
 				if(reviewMatch == null) {
 					MessageUtils.showNullErrorMessage();
@@ -93,6 +87,37 @@ public class SubmitController extends AbstractAction {
 			//More food in this review, get next food mention
 			mf.switchMenuItemDisplay(mf.getMenuItemDisplay().switchFoodMatch());
 		}
+	}
+	
+	private ReviewMatch getNextValidReview(MainFrame mf, ArrayList<String> remainingPaths) {
+		ReviewMatch retVal;
+		try {
+			retVal = JsonParseUtil.parseReviewMatch(remainingPaths.get(0));
+			
+			//No food found by CRF? Save and skip...
+			if(retVal.getMenuItems().isEmpty()) {
+				MessageUtils.showEmptyFoodMatches(retVal.getId());
+				try {
+					JsonParseUtil.saveReview(retVal, mf.getDirectoryPath());
+					remainingPaths.remove(0);
+					//Check if there are more reviews pending, find next valid
+					if(!remainingPaths.isEmpty()) {
+						return getNextValidReview(mf, remainingPaths);
+					}else {
+						return null;
+					}
+					
+				} catch (JsonIOException | IOException e) {
+					MessageUtils.showSerializationErrorMessage();
+					return null;
+				}
+			}
+		} catch (IOException | ParseException e) {
+			MessageUtils.showParseErrorMessage(mf.getDirectoryPath());
+			return null;
+		}
+		
+		return retVal;
 	}
 
 }

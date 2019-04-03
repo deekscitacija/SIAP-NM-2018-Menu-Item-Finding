@@ -61,14 +61,7 @@ public class MultipleFileChooserDialogController extends AbstractAction{
 			mf.setFileNames(tempFiles);
 			
 			//Deserialize first revew file
-			ReviewMatch reviewMatch;
-			
-			try {
-				reviewMatch = JsonParseUtil.parseReviewMatch(tempFiles.get(0));
-			} catch (IOException | ParseException e1) {
-				MessageUtils.showParseErrorMessage(tempFiles.get(0));
-				return;
-			}
+			ReviewMatch reviewMatch = deserializeReview(mf.getFileNames());
 			
 			if(reviewMatch == null) {
 				MessageUtils.showNullErrorMessage();
@@ -79,6 +72,26 @@ public class MultipleFileChooserDialogController extends AbstractAction{
 			mf.switchView(new MenuItemDisplay(reviewMatch, reviewMatch.getMenuItems().get(0), restaurant.getRestaurantName(), 0, 0), new MatchingPanel(restaurant));
 	    }
 		
+	}
+	
+	private ReviewMatch deserializeReview(ArrayList<String> tempFiles) {
+		
+		ReviewMatch retVal  = null;
+		try {
+			if(!tempFiles.isEmpty()) {
+				retVal = JsonParseUtil.parseReviewMatch(tempFiles.get(0));
+				if(retVal.getMenuItems().isEmpty()) {
+					MessageUtils.showEmptyFoodMatches(retVal.getId());
+					tempFiles.remove(0);
+					return deserializeReview(tempFiles);
+				}	
+			}
+		} catch (IOException | ParseException e1) {
+			MessageUtils.showParseErrorMessage(tempFiles.get(0));
+			return null;
+		}
+		
+		return retVal;
 	}
 
 }
