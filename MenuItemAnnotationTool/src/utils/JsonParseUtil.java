@@ -37,6 +37,7 @@ public class JsonParseUtil {
 	public static String removeLatinCharacters(String value) {
 		
 		String retVal = "";
+		boolean matchFound = false;
 		
 		for(char c : value.toCharArray()) {
 			if(c == 'Č' || c == 'Ć') {
@@ -58,7 +59,7 @@ public class JsonParseUtil {
 				retVal+='z';
 				continue;
 			}else if(c == 'Đ') {
-				retVal+="DJ";
+				retVal+="Dj";
 				continue;
 			}else if(c == 'đ') {
 				retVal+="dj";
@@ -68,23 +69,26 @@ public class JsonParseUtil {
 			}
 		}
 		
-		if(retVal.length() > 9) {
-			if(retVal.substring(retVal.length() - 9).toLowerCase().equals("popularno")) {
-				retVal = retVal.substring(0, retVal.length() - 9);
-			}
-		}
-		
-		if(retVal.length() > 5) {
-			if(retVal.substring(retVal.length() - 5).toLowerCase().equals("posno")) {
-				retVal = retVal.substring(0, retVal.length() - 5);
+		do{
+			matchFound = false;
+			if(retVal.length() > 9) {
+				if(retVal.substring(retVal.length() - 9).toLowerCase().equals("popularno")) {
+					retVal = retVal.substring(0, retVal.length() - 9);
+					matchFound = true;
+				}
 			}
 			
-			if(retVal.substring(retVal.length() - 5).toLowerCase().equals("ljuto")) {
-				retVal = retVal.substring(0, retVal.length() - 5);
+			if(retVal.length() > 5) {
+				if(retVal.substring(retVal.length() - 5).toLowerCase().equals("posno") || retVal.substring(retVal.length() - 5).toLowerCase().equals("ljuto")) {
+					retVal = retVal.substring(0, retVal.length() - 5);
+					matchFound = true;
+				}
 			}
-		}
+			retVal = retVal.trim();
+			
+		}while(matchFound);
 		
-		return retVal.trim();
+		return retVal;
 	}
 	
 }
