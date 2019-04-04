@@ -1,4 +1,4 @@
-import tokeniser
+from tokeniser import tokenize_array, generate_tokenizer, process, represent_tomaz
 
 if __name__=='__main__':
 	#import argparse
@@ -13,10 +13,10 @@ if __name__=='__main__':
 	
 	lang = 'sr'
 	mode = 'nonstandard'
-	tokenizer=tokeniser.generate_tokenizer(lang)
+	tokenizer=generate_tokenizer(lang)
 	par_id=0
 	with open("example.txt", "r", encoding="utf-8") as exampleFile, open("out.txt", "w", encoding="utf-8") as outFile :
 		for line in exampleFile:
 			par_id+=1
-			outFile.write(tokeniser.represent_tomaz(tokeniser.process[mode](tokenizer,line,lang),par_id))
-			outFile.write(str(tokeniser.tokenize_array(tokeniser.process[mode](tokenizer,line,lang))))
+			outFile.write(represent_tomaz(process[mode](tokenizer,line,lang),par_id))
+			outFile.write(str(tokenize_array(process[mode](tokenizer,line,lang))))
