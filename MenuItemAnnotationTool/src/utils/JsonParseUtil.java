@@ -84,6 +84,14 @@ public class JsonParseUtil {
 					matchFound = true;
 				}
 			}
+			
+			if(retVal.length() > 4) {
+				if(retVal.substring(retVal.length() - 4).toLowerCase().equals("novo")) {
+					retVal = retVal.substring(0, retVal.length() - 4);
+					matchFound = true;
+				}
+			}
+			
 			retVal = retVal.trim();
 			
 		}while(matchFound);
