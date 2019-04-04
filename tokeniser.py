@@ -6,10 +6,11 @@ import sys
 
 import os
 reldir=os.path.dirname(os.path.abspath(__file__))
+abbrevsdir=os.path.join(reldir,"abbrevs")
 
 def read_abbrevs(file):
 	abbrevs={'B':[],'N':[],'S':[]}
-	with open(os.path.join(reldir,file), "r", encoding = "utf-8") as abbrevsFile:
+	with open(os.path.join(abbrevsdir,file), "r", encoding = "utf-8") as abbrevsFile:
 		for line in abbrevsFile:
 			if not line.startswith('#'):
 				abbrev,type=line.strip().split('\t')[:2]
