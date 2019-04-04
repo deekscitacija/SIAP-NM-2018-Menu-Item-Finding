@@ -19,3 +19,4 @@ if __name__=='__main__':
 		for line in exampleFile:
 			par_id+=1
 			outFile.write(tokeniser.represent_tomaz(tokeniser.process[mode](tokenizer,line,lang),par_id))
+			outFile.write(str(tokeniser.tokenize_array(tokeniser.process[mode](tokenizer,line,lang))))

@@ -166,3 +166,12 @@ def represent_tomaz(input,par_id):
         output+=str(par_id)+'.'+str(sent_id)+'.'+str(token_id)+'.'+str(start+1)+'-'+str(end)+'\t'+token+'\n'
     output+='\n'
   return output
+  
+def tokenize_array(input):
+	output = []
+	for sent in input:
+		for token in sent:
+			if not token[0].isspace():
+				output.append(token[0])
+	  
+	return output
