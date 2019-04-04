@@ -435,8 +435,10 @@ def stem_str(str):
         end_str = end_str+" "+word
     return end_str
         
-out = stem_arr("Piletina sa ind. orahom")
-out2 = stem_arr("pica 4sira")
+out = stem_arr("Piletina sa ind. orahom u slatko-kiselom sosu")
+out2 = stem_arr("Poh. pileci batak i pizza 4sira")
+out3 = stem_arr("Tel. supa")
 
 print(out)
 print(out2)
+print(out3)
