@@ -87,3 +87,30 @@ def serbianLatinToLatin(value):
         return retVal
     
     return value
+
+def removeSpecialTags(value):
+
+    while True:
+        matchFound = False
+        
+        if len(value) > 9:
+            if value.lower()[-9:] == 'popularno':
+                value = value[:-9]
+                matchFound = True
+        
+        if len(value) > 5:
+            if value.lower()[-5:] == 'posno' or value.lower()[-5:] == 'ljuto':
+                value = value[:-5]
+                matchFound = True
+        
+        if len(value) > 4:
+            if value.lower()[-4:] == 'novo':
+                value = value[:-4]
+                matchFound = True
+
+        value = value.rstrip()
+
+        if not matchFound:
+            break
+    
+    return value
