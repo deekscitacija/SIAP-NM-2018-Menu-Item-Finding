@@ -7,7 +7,7 @@ Created on 7 May 2015
 Created at the University of Manchester, School of Computer Science
 Licence GNU/GPL 3.0
 '''
-from tokeniser import tokenize_array, generate_tokenizer, process
+from tokeniser import tokenize_text, generate_tokenizer, process
 rules = {
 'ovnicxki':'',
 'ovnicxka':'',
@@ -379,9 +379,9 @@ def stem_arr(str):
     str = str.replace("đ", "dx")
     str = str.replace("ž", "zx")
     lang = 'sr'
-    mode = 'nonstandard'
+    mode = 'standard'
     tokenizer=generate_tokenizer(lang)
-    lam = tokenize_array(process[mode](tokenizer,str,lang))
+    lam = tokenize_text(process[mode](tokenizer,str,lang))
     i = 0
     for word in lam:
         for key in dictionary:
@@ -415,9 +415,9 @@ def stem_str(str):
     str = str.replace("€","eur")
     str = str.replace("„","\"")
     lang = 'sr'
-    mode = 'nonstandard'
+    mode = 'standard'
     tokenizer=generate_tokenizer(lang)
-    lam = tokenize_array(process[mode](tokenizer,str,lang))
+    lam = tokenize_text(process[mode](tokenizer,str,lang))
     i = 0
     for word in lam:
         for key in dictionary:

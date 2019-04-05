@@ -167,8 +167,19 @@ def represent_tomaz(input,par_id):
         output+=str(par_id)+'.'+str(sent_id)+'.'+str(token_id)+'.'+str(start+1)+'-'+str(end)+'\t'+token+'\n'
     output+='\n'
   return output
-  
-def tokenize_array(input):
+
+def tokenize_sentences(input):
+  output = []
+  for sent in input:
+    sentence_output = []
+    if sent:
+      for token in sent:
+        if not token[0].isspace():
+          sentence_output.append(token[0])
+      output.append(sentence_output)
+  return output
+
+def tokenize_text(input):
 	output = []
 	for sent in input:
 		for token in sent:
