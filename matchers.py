@@ -10,6 +10,7 @@ import os, csv, json
 client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
 db = client['RestaurantData']
 dbRestaurants = db['Restaurants']
+filePaths = []
 
 def processFiles(folderPath, filePaths):
     dbRestaurant = {'restaurantLink' : None}
@@ -84,7 +85,6 @@ def partialMatch(food, menuItems):
 
 def readAllFiles(folderPath):
     allFiles = os.listdir(folderPath)
-    filePaths = []
     for tempItem in allFiles:
         fullFilePath = folderPath+os.path.sep+tempItem
         
@@ -93,13 +93,12 @@ def readAllFiles(folderPath):
         else:
             if fullFilePath.endswith('_match.json'):
                 filePaths.append(fullFilePath)
-    return filePaths
 
 def startProgram():
     root = tk.Tk()
     root.withdraw()
     folderPath = filedialog.askdirectory()
-    filePaths = readAllFiles(folderPath)
+    readAllFiles(folderPath)
     if(len(filePaths) > 0):
         processFiles(folderPath, filePaths)
 
