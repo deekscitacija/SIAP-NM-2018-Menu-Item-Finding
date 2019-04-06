@@ -12,10 +12,10 @@ db = client['RestaurantData']
 dbRestaurants = db['Restaurants']
 filePaths = []
 
-def processFiles(folderPath, filePaths):
+def processFiles(folderPath,outputFilename):
     dbRestaurant = {'restaurantLink' : None}
 
-    with open(folderPath+os.path.sep+"outputMatchers.txt", "w", encoding="utf-8") as outputFile:
+    with open(folderPath+os.path.sep+outputFilename, "w", encoding="utf-8") as outputFile:
         tsv_writer = csv.writer(outputFile, delimiter='\t', lineterminator='\n')
 
         for filePath in filePaths:
@@ -97,10 +97,11 @@ def readAllFiles(folderPath):
 def startProgram():
     root = tk.Tk()
     root.withdraw()
+    outputFilename = input("Unesite naziv fajle koja ce se izgenerisati:")
     folderPath = filedialog.askdirectory()
     readAllFiles(folderPath)
     if(len(filePaths) > 0):
-        processFiles(folderPath, filePaths)
+        processFiles(folderPath,outputFilename)
 
 if __name__ == "__main__":
     startProgram()
