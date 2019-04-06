@@ -4,6 +4,7 @@ from tkinter import filedialog
 from pyjarowinkler import distance
 import tkinter as tk
 import alphabetConverter as ac
+import serbianStemmer as stemmer
 import os, csv, json
 
 client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
@@ -30,7 +31,8 @@ def processFiles(folderPath, filePaths):
                     exactMatchStr = exactMatch(foodItem['text'], dbRestaurant['menuItems'])
                     substringMatchStr = substringMatch(foodItem['text'], dbRestaurant['menuItems'])
                     fuzzyMatchStr = fuzzyMatch(foodItem['text'], dbRestaurant['menuItems'])
-                    tsv_writer.writerow([foodItem['text'], foodItem['match'], exactMatchStr, substringMatchStr, fuzzyMatchStr])
+                    partialMatchStr = partialMatch(foodItem['text'], dbRestaurant['menuItems'])
+                    tsv_writer.writerow([foodItem['text'], foodItem['match'], exactMatchStr, substringMatchStr, fuzzyMatchStr, partialMatchStr])
 
 def exactMatch(food, menuItems):
     for menuItem in menuItems:
@@ -67,6 +69,18 @@ def fuzzyMatch(food, menuItems):
         return max['match']
 
     return "None"
+
+def partialMatch(food, menuItems):
+    foodTokenSet = set(stemmer.stem_arr(food))
+    max = {'match' : "None", 'intersect_len' : -1}
+    for menuItem in menuItems:
+        menuItemTokenSet = set(stemmer.stem_arr(menuItem['name']))
+        intersectionSet = foodTokenSet.intersection(menuItemTokenSet)
+        
+        if (len(intersectionSet) > max['intersect_len']) and (len(intersectionSet) > len(menuItemTokenSet)/2):
+            max = {'match' : menuItem['name'], 'intersect_len' : len(intersectionSet) }
+
+    return max['match']
 
 def readAllFiles(folderPath):
     allFiles = os.listdir(folderPath)

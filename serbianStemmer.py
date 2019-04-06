@@ -371,6 +371,19 @@ dictionary = {
 'moći':'mocyi'
 }
 
+stop_words = ["biti", "ne", 
+"jesam", "sam", "jesi", "si", "je", "jesmo", "smo", "jeste", "ste", "jesu", "su", "sa",
+"nijesam", "nisam", "nijesi", "nisi", "nije", "nijesmo", "nismo", "nijeste", "niste", "nijesu", "nisu",
+"budem", "budeš", "bude", "budemo", "budete", "budu", "budes",
+"bih",  "bi", "bismo", "biste", "biše", "bise",
+"bio", "bili", "budimo", "budite", "bila", "bilo", "bile", 
+"cu", "ces", "ce", "cemo", "cete", "ceš",
+"necu", "neces", "nece", "necemo", "necete", "neceš",
+"mogu", "možeš", "može", "možemo", "možete",
+"mozes", "moze", "mozemo", "mozete",
+"i", "a", "ili", "ali", "pa", "te", "da", "u", "po", "na",
+".", ",", "-", ";", ":", "?", "!", "+"]
+
 def stem_arr(str):
     str = str.lower()
     str = str.replace("š", "sx")
@@ -381,7 +394,7 @@ def stem_arr(str):
     lang = 'sr'
     mode = 'standard'
     tokenizer=generate_tokenizer(lang)
-    lam = tokenize_text(process[mode](tokenizer,str,lang))
+    lam = remove_stop_words(tokenize_text(process[mode](tokenizer,str,lang)))
     i = 0
     for word in lam:
         for key in dictionary:
@@ -417,7 +430,7 @@ def stem_str(str):
     lang = 'sr'
     mode = 'standard'
     tokenizer=generate_tokenizer(lang)
-    lam = tokenize_text(process[mode](tokenizer,str,lang))
+    lam = remove_stop_words(tokenize_text(process[mode](tokenizer,str,lang)))
     i = 0
     for word in lam:
         for key in dictionary:
@@ -434,11 +447,19 @@ def stem_str(str):
     for word in lam:
         end_str = end_str+" "+word
     return end_str
-        
-out = stem_arr("Piletina sa ind. orahom u slatko-kiselom sosu")
-out2 = stem_arr("Poh. pileci batak i pizza 4sira")
-out3 = stem_arr("Tel. supa")
 
-print(out)
-print(out2)
-print(out3)
+def remove_stop_words(token_arr):
+    retVal = []
+    for token in token_arr:
+        contains = False
+        for stop_word in stop_words:
+            if token == stop_word:
+                contains = True
+                break
+        if not contains:
+            retVal.append(token)
+
+    return retVal
+
+
+
