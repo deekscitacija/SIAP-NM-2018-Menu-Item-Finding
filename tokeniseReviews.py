@@ -44,11 +44,12 @@ def tokenizeReviews(startPoint,endPoint,folderPath,filename):
 					if sentences_tokens:
 						for sentence_tokens in sentences_tokens:
 							tokenizedSentence = " ".join(sentence_tokens)
-							convertedTokenizedSentence = serbianLatinToLatin(tokenizedSentence)
-							outFileOriginal.write(str(review["_id"]) + "\t" + tokenizedSentence + "\n")
-							outFileConverted.write(str(review["_id"]) + "\t" + tokenizedSentence + "\n")
-							if tokenizedSentence != convertedTokenizedSentence:
-								outFileConverted.write(str(review["_id"]) + "\t" + convertedTokenizedSentence + "\n")
+							if tokenizedSentence and not tokenizedSentence.isspace():
+								convertedTokenizedSentence = serbianLatinToLatin(tokenizedSentence)
+								outFileOriginal.write(str(review["_id"]) + "\t" + tokenizedSentence + "\n")
+								outFileConverted.write(str(review["_id"]) + "\t" + tokenizedSentence + "\n")
+								if tokenizedSentence != convertedTokenizedSentence:
+									outFileConverted.write(str(review["_id"]) + "\t" + convertedTokenizedSentence + "\n")
 
 				startPoint+=1
 	
