@@ -22,6 +22,11 @@ def startProgram():
             print("Unos neuspesan!")
 
 def splitFile(filepath,splitLen):
+
+    trainFilesDirectory = os.path.join(os.path.dirname(filepath),"trainParts")
+    if not os.path.exists(trainFilesDirectory):
+        os.mkdir(trainFilesDirectory)
+
     with open(filepath,"r",encoding="utf-8") as trainFile:
         lines = trainFile.readlines()
         shuffle(lines)
@@ -29,11 +34,14 @@ def splitFile(filepath,splitLen):
         i = 0
         for line in lines:
             if '\t' in line:
+                if fileNum == 2:
+                    break
+
                 splits = line.split('\t')
                 id = splits[0]
                 sentence = splits[1].rstrip()
                 if i == 0:
-                    trainFilePart = open(os.path.join(os.path.dirname(filepath),os.path.basename(filepath) + str(fileNum)),"w", encoding="utf-8")
+                    trainFilePart = open(os.path.join(trainFilesDirectory,os.path.basename(filepath) + str(fileNum) + ".txt"),"w", encoding="utf-8")
                     
                 trainFilePart.write(sentence)
                 if i != FILE_LEN-1:
