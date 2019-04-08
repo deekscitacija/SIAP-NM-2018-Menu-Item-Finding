@@ -9,19 +9,25 @@ def startProgram():
     root = tk.Tk()
     root.withdraw()
     filepath = filedialog.askopenfilename()
-    splitFile(filepath)
+    fullFile = input("Da li zelite da isparsirate ceo fajl (Y/N): ")
+    if fullFile == "Y" or fullFile == "y":
+        splitLen = -1
+        splitFile(filepath,splitLen)
+    elif fullFile == "N" or fullFile == "n":
+        splitLenStr = input("Unesite koliko recenzija zelite da bude iskorisceno za treniranje: ")
+        try:
+            splitLen = int(splitLenStr)
+            splitFile(filepath,splitLen)
+        except ValueError:
+            print("Unos neuspesan!")
 
-def splitFile(filepath):
+def splitFile(filepath,splitLen):
     with open(filepath,"r",encoding="utf-8") as trainFile:
         lines = trainFile.readlines()
         shuffle(lines)
         fileNum = 1
         i = 0
         for line in lines:
-
-            if fileNum == 2:
-                break
-
             if '\t' in line:
                 splits = line.split('\t')
                 id = splits[0]
