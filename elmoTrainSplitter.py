@@ -11,17 +11,18 @@ def startProgram():
     filepath = filedialog.askopenfilename()
     fullFile = input("Da li zelite da isparsirate ceo fajl (Y/N): ")
     if fullFile == "Y" or fullFile == "y":
-        splitLen = -1
-        splitFile(filepath,splitLen)
+        createTrainFiles(filepath,0,-1)
     elif fullFile == "N" or fullFile == "n":
+        splitStartStr = input("Unesite od koje recenzije zelite da zapocnete generisanje fajli za treniranje: ")
         splitLenStr = input("Unesite koliko recenzija zelite da bude iskorisceno za treniranje: ")
         try:
+            splitStart = int(splitStartStr)
             splitLen = int(splitLenStr)
-            splitFile(filepath,splitLen)
+            createTrainFiles(filepath,splitStart,splitLen)
         except ValueError:
             print("Unos neuspesan!")
 
-def splitFile(filepath,splitLen):
+def createTrainFiles(filepath,splitStart,splitLen):
 
     trainFilesDirectory = os.path.join(os.path.dirname(filepath),"trainParts")
     if not os.path.exists(trainFilesDirectory):
@@ -29,30 +30,40 @@ def splitFile(filepath,splitLen):
 
     with open(filepath,"r",encoding="utf-8") as trainFile:
         lines = trainFile.readlines()
-        shuffle(lines)
+        sentences = splitFile(lines,splitStart,splitLen)
+        shuffle(sentences)
         fileNum = 1
         i = 0
-        for line in lines:
-            if '\t' in line:
-                if fileNum == 2:
-                    break
-
-                splits = line.split('\t')
-                id = splits[0]
-                sentence = splits[1].rstrip()
-                if i == 0:
-                    trainFilePart = open(os.path.join(trainFilesDirectory,os.path.basename(filepath) + str(fileNum) + ".txt"),"w", encoding="utf-8")
+        for sentence in sentences:
+            if i == 0:
+                trainFilePart = open(os.path.join(trainFilesDirectory,os.path.basename(filepath) + str(fileNum) + ".txt"),"w", encoding="utf-8")
                     
-                trainFilePart.write(sentence)
-                if i != FILE_LEN-1:
-                    trainFilePart.write("\n")
+            trainFilePart.write(sentence)
+            if i != FILE_LEN-1:
+                trainFilePart.write("\n")
 
-                i += 1
+            i += 1
 
-                if i == FILE_LEN:
-                    fileNum += 1
-                    i = 0
-                    trainFilePart.close()
+            if i == FILE_LEN:
+                fileNum += 1
+                i = 0
+                trainFilePart.close()
+
+def splitFile(lines,splitStart,splitLen):
+    ids = set()
+    sentences = []
+    for line in lines:
+        if '\t' in line:
+            splits = line.split('\t')
+            id = splits[0]
+            ids.add(id)
+            if len(ids) == splitStart+splitLen+1:
+                return sentences
+            sentence = splits[1].rstrip()
+            if len(ids) >= splitStart:
+                sentences.append(sentence)
+
+    return sentences
 
 if __name__ == "__main__":
     startProgram()
