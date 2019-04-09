@@ -25,7 +25,9 @@ def createVocabularyFile(directory):
         for specialCharacter in specialCharacters:
             vocabularyFile.write(specialCharacter + "\n")
         for token in sortedCounter:
-            vocabularyFile.write(token + "\n")
+            vocabularyFile.write(token)
+            if token != sortedCounter[-1]:
+                vocabularyFile.write("\n")
 
 if __name__ == "__main__":
     startProgram()
