@@ -19,9 +19,13 @@ def createVocabularyFile(directory):
                 if line and not line.isspace():
                     tokens.extend(line.rstrip().split(" "))
 
+    vocabularyDirectory = os.path.join(directory,"vocabulary")
+    if not os.path.exists(vocabularyDirectory):
+        os.mkdir(vocabularyDirectory)
+
     counter = Counter(tokens)
     sortedCounter = [pair[0] for pair in sorted(counter.items(), key=lambda item: item[1], reverse=True)]
-    with open(os.path.join(directory,"vocabulary.txt"),"w",encoding="utf-8") as vocabularyFile:
+    with open(os.path.join(vocabularyDirectory,"vocabulary.txt"),"w",encoding="utf-8") as vocabularyFile:
         for specialCharacter in specialCharacters:
             vocabularyFile.write(specialCharacter + "\n")
         for token in sortedCounter:
