@@ -235,7 +235,7 @@
 5c607056a5af0805c87d94fa~s_3~t_25	Testo	Ncnsn	testo	False	False	False	True	False	U-FOOD
 5c607056a5af0805c87d94fa~s_3~t_26	je	Var3s	biti	False	False	False	False	False	O
 5c607056a5af0805c87d94fa~s_3~t_27	kao	Cs	kao	False	False	False	False	False	O
-5c607056a5af0805c87d94fa~s_3~t_28	hleb	Ncmsn	hleb	False	False	False	False	False	O
+5c607056a5af0805c87d94fa~s_3~t_28	hleb	Ncmsn	hleb	False	False	False	False	False	U-FOOD
 5c607056a5af0805c87d94fa~s_3~t_29	...	Z	...	False	True	False	False	True	O
 
 5c607056a5af0805c87d94fa~s_4~t_30	Ako	Cs	ako	False	False	False	True	False	O
@@ -2353,7 +2353,7 @@
 5c607157a5af0805c87d9706~s_4~t_43	.	Z	.	False	True	False	False	True	O
 
 5c607157a5af0805c87d9706~s_5~t_44	I	Cc	i	False	False	True	False	False	O
-5c607157a5af0805c87d9706~s_5~t_45	visnje	Ncnsn	visnje	False	False	False	False	False	O
+5c607157a5af0805c87d9706~s_5~t_45	visnje	Ncnsn	visnje	False	False	False	False	False	U-FOOD
 5c607157a5af0805c87d9706~s_5~t_46	su	Var3p	biti	False	False	False	False	False	O
 5c607157a5af0805c87d9706~s_5~t_47	se	Px--sa	sebe	False	False	False	False	False	O
 5c607157a5af0805c87d9706~s_5~t_48	negde	Rgp	negde	False	False	False	False	False	O
@@ -2462,7 +2462,7 @@
 5c60715aa5af0805c87d970b~s_3~t_7	Americki	Agpmsny	americki	False	False	False	True	False	B-FOOD
 5c60715aa5af0805c87d970b~s_3~t_8	dorucak	Ncmsn	dorucak	False	False	False	False	False	L-FOOD
 5c60715aa5af0805c87d970b~s_3~t_9	200.00	Mdc	200.00	False	False	False	False	False	O
-5c60715aa5af0805c87d970b~s_3~t_10	tost	Ncmsan	tost	False	False	False	False	False	O
+5c60715aa5af0805c87d970b~s_3~t_10	tost	Ncmsan	tost	False	False	False	False	False	U-FOOD
 5c60715aa5af0805c87d970b~s_3~t_11	,	Z	,	False	True	False	False	False	O
 5c60715aa5af0805c87d970b~s_3~t_12	sunka	Ncfsn	sunka	False	False	False	False	False	U-FOOD
 5c60715aa5af0805c87d970b~s_3~t_13	,	Z	,	False	True	False	False	False	O
@@ -8153,7 +8153,7 @@
 5c64951aa5af08388451e99c~s_1~t_7	dobra	Agpfsny	dobar	False	False	False	False	False	O
 5c64951aa5af08388451e99c~s_1~t_8	je	Var3s	biti	False	False	False	False	False	O
 5c64951aa5af08388451e99c~s_1~t_9	i	Qo	i	False	False	False	False	False	O
-5c64951aa5af08388451e99c~s_1~t_10	pica	Ncfsn	pica	False	False	False	False	False	O
+5c64951aa5af08388451e99c~s_1~t_10	pica	Ncfsn	pica	False	False	False	False	False	U-FOOD
 5c64951aa5af08388451e99c~s_1~t_11	,	Z	,	False	True	False	False	False	O
 5c64951aa5af08388451e99c~s_1~t_12	samo	Rgp	samo	False	False	False	False	False	O
 5c64951aa5af08388451e99c~s_1~t_13	da	Cs	da	False	False	False	False	False	O
@@ -15210,7 +15210,7 @@
 5c6c70e5a5af081c88d45903~s_1~t_23	stekao	Vmp-sm	steći	False	False	False	False	False	O
 5c6c70e5a5af081c88d45903~s_1~t_24	da	Cs	da	False	False	False	False	False	O
 5c6c70e5a5af081c88d45903~s_1~t_25	je	Var3s	biti	False	False	False	False	False	O
-5c6c70e5a5af081c88d45903~s_1~t_26	sir	Ncmsn	sir	False	False	False	False	False	O
+5c6c70e5a5af081c88d45903~s_1~t_26	sir	Ncmsn	sir	False	False	False	False	False	U-FOOD
 5c6c70e5a5af081c88d45903~s_1~t_27	bio	Vap-sm	biti	False	False	False	False	False	O
 5c6c70e5a5af081c88d45903~s_1~t_28	malo	Rgp	malo	False	False	False	False	False	O
 5c6c70e5a5af081c88d45903~s_1~t_29	masniji	Agcmsny	mastan	False	False	False	False	False	O
@@ -15392,7 +15392,7 @@
 5c6c7101a5af081c88d45938~s_5~t_98	ukusu	Ncmsl	ukus	False	False	False	False	False	O
 5c6c7101a5af081c88d45938~s_5~t_99	:)	Agpmsly	:i	False	False	False	False	True	O
 
-5c6c710ba5af081c88d4594b~s_0~t_0	Pasta	Ncfsn	pasta	False	False	False	True	False	O
+5c6c710ba5af081c88d4594b~s_0~t_0	Pasta	Ncfsn	pasta	False	False	False	True	False	U-FOOD
 5c6c710ba5af081c88d4594b~s_0~t_1	drugi	Mlomsan	drugi	False	False	False	False	False	O
 5c6c710ba5af081c88d4594b~s_0~t_2	put	Rgp	put	False	False	False	False	True	O
 
@@ -15688,7 +15688,7 @@
 5c6c7126a5af081c88d4597b~s_1~t_41	ne	Qz	ne	False	False	False	False	False	O
 5c6c7126a5af081c88d4597b~s_1~t_42	moze	Agpfsgy	moz	False	False	False	False	False	O
 5c6c7126a5af081c88d4597b~s_1~t_43	brate	Vmr3p	bratiti	False	False	False	False	False	O
-5c6c7126a5af081c88d4597b~s_1~t_44	grasak	Ncmsan	grasak	False	False	False	False	False	O
+5c6c7126a5af081c88d4597b~s_1~t_44	grasak	Ncmsan	grasak	False	False	False	False	False	U-FOOD
 5c6c7126a5af081c88d4597b~s_1~t_45	i	Cc	i	False	False	False	False	False	O
 5c6c7126a5af081c88d4597b~s_1~t_46	sargarepu	Vmr3p	sargarivati	False	False	False	False	False	U-FOOD
 5c6c7126a5af081c88d4597b~s_1~t_47	da	Cs	da	False	False	False	False	False	O
@@ -20432,7 +20432,7 @@
 5c6c72e2a5af081c88d45ca4~s_1~t_46	uredno	Rgp	uredno	False	False	False	False	False	O
 5c6c72e2a5af081c88d45ca4~s_1~t_47	naplate	Ncfsg	naplata	False	False	False	False	False	O
 5c6c72e2a5af081c88d45ca4~s_1~t_48	kao	Cs	kao	False	False	False	False	False	O
-5c6c72e2a5af081c88d45ca4~s_1~t_49	nutelu	Ncfsa	nutela	False	False	False	False	False	O
+5c6c72e2a5af081c88d45ca4~s_1~t_49	nutelu	Ncfsa	nutela	False	False	False	False	False	U-FOOD
 5c6c72e2a5af081c88d45ca4~s_1~t_50	)	Z	)	False	True	False	False	True	O
 
 5c6c72e2a5af081c88d45ca4~s_2~t_51	Slane	Agpfpay	slan	False	False	False	True	False	B-FOOD
@@ -20693,7 +20693,7 @@
 5c6c72fca5af081c88d45ccc~s_2~t_33	rezultat	Ncmsn	rezultat	False	False	False	False	False	O
 5c6c72fca5af081c88d45ccc~s_2~t_34	.	Z	.	False	True	False	False	True	O
 
-5c6c72fca5af081c88d45ccc~s_3~t_35	Pica	Ncfsn	pica	False	False	False	True	False	O
+5c6c72fca5af081c88d45ccc~s_3~t_35	Pica	Ncfsn	pica	False	False	False	True	False	U-FOOD
 5c6c72fca5af081c88d45ccc~s_3~t_36	naravno	Rgp	naravno	False	False	False	False	False	O
 5c6c72fca5af081c88d45ccc~s_3~t_37	vruca	Vmr3s	vrucati	False	False	False	False	False	O
 5c6c72fca5af081c88d45ccc~s_3~t_38	sa	Si	sa	False	False	False	False	False	O
@@ -21314,7 +21314,7 @@
 5c6c731aa5af081c88d45cfe~s_2~t_31	dobili	Vmp-pm	dobiti	False	False	False	False	False	O
 5c6c731aa5af081c88d45cfe~s_2~t_32	jos	Npmsan	jos	False	False	False	False	False	O
 5c6c731aa5af081c88d45cfe~s_2~t_33	2.	Mdo	2.	False	False	False	False	False	O
-5c6c731aa5af081c88d45cfe~s_2~t_34	palacinke	Ncfsg	palacinka	False	False	False	False	False	O
+5c6c731aa5af081c88d45cfe~s_2~t_34	palacinke	Ncfsg	palacinka	False	False	False	False	False	U-FOOD
 5c6c731aa5af081c88d45cfe~s_2~t_35	na	Sa	na	False	False	False	False	False	O
 5c6c731aa5af081c88d45cfe~s_2~t_36	poklon	Ncmsan	poklon	False	False	False	False	False	O
 5c6c731aa5af081c88d45cfe~s_2~t_37	.	Z	.	False	True	False	False	True	O
@@ -21340,7 +21340,7 @@
 5c6c731aa5af081c88d45cfe~s_4~t_55	su	Var3p	biti	False	False	False	False	False	O
 5c6c731aa5af081c88d45cfe~s_4~t_56	fenomenalne	Agpfpny	fenomenalan	False	False	False	False	False	O
 5c6c731aa5af081c88d45cfe~s_4~t_57	,	Z	,	False	True	False	False	False	O
-5c6c731aa5af081c88d45cfe~s_4~t_58	testo	Ncnsa	testo	False	False	False	False	False	O
+5c6c731aa5af081c88d45cfe~s_4~t_58	testo	Ncnsa	testo	False	False	False	False	False	U-FOOD
 5c6c731aa5af081c88d45cfe~s_4~t_59	je	Var3s	biti	False	False	False	False	False	O
 5c6c731aa5af081c88d45cfe~s_4~t_60	super	Rgp	super	False	False	False	False	False	O
 5c6c731aa5af081c88d45cfe~s_4~t_61	,	Z	,	False	True	False	False	False	O
@@ -21852,7 +21852,7 @@
 5c6c7341a5af081c88d45d37~s_1~t_26	samo	Agpmsayn	sam	False	False	False	False	False	O
 5c6c7341a5af081c88d45d37~s_1~t_27	kupus	Ncmsan	kupus	False	False	False	False	False	U-FOOD
 5c6c7341a5af081c88d45d37~s_1~t_28	kao	Cs	kao	False	False	False	False	False	O
-5c6c7341a5af081c88d45d37~s_1~t_29	povrce	Ncmpa	povrac	False	False	False	False	False	O
+5c6c7341a5af081c88d45d37~s_1~t_29	povrce	Ncmpa	povrac	False	False	False	False	False	U-FOOD
 5c6c7341a5af081c88d45d37~s_1~t_30	,	Z	,	False	True	False	False	False	O
 5c6c7341a5af081c88d45d37~s_1~t_31	supe	Ncfsg	supa	False	False	False	False	False	U-FOOD
 5c6c7341a5af081c88d45d37~s_1~t_32	ima	Vmr3s	imati	False	False	False	False	False	O
@@ -23027,7 +23027,7 @@
 5c6c73c2a5af081c88d45e5a~s_2~t_10	Decko	Npmsn	Decko	False	False	False	True	False	O
 5c6c73c2a5af081c88d45e5a~s_2~t_11	je	Var3s	biti	False	False	False	False	False	O
 5c6c73c2a5af081c88d45e5a~s_2~t_12	doneo	Vmp-sm	doneti	False	False	False	False	False	O
-5c6c73c2a5af081c88d45e5a~s_2~t_13	picu	Ncfsa	pica	False	False	False	False	False	O
+5c6c73c2a5af081c88d45e5a~s_2~t_13	picu	Ncfsa	pica	False	False	False	False	False	U-FOOD
 5c6c73c2a5af081c88d45e5a~s_2~t_14	koji	Pi-msn	koji	False	False	False	False	False	O
 5c6c73c2a5af081c88d45e5a~s_2~t_15	minut	Ncmsn	minut	False	False	False	False	False	O
 5c6c73c2a5af081c88d45e5a~s_2~t_16	ranije	Rgc	rano	False	False	False	False	False	O
@@ -23618,11 +23618,11 @@
 5c6c7408a5af081c88d45ec9~s_13~t_290	)	Z	)	False	True	False	False	False	O
 5c6c7408a5af081c88d45ec9~s_13~t_291	,	Z	,	False	True	False	False	False	O
 5c6c7408a5af081c88d45ec9~s_13~t_292	sa	Si	sa	False	False	False	False	False	O
-5c6c7408a5af081c88d45ec9~s_13~t_293	slagom	Ncfsi	slaga	False	False	False	False	False	O
+5c6c7408a5af081c88d45ec9~s_13~t_293	slagom	Ncfsi	slaga	False	False	False	False	False	U-FOOD
 5c6c7408a5af081c88d45ec9~s_13~t_294	i	Cc	i	False	False	False	False	False	O
-5c6c7408a5af081c88d45ec9~s_13~t_295	prelivom	Ncfsi	preliva	False	False	False	False	False	O
-5c6c7408a5af081c88d45ec9~s_13~t_296	od	Sg	od	False	False	False	False	False	O
-5c6c7408a5af081c88d45ec9~s_13~t_297	jagode	Ncfsg	jagoda	False	False	False	False	False	O
+5c6c7408a5af081c88d45ec9~s_13~t_295	prelivom	Ncfsi	preliva	False	False	False	False	False	B-FOOD
+5c6c7408a5af081c88d45ec9~s_13~t_296	od	Sg	od	False	False	False	False	False	I-FOOD
+5c6c7408a5af081c88d45ec9~s_13~t_297	jagode	Ncfsg	jagoda	False	False	False	False	False	L-FOOD
 5c6c7408a5af081c88d45ec9~s_13~t_298	odozgo	Rgp	odozgo	False	False	False	False	False	O
 5c6c7408a5af081c88d45ec9~s_13~t_299	,	Z	,	False	True	False	False	False	O
 5c6c7408a5af081c88d45ec9~s_13~t_300	sveza	Ncfsn	sveza	False	False	False	False	False	O
@@ -24406,7 +24406,7 @@
 5c6c7481a5af081c88d45f83~s_7~t_82	i	Cc	i	False	False	False	False	False	O
 5c6c7481a5af081c88d45f83~s_7~t_83	kondenzovanja	Ncnsg	kondenzovanje	False	False	False	False	False	O
 5c6c7481a5af081c88d45f83~s_7~t_84	,	Z	,	False	True	False	False	False	O
-5c6c7481a5af081c88d45f83~s_7~t_85	voda	Ncfsn	voda	False	False	False	False	False	O
+5c6c7481a5af081c88d45f83~s_7~t_85	voda	Ncfsn	voda	False	False	False	False	False	U-FOOD
 5c6c7481a5af081c88d45f83~s_7~t_86	iz	Sg	iz	False	False	False	False	False	O
 5c6c7481a5af081c88d45f83~s_7~t_87	pakovanja	Ncnsg	pakovanje	False	False	False	False	False	O
 5c6c7481a5af081c88d45f83~s_7~t_88	pomfrita	Ncmsg	pomfrit	False	False	False	False	False	U-FOOD
@@ -24682,7 +24682,7 @@
 5c6c74a1a5af081c88d45fa8~s_1~t_17	dobio	Vmp-sm	dobiti	False	False	False	False	False	O
 5c6c74a1a5af081c88d45fa8~s_1~t_18	mascu	Ncfsa	masca	False	False	False	False	False	O
 5c6c74a1a5af081c88d45fa8~s_1~t_19	(	Z	(	False	True	False	False	False	O
-5c6c74a1a5af081c88d45fa8~s_1~t_20	mast	Ncfsn	mast	False	False	False	False	False	O
+5c6c74a1a5af081c88d45fa8~s_1~t_20	mast	Ncfsn	mast	False	False	False	False	False	U-FOOD
 5c6c74a1a5af081c88d45fa8~s_1~t_21	od	Sg	od	False	False	False	False	False	O
 5c6c74a1a5af081c88d45fa8~s_1~t_22	kackavalja	Ncmpg	kackavalj	False	False	False	False	False	U-FOOD
 5c6c74a1a5af081c88d45fa8~s_1~t_23	)	Z	)	False	True	False	False	False	O
@@ -25620,7 +25620,7 @@
 5c6c7512a5af0820a0f0d79f~s_1~t_11	,	Z	,	False	True	False	False	False	O
 5c6c7512a5af0820a0f0d79f~s_1~t_12	dobila	Vmp-sf	dobiti	False	False	False	False	False	O
 5c6c7512a5af0820a0f0d79f~s_1~t_13	sam	Var1s	biti	False	False	False	False	False	O
-5c6c7512a5af0820a0f0d79f~s_1~t_14	pirinac	Agpmsayn	pirinac	False	False	False	False	False	O
+5c6c7512a5af0820a0f0d79f~s_1~t_14	pirinac	Agpmsayn	pirinac	False	False	False	False	False	U-FOOD
 5c6c7512a5af0820a0f0d79f~s_1~t_15	:D	Ncmsan	:d	False	False	True	False	True	O
 
 5c6c7513a5af0820a0f0d7a1~s_0~t_0	Dobar	Agpmsnn	dobar	False	False	False	True	True	O
@@ -26029,7 +26029,7 @@
 5c6c7530a5af0820a0f0d7dc~s_3~t_57	ponovo	Rgp	ponovo	False	False	False	False	False	O
 5c6c7530a5af0820a0f0d7dc~s_3~t_58	,	Z	,	False	True	False	False	False	O
 5c6c7530a5af0820a0f0d7dc~s_3~t_59	i	Cc	i	False	False	False	False	False	O
-5c6c7530a5af0820a0f0d7dc~s_3~t_60	pica	Ncfsn	pica	False	False	False	False	False	O
+5c6c7530a5af0820a0f0d7dc~s_3~t_60	pica	Ncfsn	pica	False	False	False	False	False	U-FOOD
 5c6c7530a5af0820a0f0d7dc~s_3~t_61	je	Var3s	biti	False	False	False	False	False	O
 5c6c7530a5af0820a0f0d7dc~s_3~t_62	imala	Vmp-sf	imati	False	False	False	False	False	O
 5c6c7530a5af0820a0f0d7dc~s_3~t_63	neki	Agpnsay	neki	False	False	False	False	False	O
@@ -27489,7 +27489,7 @@
 5c6c7576a5af0820a0f0d840~s_3~t_42	ih	Pp3-pa	oni	False	False	False	False	False	O
 5c6c7576a5af0820a0f0d840~s_3~t_43	je	Var3s	biti	False	False	False	False	False	O
 5c6c7576a5af0820a0f0d840~s_3~t_44	na	Sl	na	False	False	False	False	False	O
-5c6c7576a5af0820a0f0d840~s_3~t_45	pici	Ncfsl	pica	False	False	False	False	False	O
+5c6c7576a5af0820a0f0d840~s_3~t_45	pici	Ncfsl	pica	False	False	False	False	False	U-FOOD
 5c6c7576a5af0820a0f0d840~s_3~t_46	od	Sg	od	False	False	False	False	False	O
 5c6c7576a5af0820a0f0d840~s_3~t_47	35	Mdc	35	True	False	False	False	False	O
 5c6c7576a5af0820a0f0d840~s_3~t_48	cm	Ncfpg	cm	False	False	False	False	False	O
@@ -27617,7 +27617,7 @@
 5c6c757fa5af0820a0f0d850~s_7~t_65	imali	Vmp-pm	imati	False	False	False	False	False	O
 5c6c757fa5af0820a0f0d850~s_7~t_66	na	Sl	na	False	False	False	False	False	O
 5c6c757fa5af0820a0f0d850~s_7~t_67	famili	Ncfsl	famila	False	False	False	False	False	O
-5c6c757fa5af0820a0f0d850~s_7~t_68	pici	Ncfsl	pica	False	False	False	False	False	O
+5c6c757fa5af0820a0f0d850~s_7~t_68	pici	Ncfsl	pica	False	False	False	False	False	U-FOOD
 5c6c757fa5af0820a0f0d850~s_7~t_69	.	Z	.	False	True	False	False	True	O
 
 5c6c758aa5af0820a0f0d85e~s_0~t_0	Grozno	Rgp	grozno	False	False	False	True	True	O
@@ -28270,7 +28270,7 @@
 5c6c78c0a5af081de05b67da~s_9~t_156	je	Var3s	biti	False	False	False	False	False	O
 5c6c78c0a5af081de05b67da~s_9~t_157	stajala	Vmp-sf	stajati	False	False	False	False	False	O
 5c6c78c0a5af081de05b67da~s_9~t_158	na	Sl	na	False	False	False	False	False	O
-5c6c78c0a5af081de05b67da~s_9~t_159	pici	Ncfsl	pica	False	False	False	False	False	O
+5c6c78c0a5af081de05b67da~s_9~t_159	pici	Ncfsl	pica	False	False	False	False	False	U-FOOD
 5c6c78c0a5af081de05b67da~s_9~t_160	,	Z	,	False	True	False	False	False	O
 5c6c78c0a5af081de05b67da~s_9~t_161	ili	Cc	ili	False	False	False	False	False	O
 5c6c78c0a5af081de05b67da~s_9~t_162	je	Var3s	biti	False	False	False	False	False	O
@@ -28619,7 +28619,7 @@
 5c6c78f1a5af081de05b6830~s_5~t_39	za	Sa	za	False	False	False	False	False	O
 5c6c78f1a5af081de05b6830~s_5~t_40	2	Mdc	2	True	False	False	False	False	O
 5c6c78f1a5af081de05b6830~s_5~t_41	porcije	Ncfsg	porcija	False	False	False	False	False	O
-5c6c78f1a5af081de05b6830~s_5~t_42	lignji	Ncfpg	lignja	False	False	False	False	False	O
+5c6c78f1a5af081de05b6830~s_5~t_42	lignji	Ncfpg	lignja	False	False	False	False	False	U-FOOD
 5c6c78f1a5af081de05b6830~s_5~t_43	a	Cc	a	False	False	False	False	False	O
 5c6c78f1a5af081de05b6830~s_5~t_44	ja	Pp1-sn	ja	False	False	False	False	False	O
 5c6c78f1a5af081de05b6830~s_5~t_45	sam	Var1s	biti	False	False	False	False	False	O
@@ -28904,7 +28904,7 @@
 5c6c790ea5af081de05b685d~s_2~t_46	je	Var3s	biti	False	False	False	False	False	O
 5c6c790ea5af081de05b685d~s_2~t_47	na	Sa	na	False	False	False	False	False	O
 5c6c790ea5af081de05b685d~s_2~t_48	ovu	Pd-fsa	ovaj	False	False	False	False	False	O
-5c6c790ea5af081de05b685d~s_2~t_49	picu	Ncfsa	pica	False	False	False	False	False	O
+5c6c790ea5af081de05b685d~s_2~t_49	picu	Ncfsa	pica	False	False	False	False	False	U-FOOD
 5c6c790ea5af081de05b685d~s_2~t_50	od	Sg	od	False	False	False	False	False	O
 5c6c790ea5af081de05b685d~s_2~t_51	50	Mdc	50	True	False	False	False	False	O
 5c6c790ea5af081de05b685d~s_2~t_52	cm	Ncmpg	cm	False	False	False	False	False	O
@@ -29828,7 +29828,7 @@
 5c6c7953a5af081de05b68c5~s_1~t_77	stize	Rgp	stize	False	False	False	False	False	O
 5c6c7953a5af081de05b68c5~s_1~t_78	topla	Agpfsny	topao	False	False	False	False	False	O
 5c6c7953a5af081de05b68c5~s_1~t_79	.	Z	.	False	True	False	False	False	O
-5c6c7953a5af081de05b68c5~s_1~t_80	palacinke	Ncfpn	palacinka	False	False	False	False	False	O
+5c6c7953a5af081de05b68c5~s_1~t_80	palacinke	Ncfpn	palacinka	False	False	False	False	False	U-FOOD
 5c6c7953a5af081de05b68c5~s_1~t_81	su	Var3p	biti	False	False	False	False	False	O
 5c6c7953a5af081de05b68c5~s_1~t_82	takodje	Rgp	takodje	False	False	False	False	False	O
 5c6c7953a5af081de05b68c5~s_1~t_83	odlicne	Agpfpny	odlican	False	False	False	False	False	O
@@ -30907,7 +30907,7 @@
 5c6c7a09a5af081de05b6a0d~s_2~t_24	topla	Agpfsny	topao	False	False	False	False	False	O
 5c6c7a09a5af081de05b6a0d~s_2~t_25	.	Z	.	False	True	False	False	True	O
 
-5c6c7a09a5af081de05b6a0d~s_3~t_26	Testo	Ncnsn	testo	False	False	False	True	False	O
+5c6c7a09a5af081de05b6a0d~s_3~t_26	Testo	Ncnsn	testo	False	False	False	True	False	U-FOOD
 5c6c7a09a5af081de05b6a0d~s_3~t_27	kao	Cs	kao	False	False	False	False	False	O
 5c6c7a09a5af081de05b6a0d~s_3~t_28	i	Cc	i	False	False	False	False	False	O
 5c6c7a09a5af081de05b6a0d~s_3~t_29	obicno	Rgp	obicno	False	False	False	False	False	O
@@ -31050,12 +31050,12 @@
 5c6c7a11a5af081de05b6a1b~s_1~t_5	no	Cc	no	False	False	False	False	True	O
 
 5c6c7a11a5af081de05b6a1b~s_2~t_6	ve	Ncfpa	va	False	False	False	False	False	O
-5c6c7a11a5af081de05b6a1b~s_2~t_7	pizze	Ncfsg	pizza	False	False	False	False	False	O
+5c6c7a11a5af081de05b6a1b~s_2~t_7	pizze	Ncfsg	pizza	False	False	False	False	False	U-FOOD
 5c6c7a11a5af081de05b6a1b~s_2~t_8	,	Z	,	False	True	False	False	False	O
-5c6c7a11a5af081de05b6a1b~s_2~t_9	4	Mdc	4	True	False	False	False	False	B-FOOD
-5c6c7a11a5af081de05b6a1b~s_2~t_10	carni	Ncfsl	carna	False	False	False	False	False	L-FOOD
-5c6c7a11a5af081de05b6a1b~s_2~t_11	sa	Sg	sa	False	False	False	False	False	O
-5c6c7a11a5af081de05b6a1b~s_2~t_12	4	Mdc	4	True	False	False	False	False	B-FOOD
+5c6c7a11a5af081de05b6a1b~s_2~t_9	4	Mdc	4	True	False	False	False	False	O
+5c6c7a11a5af081de05b6a1b~s_2~t_10	carni	Ncfsl	carna	False	False	False	False	False	B-FOOD
+5c6c7a11a5af081de05b6a1b~s_2~t_11	sa	Sg	sa	False	False	False	False	False	I-FOOD
+5c6c7a11a5af081de05b6a1b~s_2~t_12	4	Mdc	4	True	False	False	False	False	I-FOOD
 5c6c7a11a5af081de05b6a1b~s_2~t_13	vrste	Ncfsg	vrsta	False	False	False	False	False	I-FOOD
 5c6c7a11a5af081de05b6a1b~s_2~t_14	mesa	Ncnsg	meso	False	False	False	False	False	L-FOOD
 5c6c7a11a5af081de05b6a1b~s_2~t_15	i	Cc	i	False	False	False	False	False	O
@@ -31347,7 +31347,7 @@
 5c6c7a1aa5af081de05b6a27~s_4~t_39	i	Cc	i	False	False	False	False	False	O
 5c6c7a1aa5af081de05b6a27~s_4~t_40	bez	Sg	bez	False	False	False	False	False	O
 5c6c7a1aa5af081de05b6a27~s_4~t_41	kapi	Ncfsg	kap	False	False	False	False	False	O
-5c6c7a1aa5af081de05b6a27~s_4~t_42	ulja	Ncnsg	ulje	False	False	False	False	True	O
+5c6c7a1aa5af081de05b6a27~s_4~t_42	ulja	Ncnsg	ulje	False	False	False	False	True	U-FOOD
 
 5c6c7a1aa5af081de05b6a27~s_5~t_43	5.	Mdo	5.	False	False	False	False	False	O
 5c6c7a1aa5af081de05b6a27~s_5~t_44	ovako	Rgp	ovako	False	False	False	False	False	O
@@ -31682,7 +31682,7 @@
 5c6c7a4ba5af081de05b6a74~s_1~t_12	odlican	Agpmsnn	odlican	False	False	False	False	False	O
 5c6c7a4ba5af081de05b6a74~s_1~t_13	kvalitet	Ncmsn	kvalitet	False	False	False	False	False	O
 5c6c7a4ba5af081de05b6a74~s_1~t_14	,	Z	,	False	True	False	False	False	O
-5c6c7a4ba5af081de05b6a74~s_1~t_15	pica	Ncfsn	pica	False	False	False	False	False	O
+5c6c7a4ba5af081de05b6a74~s_1~t_15	pica	Ncfsn	pica	False	False	False	False	False	U-FOOD
 5c6c7a4ba5af081de05b6a74~s_1~t_16	je	Var3s	biti	False	False	False	False	False	O
 5c6c7a4ba5af081de05b6a74~s_1~t_17	stigla	Vmp-sf	stići	False	False	False	False	False	O
 5c6c7a4ba5af081de05b6a74~s_1~t_18	vruca	Ncmsay	vruac	False	False	False	False	False	O
@@ -32078,7 +32078,7 @@
 5c6c7a52a5af081de05b6a7c~s_7~t_126	nije	Var3s	biti	False	False	False	False	False	O
 5c6c7a52a5af081de05b6a7c~s_7~t_127	lako	Rgp	lako	False	False	False	False	False	O
 5c6c7a52a5af081de05b6a7c~s_7~t_128	raznositi	Vmn	raznositi	False	False	False	False	False	O
-5c6c7a52a5af081de05b6a7c~s_7~t_129	pice	Ncfpa	pica	False	False	False	False	False	O
+5c6c7a52a5af081de05b6a7c~s_7~t_129	pice	Ncfpa	pica	False	False	False	False	False	U-FOOD
 5c6c7a52a5af081de05b6a7c~s_7~t_130	koje	Pi-fpn	koji	False	False	False	False	False	O
 5c6c7a52a5af081de05b6a7c~s_7~t_131	su	Var3p	biti	False	False	False	False	False	O
 5c6c7a52a5af081de05b6a7c~s_7~t_132	tako	Rgp	tako	False	False	False	False	False	O
@@ -33800,7 +33800,7 @@
 5c6c7c1fa5af0804481246fc~s_1~t_6	meniju	Ncmsl	menij	False	False	False	False	False	O
 5c6c7c1fa5af0804481246fc~s_1~t_7	.	Z	.	False	True	False	False	True	O
 
-5c6c7c1fa5af0804481246fc~s_2~t_8	Supa	Ncfsn	supa	False	False	False	True	False	O
+5c6c7c1fa5af0804481246fc~s_2~t_8	Supa	Ncfsn	supa	False	False	False	True	False	U-FOOD
 5c6c7c1fa5af0804481246fc~s_2~t_9	je	Var3s	biti	False	False	False	False	False	O
 5c6c7c1fa5af0804481246fc~s_2~t_10	bila	Vap-sf	biti	False	False	False	False	False	O
 5c6c7c1fa5af0804481246fc~s_2~t_11	ok	Rgp	ok	False	False	False	False	False	O
@@ -39207,7 +39207,7 @@
 5c6c7da2a5af080448124944~s_1~t_1	Pica	Ncfsn	pica	False	False	False	True	False	B-FOOD
 5c6c7da2a5af080448124944~s_1~t_2	Stivale	Ncfsg	stivala	False	False	False	True	False	L-FOOD
 5c6c7da2a5af080448124944~s_1~t_3	prava	Ncnsg	pravo	False	False	False	False	False	O
-5c6c7da2a5af080448124944~s_1~t_4	piza	Ncmsg	piz	False	False	False	False	False	O
+5c6c7da2a5af080448124944~s_1~t_4	piza	Ncmsg	piz	False	False	False	False	False	U-FOOD
 5c6c7da2a5af080448124944~s_1~t_5	za	Sa	za	False	False	False	False	False	O
 5c6c7da2a5af080448124944~s_1~t_6	uzivanje	Ncnsa	uzivanje	False	False	False	False	False	O
 5c6c7da2a5af080448124944~s_1~t_7	kod	Sg	kod	False	False	False	False	False	O

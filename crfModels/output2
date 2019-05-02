@@ -30907,7 +30907,7 @@
 5c6c7a09a5af081de05b6a0d~s_2~t_24	topla	Agpfsny	topao	False	False	False	False	False	O	O
 5c6c7a09a5af081de05b6a0d~s_2~t_25	.	Z	.	False	True	False	False	True	O	O
 
-5c6c7a09a5af081de05b6a0d~s_3~t_26	Testo	Ncnsn	testo	False	False	False	True	False	O	U-FOOD
+5c6c7a09a5af081de05b6a0d~s_3~t_26	Testo	Ncnsn	testo	False	False	False	True	False	U-FOOD	U-FOOD
 5c6c7a09a5af081de05b6a0d~s_3~t_27	kao	Cs	kao	False	False	False	False	False	O	O
 5c6c7a09a5af081de05b6a0d~s_3~t_28	i	Cc	i	False	False	False	False	False	O	O
 5c6c7a09a5af081de05b6a0d~s_3~t_29	obicno	Rgp	obicno	False	False	False	False	False	O	O
@@ -31555,9 +31555,9 @@
 5c6c7a3da5af081de05b6a5c~s_3~t_71	drugaciji	Ncfsl	drugacija	False	False	False	False	False	O	O
 5c6c7a3da5af081de05b6a5c~s_3~t_72	od	Sg	od	False	False	False	False	False	O	O
 5c6c7a3da5af081de05b6a5c~s_3~t_73	ostalih	Agpmpgy	ostali	False	False	False	False	False	O	O
-5c6c7a3da5af081de05b6a5c~s_3~t_74	kolaca	Ncmpg	kolac	False	False	False	False	False	U-FOOD	I-FOOD
+5c6c7a3da5af081de05b6a5c~s_3~t_74	kolaca	Ncmpg	kolac	False	False	False	False	False	B-FOOD	I-FOOD
 5c6c7a3da5af081de05b6a5c~s_3~t_75	od	Sg	od	False	False	False	False	False	O	I-FOOD
-5c6c7a3da5af081de05b6a5c~s_3~t_76	sira	Ncmsg	sir	False	False	False	False	False	U-FOOD	L-FOOD
+5c6c7a3da5af081de05b6a5c~s_3~t_76	sira	Ncmsg	sir	False	False	False	False	False	L-FOOD	L-FOOD
 5c6c7a3da5af081de05b6a5c~s_3~t_77	,	Z	,	False	True	False	False	False	O	O
 5c6c7a3da5af081de05b6a5c~s_3~t_78	meni	Pp1-sd	ja	False	False	False	False	False	O	O
 5c6c7a3da5af081de05b6a5c~s_3~t_79	licno	Rgp	licno	False	False	False	False	False	O	O

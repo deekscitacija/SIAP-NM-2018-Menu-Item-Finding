@@ -51,7 +51,7 @@ def parseCrfFile(filePath):
                 tokenInfo = dbReview['tokens']['token'][tokenNum]
                 tokenLen = int(tokenInfo['end']) - int(tokenInfo['start'])
                 reviewOriginalText = dbReview['text']
-                foundTag = fileLine[10]                                 # BILOU tag labeled by CRF 
+                foundTag = fileLine[13]                                 # BILOU tag labeled by CRF 
 
                 offsetPosition = calculateOffset(offsetPosition, tokenInfo, tokenLen, reviewOriginalText)
                 retVal = bindNewTag(menuItem, foundTag, lastTag, offsetPosition, tokenLen)
@@ -111,6 +111,8 @@ def bindNewTag(menuItem, labeledTag, lastTag, offsetPosition, tokenLen):
         return 'FAIL'
 
 def startProgram():
+    root = tk.Tk()
+    root.withdraw()
     filePath = filedialog.askopenfile()
     parseCrfFile(filePath.name)
 

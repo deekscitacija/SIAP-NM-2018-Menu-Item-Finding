@@ -23,6 +23,9 @@ def createVocabularyFile(directory):
     if not os.path.exists(vocabularyDirectory):
         os.mkdir(vocabularyDirectory)
 
+    with open(os.path.join(vocabularyDirectory,"tokensNum.txt"),"w",encoding="utf-8") as tokensNum:
+        tokensNum.write(str(len(tokens)))
+
     counter = Counter(tokens)
     sortedCounter = [pair[0] for pair in sorted(counter.items(), key=lambda item: item[1], reverse=True)]
     with open(os.path.join(vocabularyDirectory,"vocabulary.txt"),"w",encoding="utf-8") as vocabularyFile:

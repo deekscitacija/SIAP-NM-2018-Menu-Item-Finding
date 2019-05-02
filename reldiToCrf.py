@@ -64,12 +64,15 @@ def exportToTxt(startPoint, endPoint, folderPath, fileName, train):
                         tempPOS = propertyValues[propertyIdx][2]['text']
                         tempLemma = propertyValues[propertyIdx][1]['text']
                         tempNer = propertyValues[propertyIdx][3]['value']
+						tempTextLower = tempText.lower()
+						tempTextUpper = tempText.upper()
+						tempTextTitle = tempText.title()
 
                         if tempLemma == "" or tempLemma == " ":
                             tempLemma = tempText
 
                         if tempTokenId == tokenId:
-                            tsv_writer.writerow([reviewId+"~"+sentenceId+"~"+tokenId,tempText,tempPOS,tempLemma,str(tempText.isdigit()),str(tempPOS == 'Z'),str(tempText.isupper()),str(tempText[0].isupper() and tempText[1:].islower()),str(tempTokenId == tokenIds[-1]),tempNer])
+                            tsv_writer.writerow([reviewId+"~"+sentenceId+"~"+tokenId,tempText,tempPOS,tempLemma,tempTextLower,tempTextUpper,tempTextTitle,str(tempText.isdigit()),str(tempPOS == 'Z'),str(tempText.isupper()),str(tempText[0].isupper() and tempText[1:].islower()),str(tempTokenId == tokenIds[-1]),tempNer])
                     f.write('\n')  
                 startPoint = startPoint+1
 
