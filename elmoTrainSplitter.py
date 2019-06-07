@@ -2,6 +2,7 @@ import tkinter as tk
 import os
 from tkinter import filedialog
 from random import shuffle
+import string
 
 FILE_LEN = 1000
 
@@ -38,7 +39,10 @@ def createTrainFiles(filepath,directoryName,splitStart,splitLen):
         for sentencesLen, sentence in enumerate(sentences):
             if i == 0:
                 trainFilePart = open(os.path.join(trainFilesDirectory,os.path.basename(filepath) + str(fileNum) + ".txt"),"w", encoding="utf-8")
-                    
+
+            if not sentenceChecker(sentence):
+                continue
+
             trainFilePart.write(sentence)
             if i != FILE_LEN-1 and sentencesLen != len(sentences)-1:
                 trainFilePart.write("\n")
@@ -65,6 +69,22 @@ def splitFile(lines,splitStart,splitLen):
                 sentences.append(sentence)
 
     return sentences
+
+def sentenceChecker(sentence):
+    tokens = sentence.split()
+    if len(tokens) == 1:
+        return False
+    elif len(tokens) == 2:
+        for token in tokens:
+            if token in string.punctuation:
+                return False
+    else:
+        allPunct = all(token in string.punctuation for token in tokens)
+        allDigit = all(token.isdigit() for token in tokens)
+        if allPunct or allDigit:
+            return False
+    
+    return True
 
 if __name__ == "__main__":
     startProgram()

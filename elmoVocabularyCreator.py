@@ -3,7 +3,7 @@ import os
 from tkinter import filedialog
 from collections import Counter
 
-specialCharacters = ["<S>","</S>","UNK"]
+specialCharacters = ["<S>","</S>","<UNK>"]
 
 def startProgram():
     root = tk.Tk()
@@ -14,10 +14,11 @@ def startProgram():
 def createVocabularyFile(directory):
     tokens = []
     for file in os.listdir(directory):
-        with open(os.path.join(directory,file),"r",encoding="utf-8") as trainFile:
-            for line in trainFile:
-                if line and not line.isspace():
-                    tokens.extend(line.rstrip().split(" "))
+        if file.endswith(".txt"):
+            with open(os.path.join(directory,file),"r",encoding="utf-8") as trainFile:
+                for line in trainFile:
+                    if line and not line.isspace():
+                        tokens.extend(line.rstrip().split(" "))
 
     vocabularyDirectory = os.path.join(directory,"vocabulary")
     if not os.path.exists(vocabularyDirectory):

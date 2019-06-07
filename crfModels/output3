@@ -23600,8 +23600,8 @@
 5c6c7408a5af081c88d45ec9~s_12~t_273	poprilicna	Agpfsny	poprilicni	False	False	False	False	False	O	O
 5c6c7408a5af081c88d45ec9~s_12~t_274	.	Z	.	False	True	False	False	True	O	O
 
-5c6c7408a5af081c88d45ec9~s_13~t_275	Vocna	Agpfsny	vocni	False	False	False	True	False	O	B-FOOD
-5c6c7408a5af081c88d45ec9~s_13~t_276	salata	Ncfsn	salata	False	False	False	False	False	O	L-FOOD
+5c6c7408a5af081c88d45ec9~s_13~t_275	Vocna	Agpfsny	vocni	False	False	False	True	False	B-FOOD	B-FOOD
+5c6c7408a5af081c88d45ec9~s_13~t_276	salata	Ncfsn	salata	False	False	False	False	False	L-FOOD	L-FOOD
 5c6c7408a5af081c88d45ec9~s_13~t_277	stize	Ncfsg	stiza	False	False	False	False	False	O	O
 5c6c7408a5af081c88d45ec9~s_13~t_278	u	Sl	u	False	False	False	False	False	O	O
 5c6c7408a5af081c88d45ec9~s_13~t_279	standardnoj	Agpfsly	standardan	False	False	False	False	False	O	O
@@ -24214,9 +24214,9 @@
 5c6c7480a5af081c88d45f81~s_5~t_46	ukusan	Agpmsnn	ukusan	False	False	False	False	False	O	O
 5c6c7480a5af081c88d45f81~s_5~t_47	.	Z	.	False	True	False	False	True	O	O
 
-5c6c7480a5af081c88d45f81~s_6~t_48	Vesalica	Ncfsn	vesalica	False	False	False	True	False	U-FOOD	B-FOOD
-5c6c7480a5af081c88d45f81~s_6~t_49	u	Sl	u	False	False	False	False	False	O	I-FOOD
-5c6c7480a5af081c88d45f81~s_6~t_50	lepinji	Ncfsl	lepinja	False	False	False	False	False	U-FOOD	L-FOOD
+5c6c7480a5af081c88d45f81~s_6~t_48	Vesalica	Ncfsn	vesalica	False	False	False	True	False	B-FOOD	B-FOOD
+5c6c7480a5af081c88d45f81~s_6~t_49	u	Sl	u	False	False	False	False	False	I-FOOD	I-FOOD
+5c6c7480a5af081c88d45f81~s_6~t_50	lepinji	Ncfsl	lepinja	False	False	False	False	False	L-FOOD	L-FOOD
 5c6c7480a5af081c88d45f81~s_6~t_51	,	Z	,	False	True	False	False	False	O	O
 5c6c7480a5af081c88d45f81~s_6~t_52	nalik	Agpmply	nalik	False	False	False	False	False	O	O
 5c6c7480a5af081c88d45f81~s_6~t_53	na	Sa	na	False	False	False	False	False	O	O
