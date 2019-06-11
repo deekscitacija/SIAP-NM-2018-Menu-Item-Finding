@@ -3296,9 +3296,9 @@
 5c6071c1a5af0805c87d97a8~s_3~t_33	Narucili	Vmp-pm	naruciti	False	False	False	True	False	O	O
 5c6071c1a5af0805c87d97a8~s_3~t_34	smo	Var1p	biti	False	False	False	False	False	O	O
 5c6071c1a5af0805c87d97a8~s_3~t_35	Pizza	Ncfsn	pizza	False	False	False	True	False	B-FOOD	B-FOOD
-5c6071c1a5af0805c87d97a8~s_3~t_36	Zucchine	Npfsg	Zucchina	False	False	False	True	False	L-FOOD	I-FOOD
-5c6071c1a5af0805c87d97a8~s_3~t_37	,	Z	,	False	True	False	False	False	O	I-FOOD
-5c6071c1a5af0805c87d97a8~s_3~t_38	Melanzana	Npmsay	Melanzan	False	False	False	True	False	B-FOOD	I-FOOD
+5c6071c1a5af0805c87d97a8~s_3~t_36	Zucchine	Npfsg	Zucchina	False	False	False	True	False	I-FOOD	I-FOOD
+5c6071c1a5af0805c87d97a8~s_3~t_37	,	Z	,	False	True	False	False	False	I-FOOD	I-FOOD
+5c6071c1a5af0805c87d97a8~s_3~t_38	Melanzana	Npmsay	Melanzan	False	False	False	True	False	I-FOOD	I-FOOD
 5c6071c1a5af0805c87d97a8~s_3~t_39	e	Npmsay	e	False	False	False	False	False	I-FOOD	I-FOOD
 5c6071c1a5af0805c87d97a8~s_3~t_40	Pomodoro	Npmsay	Pomodor	False	False	False	True	False	L-FOOD	L-FOOD
 5c6071c1a5af0805c87d97a8~s_3~t_41	i	Cc	i	False	False	False	False	False	O	O
@@ -16454,10 +16454,10 @@
 5c6c7159a5af081c88d459d8~s_0~t_1	lose	Ncfsg	los	False	False	False	False	True	O	O
 
 5c6c7159a5af081c88d459d8~s_1~t_2	Pica	Ncfsn	pica	False	False	False	True	False	B-FOOD	B-FOOD
-5c6c7159a5af081c88d459d8~s_1~t_3	Galija	Ncfsn	galija	False	False	False	True	False	L-FOOD	I-FOOD
-5c6c7159a5af081c88d459d8~s_1~t_4	sa	Si	sa	False	False	False	False	False	O	I-FOOD
-5c6c7159a5af081c88d459d8~s_1~t_5	punjenom	Agpfsiy	puniti	False	False	False	False	False	O	I-FOOD
-5c6c7159a5af081c88d459d8~s_1~t_6	ivicom	Ncfsi	ivica	False	False	False	False	False	O	L-FOOD
+5c6c7159a5af081c88d459d8~s_1~t_3	Galija	Ncfsn	galija	False	False	False	True	False	I-FOOD	I-FOOD
+5c6c7159a5af081c88d459d8~s_1~t_4	sa	Si	sa	False	False	False	False	False	I-FOOD	I-FOOD
+5c6c7159a5af081c88d459d8~s_1~t_5	punjenom	Agpfsiy	puniti	False	False	False	False	False	I-FOOD	I-FOOD
+5c6c7159a5af081c88d459d8~s_1~t_6	ivicom	Ncfsi	ivica	False	False	False	False	False	L-FOOD	L-FOOD
 5c6c7159a5af081c88d459d8~s_1~t_7	.	Z	.	False	True	False	False	True	O	O
 
 5c6c7159a5af081c88d459d8~s_2~t_8	Topla	Agpfsny	topao	False	False	False	True	False	O	O
@@ -24567,8 +24567,8 @@
 5c6c7497a5af081c88d45fa4~s_1~t_3	Narucio	Vmp-sm	naruciti	False	False	False	True	False	O	O
 5c6c7497a5af081c88d45fa4~s_1~t_4	sam	Var1s	biti	False	False	False	False	False	O	O
 5c6c7497a5af081c88d45fa4~s_1~t_5	veliku	Agpfsay	velik	False	False	False	False	False	O	O
-5c6c7497a5af081c88d45fa4~s_1~t_6	pi333u	Ncfsa	pi333a	False	False	False	False	False	O	O
-5c6c7497a5af081c88d45fa4~s_1~t_7	Vulkan	Ncmsan	vulkan	False	False	False	True	False	U-FOOD	U-FOOD
+5c6c7497a5af081c88d45fa4~s_1~t_6	pi333u	Ncfsa	pi333a	False	False	False	False	False	B-FOOD	O
+5c6c7497a5af081c88d45fa4~s_1~t_7	Vulkan	Ncmsan	vulkan	False	False	False	True	False	L-FOOD	U-FOOD
 5c6c7497a5af081c88d45fa4~s_1~t_8	,	Z	,	False	True	False	False	False	O	O
 5c6c7497a5af081c88d45fa4~s_1~t_9	po	Sl	po	False	False	False	False	False	O	O
 5c6c7497a5af081c88d45fa4~s_1~t_10	mojoj	Agpfsly	moj	False	False	False	False	False	O	O

@@ -30,10 +30,10 @@ def startProgram():
         print("Niste uneli broj")
         return
     if option != 1:
-        modelOptionString = input("Choose option:\n1 - GRU One Hot\n2 - GRU CRF\nYour choise: ")
+        modelOptionString = input("Choose option:\n1 - GRU One Hot\n2 - GRU CRF\n3 - GRU Character Embeddings\n4 - GRU CRF Character Embeddings\nYour choise: ")
         try:
                 modelOption = int(modelOptionString)
-                if modelOption not in [1,2,3,4]:
+                if modelOption not in [1,2,3,4,5]:
                         return
         except ValueError:
                 print("Niste uneli broj")
@@ -78,12 +78,22 @@ def startProgram():
                 sentences_tags_test.append(sentence_tags)
 
         words = list(words_set)
-        words.append("ENDPAD")
+        #words.append("ENDPAD")
         tags = list(tags_set)
         n_words = len(words)
         n_tags = len(tags)
-        word2idx = {w: i+1 for i, w in enumerate(words)}
-        tag2idx = {t: i for i, t in enumerate(tags)}
+        word2idx = {w: i + 2 for i, w in enumerate(words)}
+        word2idx["UNK"] = 1
+        word2idx["PAD"] = 0
+        tag2idx = {t: i + 1 for i, t in enumerate(tags)}
+        tag2idx["PAD"] = 0
+        chars_set = set([w_i for w in words for w_i in w])
+        chars = list(chars_set)
+        #chars.append("ENDPAD")
+        n_chars = len(chars)
+        char2idx = {c: i + 2 for i, c in enumerate(chars)}
+        char2idx["UNK"] = 1
+        char2idx["PAD"] = 0
 
         if option == 1:
                 analyzeWordAndSentenceLength(words, sentences_words_train + sentences_words_test)
@@ -95,123 +105,217 @@ def startProgram():
                         print("Niste uneli broj")
                         return
 
-                output_dim_str = input("Unesite output dim: ")
+                max_len_char_str = input("Unesite maksimalnu duzinu reci: ")
                 try:
-                        output_dim = int(output_dim_str)
+                        max_len_char = int(max_len_char_str)
+                except ValueError:
+                        print("Niste uneli broj")
+                        return 
+
+                output_dim_word_str = input("Unesite output dim reci: ")
+                try:
+                        output_dim_word = int(output_dim_word_str)
+                except ValueError:
+                        print("Niste uneli broj")
+                        return
+
+                output_dim_char_str = input("Unesite output dim karaktera: ")
+                try:
+                        output_dim_char = int(output_dim_char_str)
                 except ValueError:
                         print("Niste uneli broj")
                         return
 
                 #sentence_words_padded = padSentenceWords(sentences_words, max_len)
                 sentence_words_train_converted = [[word2idx[sentence_word] for sentence_word in sentence_words] for sentence_words in sentences_words_train]
-                sentence_words_train_padded = pad_sequences(maxlen=max_len, sequences=sentence_words_train_converted, padding="post", truncating="post", value=word2idx['ENDPAD'])
+                sentence_words_train_padded = pad_sequences(maxlen=max_len, sequences=sentence_words_train_converted, padding="post", truncating="post", value=word2idx['PAD'])
                 sentence_words_test_converted = [[word2idx[sentence_word] for sentence_word in sentence_words] for sentence_words in sentences_words_test]
-                sentence_words_test_padded = pad_sequences(maxlen=max_len, sequences=sentence_words_test_converted, padding="post", truncating="post", value=word2idx['ENDPAD'])
+                sentence_words_test_padded = pad_sequences(maxlen=max_len, sequences=sentence_words_test_converted, padding="post", truncating="post", value=word2idx['PAD'])
                 sentence_tags_train_converted = [[tag2idx[sentence_tag] for sentence_tag in sentence_tags] for sentence_tags in sentences_tags_train]
-                sentence_tags_train_padded = pad_sequences(maxlen=max_len, sequences=sentence_tags_train_converted, padding="post", truncating="post", value=tag2idx["O"])
+                sentence_tags_train_padded = pad_sequences(maxlen=max_len, sequences=sentence_tags_train_converted, padding="post", truncating="post", value=tag2idx["PAD"])
                 sentence_tags_test_converted = [[tag2idx[sentence_tag] for sentence_tag in sentence_tags] for sentence_tags in sentences_tags_test]
-                sentence_tags_test_padded = pad_sequences(maxlen=max_len, sequences=sentence_tags_test_converted, padding="post", truncating="post", value=tag2idx["O"])
-                sentence_tags_train_padded_categorical = [to_categorical(sentence_tag_train_padded, num_classes=n_tags) for sentence_tag_train_padded in sentence_tags_train_padded]
+                sentence_tags_test_padded = pad_sequences(maxlen=max_len, sequences=sentence_tags_test_converted, padding="post", truncating="post", value=tag2idx["PAD"])
+                sentence_tags_train_padded_categorical = [to_categorical(sentence_tag_train_padded, num_classes=n_tags + 1) for sentence_tag_train_padded in sentence_tags_train_padded]
 
-                if option == 1:
+                sentence_chars_train_padded = padSentenceChars(sentences_words_train, max_len, max_len_char, char2idx)
+                sentence_chars_test_padded = padSentenceChars(sentences_words_test, max_len, max_len_char, char2idx)      
+
+                if option == 2:
                         file_name = input("Unesite naziv fajle u kojoj ce biti sacuvane tezine: ")
                         if modelOption == 1:
-                                trainNERModelGru(max_len, n_words, n_tags, output_dim, sentence_words_train_padded, sentence_tags_train_padded_categorical, file_name)
+                                trainNERModelGru(max_len, n_words, n_tags, output_dim_word, sentence_words_train_padded, sentence_tags_train_padded_categorical, file_name)
                         elif modelOption == 2:
-                                trainNERModelGruCRF(max_len, n_words, n_tags, output_dim, sentence_words_train_padded, sentence_tags_train_padded_categorical, file_name)
-                elif option == 2:
+                                trainNERModelGruCRF(max_len, n_words, n_tags, output_dim_word, sentence_words_train_padded, sentence_tags_train_padded_categorical, file_name)
+                        elif modelOption == 3:
+                                trainNERModelGruCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char, sentence_chars_train_padded, sentence_words_train_padded, sentence_tags_train_padded_categorical, file_name)
+                        elif modelOption == 4:
+                                trainNERModelGruCRFCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char, sentence_chars_train_padded, sentence_words_train_padded, sentence_tags_train_padded_categorical, file_name)
+                elif option == 3:
                         model_weights = filedialog.askopenfilename()
                         if modelOption == 1:
-                                testNERModelGru(max_len, n_words, n_tags, output_dim, sentence_words_test_padded, sentence_tags_test_padded, words, tags, model_weights)
+                                testNERModelGru(max_len, n_words, n_tags, output_dim_word, sentence_words_test_padded, sentence_tags_test_padded, words, tags, model_weights)
                         elif modelOption == 2:
-                                testNERModelGruCRF(max_len, n_words, n_tags, output_dim, sentence_words_test_padded, sentence_tags_test_padded, words, tags, model_weights)
+                                testNERModelGruCRF(max_len, n_words, n_tags, output_dim_word, sentence_words_test_padded, sentence_tags_test_padded, words, tags, model_weights)
+                        elif modelOption == 3:
+                                testNERModelGruCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char, sentence_chars_test_padded, sentence_words_test_padded, sentence_tags_test_padded, words, tags, chars, model_weights)
+                        elif modelOption == 4:
+                                testNERModelGruCRFCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char, sentence_chars_test_padded, sentence_words_test_padded, sentence_tags_test_padded, words, tags, chars, model_weights)
 
-def createNERModelGru(max_len, n_words, n_tags, output_dim):
+def createNERModelGru(max_len, n_words, n_tags, output_dim_word):
         input = Input(shape=(max_len,))
-        model = Embedding(input_dim=n_words + 1, output_dim=output_dim, input_length=max_len, mask_zero=True)(input)
+        model = Embedding(input_dim=n_words + 2, output_dim=output_dim_word, input_length=max_len, mask_zero=True)(input)
         model = Dropout(0.1)(model)
         model = Bidirectional(GRU(units=100, return_sequences=True, recurrent_dropout=0.1))(model)
-        out = TimeDistributed(Dense(n_tags, activation="softmax"))(model)
+        out = TimeDistributed(Dense(n_tags + 1, activation="softmax"))(model)
         model = Model(input, out)
 
         return model
 
-def trainNERModelGru(max_len, n_words, n_tags, output_dim, sentence_words_train_padded, sentence_tags_train_padded_categorical, file_name):   
-        model = createNERModelGru(max_len, n_words, n_tags, output_dim)
+def trainNERModelGru(max_len, n_words, n_tags, output_dim_word, sentence_words_train_padded, sentence_tags_train_padded_categorical, file_name):   
+        model = createNERModelGru(max_len, n_words, n_tags, output_dim_word)
         model.compile(optimizer="rmsprop", loss="categorical_crossentropy", metrics=["accuracy"])
         model.fit(sentence_words_train_padded, np.array(sentence_tags_train_padded_categorical), batch_size=32, epochs=5, verbose=2)
 
         model.save_weights(os.path.join(models_path, file_name + ".h5py"), overwrite=True)
 
-def testNERModelGru(max_len, n_words, n_tags, output_dim, sentence_words_test_padded, sentence_tags_test_padded, words, tags, model_weights):
-        model = createNERModelGru(max_len, n_words, n_tags, output_dim)
+def testNERModelGru(max_len, n_words, n_tags, output_dim_word, sentence_words_test_padded, sentence_tags_test_padded, words, tags, model_weights):
+        model = createNERModelGru(max_len, n_words, n_tags, output_dim_word)
         model.load_weights(model_weights)
 
         with open(os.path.join(models_path, model_weights.replace(".h5py", "") + "Results"), "w") as resultsFile:
                 tsv_writer = csv.writer(resultsFile, delimiter="\t", lineterminator='\n')
-                for i, sentence_word_test_padded in enumerate(sentence_words_test_padded):       
-                        pad_start = findPadStart(sentence_word_test_padded, words)
+                for sentence_word_test_padded, sentence_tag_test_padded in zip(sentence_words_test_padded, sentence_tags_test_padded):       
+                        pad_start = findPadStartWords(sentence_word_test_padded)
                         predictions = model.predict(np.array([sentence_word_test_padded]))
                         predictions = np.argmax(predictions, axis=-1)
-                        for word, expected, prediction in zip(sentence_word_test_padded[:pad_start], sentence_tags_test_padded[i][:pad_start], predictions[0][:pad_start]):
+                        for word, expected, prediction in zip(sentence_word_test_padded[:pad_start], sentence_tag_test_padded[:pad_start], predictions[0][:pad_start]):
                                  if word != 0:
-                                        tsv_writer.writerow([words[word-1], tags[expected], tags[prediction]])
+                                        tsv_writer.writerow([words[word-2], tags[expected-1], tags[prediction-1]])
                         resultsFile.write("\n")
 
-def createNERModelGruCRF(max_len, n_words, n_tags, output_dim):
+def createNERModelGruCRF(max_len, n_words, n_tags, output_dim_word):
         input = Input(shape=(max_len,))
-        model = Embedding(input_dim=n_words + 1, output_dim=output_dim, input_length=max_len, mask_zero=True)(input)
+        model = Embedding(input_dim=n_words + 2, output_dim=output_dim_word, input_length=max_len, mask_zero=True)(input)
         model = Bidirectional(GRU(units=50, return_sequences=True, recurrent_dropout=0.1))(model)
         model = TimeDistributed(Dense(50, activation="relu"))(model)
-        crf = CRF(n_tags)
+        crf = CRF(n_tags + 1)
         out = crf(model)
         model = Model(input, out)
 
         return (model, crf)
 
-def trainNERModelGruCRF(max_len, n_words, n_tags, output_dim, sentence_words_train_padded, sentence_tags_train_padded_categorical, file_name):   
-        (model, crf) = createNERModelGruCRF(max_len, n_words, n_tags, output_dim)
+def trainNERModelGruCRF(max_len, n_words, n_tags, output_dim_word, sentence_words_train_padded, sentence_tags_train_padded_categorical, file_name):   
+        (model, crf) = createNERModelGruCRF(max_len, n_words, n_tags, output_dim_word)
         model.compile(optimizer="rmsprop", loss=crf.loss_function, metrics=[crf.accuracy])
         model.fit(sentence_words_train_padded, np.array(sentence_tags_train_padded_categorical), batch_size=32, epochs=5, verbose=2)
 
         model.save_weights(os.path.join(models_path, file_name + ".h5py"), overwrite=True)
 
-def testNERModelGruCRF(max_len, n_words, n_tags, output_dim, sentence_words_test_padded, sentence_tags_test_padded, words, tags, model_weights):
-        modelCRF = createNERModelGruCRF(max_len, n_words, n_tags, output_dim)
+def testNERModelGruCRF(max_len, n_words, n_tags, output_dim_word, sentence_words_test_padded, sentence_tags_test_padded, words, tags, model_weights):
+        modelCRF = createNERModelGruCRF(max_len, n_words, n_tags, output_dim_word)
         model = modelCRF[0]
         model.load_weights(model_weights)
 
         with open(os.path.join(models_path, model_weights.replace(".h5py", "") + "Results"), "w") as resultsFile:
                 tsv_writer = csv.writer(resultsFile, delimiter="\t", lineterminator='\n')
-                for i, sentence_word_test_padded in enumerate(sentence_words_test_padded):       
-                        pad_start = findPadStart(sentence_word_test_padded, words)
+                for sentence_word_test_padded, sentence_tag_test_padded in zip(sentence_words_test_padded, sentence_tags_test_padded):       
+                        pad_start = findPadStartWords(sentence_word_test_padded)
                         predictions = model.predict(np.array([sentence_word_test_padded]))
                         predictions = np.argmax(predictions, axis=-1)
-                        for word, expected, prediction in zip(sentence_word_test_padded[:pad_start], sentence_tags_test_padded[i][:pad_start], predictions[0][:pad_start]):
+                        for word, expected, prediction in zip(sentence_word_test_padded[:pad_start], sentence_tag_test_padded[:pad_start], predictions[0][:pad_start]):
                                 if word != 0:
-                                        tsv_writer.writerow([words[word-1], tags[expected], tags[prediction]])
+                                        tsv_writer.writerow([words[word-2], tags[expected-1], tags[prediction-1]])
                         resultsFile.write("\n")
 
-def createNERModelGruCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim):
+def createNERModelGruCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char):
         word_in = Input(shape=(max_len,))
-        emb_word = Embedding(input_dim=n_words + 2, output_dim=20, input_length=max_len, mask_zero=True)(word_in)
+        emb_word = Embedding(input_dim=n_words + 2, output_dim=output_dim_word, input_length=max_len, mask_zero=True)(word_in)
         char_in = Input(shape=(max_len, max_len_char,))
-        emb_char = TimeDistributed(Embedding(input_dim=n_chars + 2, output_dim=10, input_length=max_len_char, mask_zero=True))(char_in)
-        char_enc = TimeDistributed(LSTM(units=20, return_sequences=False, recurrent_dropout=0.5))(emb_char)
+        emb_char = TimeDistributed(Embedding(input_dim=n_chars + 2, output_dim=output_dim_char, input_length=max_len_char, mask_zero=True))(char_in)
+        char_enc = TimeDistributed(GRU(units=20, return_sequences=False, recurrent_dropout=0.5))(emb_char)
         x = concatenate([emb_word, char_enc])
         x = SpatialDropout1D(0.3)(x)
-        main_lstm = Bidirectional(GRU(units=50, return_sequences=True, recurrent_dropout=0.6))(x)
-        out = TimeDistributed(Dense(n_tags + 1, activation="softmax"))(main_lstm)
+        main_gru = Bidirectional(GRU(units=50, return_sequences=True, recurrent_dropout=0.6))(x)
+        out = TimeDistributed(Dense(n_tags + 1, activation="softmax"))(main_gru)
         model = Model([word_in, char_in], out)
 
         return model
 
-def traineNERModelGruCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim, sentence_chars_train_padded, sentence_words_train_padded, sentence_tags_train_padded_categorical, file_name):  
-        model = createNERModelGruCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim)
-        model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["acc"])
-        model.fit([sentence_words_train_padded, np.array(sentence_chars_train_padded).reshape((len(sentence_chars_train_padded), max_len, max_len_char))], np.array(sentence_tags_train_padded_categorical).reshape(len(sentence_tags_train_padded_categorical), max_len, 1), batch_size=32, epochs=10, verbose=2)
+def trainNERModelGruCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char, sentence_chars_train_padded, sentence_words_train_padded, sentence_tags_train_padded_categorical, file_name):  
+        model = createNERModelGruCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char)
+        model.compile(optimizer="rmsprop", loss="categorical_crossentropy", metrics=["acc"])
+        model.fit([sentence_words_train_padded, np.array(sentence_chars_train_padded).reshape((len(sentence_chars_train_padded), max_len, max_len_char))], np.array(sentence_tags_train_padded_categorical).reshape(len(sentence_tags_train_padded_categorical), max_len, n_tags + 1), batch_size=32, epochs=5, verbose=2)
 
         model.save_weights(os.path.join(models_path, file_name + ".h5py"), overwrite=True)
+
+def testNERModelGruCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char, sentence_chars_test_padded, sentence_words_test_padded, sentence_tags_test_padded, words, tags, chars, model_weights):
+        model = createNERModelGruCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char)
+        model.load_weights(model_weights)
+
+        with open(os.path.join(models_path, model_weights.replace(".h5py", "") + "Results"), "w") as resultsFile:
+                tsv_writer = csv.writer(resultsFile, delimiter="\t", lineterminator='\n')
+                predictions = model.predict([sentence_words_test_padded, np.array(sentence_chars_test_padded).reshape((len(sentence_chars_test_padded), max_len, max_len_char))])
+                for i, (sentence_word_test_padded, sentence_tag_test_padded) in enumerate(zip(sentence_words_test_padded, sentence_tags_test_padded)):       
+                        pad_start = findPadStartWords(sentence_word_test_padded)
+                        predictions_item = np.argmax(predictions[i], axis=-1)
+                        for word, expected, prediction in zip(sentence_word_test_padded[:pad_start], sentence_tag_test_padded[:pad_start], predictions_item[:pad_start]):
+                                if word != 0:
+                                        tsv_writer.writerow([words[word-2], tags[expected-1], tags[prediction-1]])
+                        resultsFile.write("\n")
+
+def createNERModelGruCRFCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char):
+        word_in = Input(shape=(max_len,))
+        emb_word = Embedding(input_dim=n_words + 2, output_dim=output_dim_word, input_length=max_len, mask_zero=True)(word_in)
+        char_in = Input(shape=(max_len, max_len_char,))
+        emb_char = TimeDistributed(Embedding(input_dim=n_chars + 2, output_dim=output_dim_char, input_length=max_len_char, mask_zero=True))(char_in)
+        char_enc = TimeDistributed(GRU(units=20, return_sequences=False, recurrent_dropout=0.5))(emb_char)
+        x = concatenate([emb_word, char_enc])
+        x = SpatialDropout1D(0.3)(x)
+        main_gru = Bidirectional(GRU(units=50, return_sequences=True, recurrent_dropout=0.6))(x)
+        model = TimeDistributed(Dense(50, activation="relu"))(main_gru)
+        crf = CRF(n_tags + 1)
+        out = crf(model)
+        model = Model([word_in, char_in], out)
+
+        return (model, crf)
+
+def trainNERModelGruCRFCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char, sentence_chars_train_padded, sentence_words_train_padded, sentence_tags_train_padded_categorical, file_name):  
+        (model, crf) = createNERModelGruCRFCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char)
+        model.compile(optimizer="rmsprop", loss=crf.loss_function, metrics=[crf.accuracy])
+        model.fit([sentence_words_train_padded, np.array(sentence_chars_train_padded).reshape((len(sentence_chars_train_padded), max_len, max_len_char))], np.array(sentence_tags_train_padded_categorical).reshape(len(sentence_tags_train_padded_categorical), max_len, n_tags + 1), batch_size=32, epochs=5, verbose=2)
+
+        model.save_weights(os.path.join(models_path, file_name + ".h5py"), overwrite=True)
+
+def testNERModelGruCRFCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char, sentence_chars_test_padded, sentence_words_test_padded, sentence_tags_test_padded, words, tags, chars, model_weights):
+        modelCRF = createNERModelGruCRFCharacter(max_len, max_len_char, n_chars, n_words, n_tags, output_dim_word, output_dim_char)
+        model = modelCRF[0]
+        model.load_weights(model_weights)
+
+        with open(os.path.join(models_path, model_weights.replace(".h5py", "") + "Results"), "w") as resultsFile:
+                tsv_writer = csv.writer(resultsFile, delimiter="\t", lineterminator='\n')
+                predictions = model.predict([sentence_words_test_padded, np.array(sentence_chars_test_padded).reshape((len(sentence_chars_test_padded), max_len, max_len_char))])
+                for i, (sentence_word_test_padded, sentence_tag_test_padded) in enumerate(zip(sentence_words_test_padded, sentence_tags_test_padded)):       
+                        pad_start = findPadStartWords(sentence_word_test_padded)
+                        predictions_item = np.argmax(predictions[i], axis=-1)
+                        for word, expected, prediction in zip(sentence_word_test_padded[:pad_start], sentence_tag_test_padded[:pad_start], predictions_item[:pad_start]):
+                                if word != 0:
+                                        tsv_writer.writerow([words[word-2], tags[expected-1], tags[prediction-1]])
+                        resultsFile.write("\n")
+        
+def padSentenceChars(sentences_words, max_len, max_len_char, char2idx):
+        sentences_chars_padded = []
+        for sentence_words in sentences_words:
+                sentence_sequence = []
+                for i in range(max_len):
+                        word_sequence = []
+                        for j in range(max_len_char):
+                                try:
+                                        word_sequence.append(char2idx.get(sentence_words[i][j]))
+                                except:
+                                        word_sequence.append(char2idx.get("PAD"))
+                        sentence_sequence.append(word_sequence)
+                sentences_chars_padded.append(np.array(sentence_sequence))
+        return sentences_chars_padded
 
 def padSentenceWords(sentences_words, max_len):
         sentences_words_padded = []
@@ -225,11 +329,10 @@ def padSentenceWords(sentences_words, max_len):
                 sentences_words_padded.append(sentence_words_padded)
         return sentences_words_padded
 
-def findPadStart(sentence_words, words):
+def findPadStartWords(sentence_words):
         for i, word in enumerate(sentence_words):
-                if word != 0:
-                        if words[word-1] == "ENDPAD":
-                                return i
+                if word == 0:
+                        return i
 
 def analyzeWordAndSentenceLength(words, sentences_words):
         sentence_lens = []

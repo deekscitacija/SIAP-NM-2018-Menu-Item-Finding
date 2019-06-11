@@ -1,6 +1,10 @@
 gruModel1 -> 50 pad 50 outputdim
 gruModel2 -> 200 pad 200 output dim
-gruCRFModel1 -> 50 pad 20 outputdim
-gruCRFModel2 -> 75 pad 20 outputdim
-gruCRFModel3 -> 50 pad 50 outputdim
-gruCRFModel4 -> 200 pad 200 outputdim
+gruCRFModel1 -> 50 pad 50 outputdim
+gruCRFModel2 -> 200 pad 200 outputdim
+###
+gruCRFModel3 -> 50 pad 20 outputdim
+gruCRFModel4 -> 75 pad 20 outputdim
+##
+gruCharModel1 -> 50, 10 pad 50, 10 outputdim
+gruCharModel2 -> 200, 100 pad 200, 100 outputdim
