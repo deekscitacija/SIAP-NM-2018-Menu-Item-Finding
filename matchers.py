@@ -2,12 +2,13 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from tkinter import filedialog
 from pyjarowinkler import distance
+from config import DATABASE_STRING
 import tkinter as tk
 import alphabetConverter as ac
 import serbianStemmer as stemmer
 import os, csv, json
 
-client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
+client = MongoClient(DATABASE_STRING)
 db = client['RestaurantData']
 dbRestaurants = db['Restaurants']
 filePaths = []

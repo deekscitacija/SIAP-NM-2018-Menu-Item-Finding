@@ -4,9 +4,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import TimeoutException
 from pymongo import MongoClient
+from config import DATABASE_STRING
 import scraper
 
-client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
+client = MongoClient(DATABASE_STRING)
 db = client['RestaurantData']
 
 srb =  {"name" : "Srbija", "cities" : ["Beograd", "Novi Sad", "Nis", "Subotica", "Pancevo", "Zrenjanin", "Kragujevac", "Krusevac", "Kraljevo", "Cacak"]}

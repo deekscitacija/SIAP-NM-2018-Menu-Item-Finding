@@ -4,8 +4,9 @@ from tokeniser import generate_tokenizer, process, tokenize_sentences
 from pymongo import MongoClient
 from tkinter import filedialog
 from alphabetConverter import serbianLatinToLatin
+from config import DATABASE_STRING
 
-client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
+client = MongoClient()
 db = client['RestaurantData']
 
 def startProgram():

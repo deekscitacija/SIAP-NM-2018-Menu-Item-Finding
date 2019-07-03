@@ -2,8 +2,9 @@ from pymongo import MongoClient
 import xml.etree.cElementTree as xmlET
 import tkinter as tk
 from tkinter import filedialog
+from config import DATABASE_STRING
 
-client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
+client = MongoClient(DATABASE_STRING)
 db = client['RestaurantData']
 
 def startProgram():

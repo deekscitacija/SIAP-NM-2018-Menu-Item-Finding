@@ -2,10 +2,11 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 import tkinter as tk
 from tkinter import filedialog
+from config import DATABASE_STRING
 import xml.etree.cElementTree as xmlET
 import os,re
 
-client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
+client = MongoClient(DATABASE_STRING)
 db = client['RestaurantData']
 
 def convertFromMaeXmlToReldi(maeXmlsPath):

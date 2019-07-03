@@ -2,8 +2,9 @@ import json
 from reldi.parser import Parser
 from pymongo import MongoClient
 from unidecode import unidecode
+from config import DATABASE_STRING, RELDI_USERNAME, RELDI_PASSWORD
 
-client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
+client = MongoClient(DATABASE_STRING)
 db = client['RestaurantData']
 
 def startProgram():
@@ -19,7 +20,7 @@ def startProgram():
 def tagReviews(startPoint, endPoint):
 
     p = Parser('sr')
-    p.authorize('igor_trpovski','SifrazaIgoraSIAPreldi!2018')
+    p.authorize(RELDI_USERNAME, RELDI_PASSWORD)
 
     reviewCount = 0
     while(reviewCount < endPoint):

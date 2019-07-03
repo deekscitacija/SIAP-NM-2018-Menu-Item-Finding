@@ -1,7 +1,8 @@
 from pymongo import MongoClient
+from config import DATABASE_STRING
 import alphabetConverter as ac
 
-client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
+client = MongoClient(DATABASE_STRING)
 db = client['RestaurantData']
 
 def filterReviews(startPoint):

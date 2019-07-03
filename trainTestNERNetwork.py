@@ -33,7 +33,7 @@ def startProgram():
         modelOptionString = input("Choose option:\n1 - GRU One Hot\n2 - GRU CRF\n3 - GRU Character Embeddings\n4 - GRU CRF Character Embeddings\nYour choise: ")
         try:
                 modelOption = int(modelOptionString)
-                if modelOption not in [1,2,3,4,5]:
+                if modelOption not in [1,2,3,4]:
                         return
         except ValueError:
                 print("Niste uneli broj")

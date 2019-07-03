@@ -64,8 +64,8 @@ def exportToTxt(startPoint, endPoint, folderPath, fileName, train):
                         tempPOS = propertyValues[propertyIdx][2]['text']
                         tempLemma = propertyValues[propertyIdx][1]['text']
                         tempNer = propertyValues[propertyIdx][3]['value']
-						tempTextLower = tempText.lower()
-						tempTextUpper = tempText.upper()
+					    tempTextLower = tempText.lower()
+					    tempTextUpper = tempText.upper()
 						tempTextTitle = tempText.title()
 
                         if tempLemma == "" or tempLemma == " ":

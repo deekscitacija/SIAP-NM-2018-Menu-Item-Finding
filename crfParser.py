@@ -3,6 +3,7 @@ from bson.objectid import ObjectId
 import tkinter as tk
 from tkinter import filedialog
 from copy import deepcopy
+from config import DATABASE_STRING
 import os, csv, json
 
 class MenuItem(object):
@@ -17,7 +18,7 @@ class MenuItem(object):
         self.items = items
         self.text = text
 
-client = MongoClient("mongodb+srv://MarijaIgor:SifrazaprojekatizSIAP-a!2018@cluster0-jndnv.azure.mongodb.net")
+client = MongoClient(DATABASE_STRING)
 db = client['RestaurantData']
 dbReviews = db['FilteredAndTaggedRestaurantReviews']
 
