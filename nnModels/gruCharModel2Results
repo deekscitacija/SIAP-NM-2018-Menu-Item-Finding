@@ -64,7 +64,7 @@ pranju	O	O
 .	O	O
 
 Cetri	O	B-FOOD
-cevapa	U-FOOD	L-FOOD
+cevapa	U-FOOD	U-FOOD
 ???	O	O
 ,	O	O
 cetri	O	O
@@ -73,8 +73,8 @@ ustipaka	U-FOOD	U-FOOD
 ,	O	O
 a	O	O
 belo	B-FOOD	B-FOOD
-meso	L-FOOD	I-FOOD
-parcence	O	L-FOOD
+meso	L-FOOD	L-FOOD
+parcence	O	O
 .	O	O
 
 Napominjem	O	O
@@ -134,9 +134,9 @@ Shnicla	L-FOOD	L-FOOD
 ,	O	O
 Americhki	O	O
 ,	O	O
-Britanski	O	O
+Britanski	O	U-FOOD
 i	O	O
-Vegetarijanski	B-FOOD	U-FOOD
+Vegetarijanski	B-FOOD	B-FOOD
 doruchak	L-FOOD	L-FOOD
 i	O	O
 svi	O	O
@@ -179,7 +179,7 @@ corbe	U-FOOD	U-FOOD
 smo	O	O
 dobili	O	O
 i	O	O
-naseckani	O	O
+naseckani	O	U-FOOD
 ,	O	O
 cini	O	O
 mi	O	O
@@ -204,8 +204,8 @@ za	O	O
 pohvalu	O	O
 .	O	O
 
-Bezukusna	O	O
-pica	U-FOOD	U-FOOD
+Bezukusna	O	B-FOOD
+pica	U-FOOD	L-FOOD
 
 Osecaj	O	O
 je	O	O
@@ -308,7 +308,7 @@ debljine	O	O
 Nadev	O	O
 u	O	O
 palacinkama	U-FOOD	U-FOOD
-tamna	O	O
+tamna	O	L-FOOD
 koliko	O	O
 treba	O	O
 ,	O	O
@@ -340,7 +340,7 @@ narucivanja	O	O
 
 10.	O	O
 /	O	O
-16.	O	U-FOOD
+16.	O	O
 /	O	O
 25.	O	O
 
@@ -425,7 +425,7 @@ pitanju	O	O
 .	O	O
 
 Salama	U-FOOD	O
-/	O	I-FOOD
+/	O	O
 pecenica	U-FOOD	U-FOOD
 samo	O	O
 prvog	O	O
@@ -513,7 +513,7 @@ jeftini	O	O
 jogurt	U-FOOD	U-FOOD
 .	O	O
 
-Engleski	B-FOOD	O
+Engleski	B-FOOD	B-FOOD
 dorucak	L-FOOD	L-FOOD
 ,	O	O
 pohovani	B-FOOD	B-FOOD
@@ -523,7 +523,7 @@ vam	O	O
 3,4	O	O
 riblja	B-FOOD	O
 stapica	L-FOOD	O
-frikom	O	O
+frikom	O	U-FOOD
 ,	O	O
 salate	U-FOOD	U-FOOD
 su	O	O
@@ -653,7 +653,7 @@ je	O	O
 pica	U-FOOD	U-FOOD
 bila	O	O
 od	O	O
-4	O	O
+4	O	B-FOOD
 vrste	O	I-FOOD
 sira	U-FOOD	L-FOOD
 bila	O	O
@@ -942,7 +942,7 @@ vas	O	O
 .	O	O
 
 Fasirani	B-FOOD	B-FOOD
-medaljoni	L-FOOD	L-FOOD
+medaljoni	L-FOOD	U-FOOD
 ,	O	O
 Americki	B-FOOD	B-FOOD
 dorucak	L-FOOD	L-FOOD
@@ -1026,7 +1026,7 @@ opet	O	O
 naruciti	O	O
 !	O	O
 
-butkica	B-FOOD	O
+butkica	B-FOOD	B-FOOD
 sa	I-FOOD	O
 kupusom	L-FOOD	U-FOOD
 
@@ -1089,8 +1089,8 @@ da	O	O
 je	O	O
 znog	O	O
 manjka	O	O
-sira	U-FOOD	U-FOOD
-pizza	U-FOOD	U-FOOD
+sira	U-FOOD	B-FOOD
+pizza	U-FOOD	L-FOOD
 manje	O	O
 socna	O	O
 nego	O	O
@@ -1409,10 +1409,10 @@ cezar	B-FOOD	B-FOOD
 salata	L-FOOD	L-FOOD
 bez	O	O
 adekvatnog	O	O
-dressinga	U-FOOD	O
-t.	O	O
-j.	O	O
-dresing	U-FOOD	U-FOOD
+dressinga	U-FOOD	U-FOOD
+t.	O	I-FOOD
+j.	O	I-FOOD
+dresing	U-FOOD	L-FOOD
 ima	O	O
 ukus	O	O
 jeftinog	O	O
@@ -1465,8 +1465,8 @@ odlicna	O	O
 
 Narucili	O	O
 smo	O	O
-capricciosu	U-FOOD	U-FOOD
-mega	O	O
+capricciosu	U-FOOD	B-FOOD
+mega	O	L-FOOD
 i	O	O
 vec	O	O
 drugi	O	O
@@ -1521,7 +1521,7 @@ pice	U-FOOD	U-FOOD
 koje	O	O
 plivaju	O	O
 u	O	O
-masnoci	O	O
+masnoci	O	B-FOOD
 od	O	O
 sira	U-FOOD	U-FOOD
 i	O	O
@@ -1537,10 +1537,10 @@ su	O	O
 masline	U-FOOD	U-FOOD
 ...	O	O
 preporucujem	O	O
-nabavku	O	O
-crnih	B-FOOD	U-FOOD
-kalamata	I-FOOD	O
-maslina	L-FOOD	U-FOOD
+nabavku	O	B-FOOD
+crnih	B-FOOD	I-FOOD
+kalamata	I-FOOD	I-FOOD
+maslina	L-FOOD	L-FOOD
 umesto	O	O
 ovih	O	O
 zelenih	O	O
@@ -1751,7 +1751,7 @@ promene	O	O
 
 Pizza	B-FOOD	U-FOOD
 ''	I-FOOD	O
-Specijal	I-FOOD	U-FOOD
+Specijal	I-FOOD	L-FOOD
 ''	L-FOOD	O
 
 Vec	O	O
@@ -2133,7 +2133,7 @@ psa	O	O
 ,	O	O
 a	O	O
 zaboravila	O	O
-kljuceve	O	U-FOOD
+kljuceve	O	O
 od	O	O
 zgrade	O	O
 (	O	O
@@ -2157,8 +2157,8 @@ noci	O	O
 Decka	O	O
 sa	O	O
 picom	U-FOOD	U-FOOD
-srela	O	I-FOOD
-isped	O	L-FOOD
+srela	O	O
+isped	O	O
 ulaza	O	O
 koji	O	O
 mi	O	O
@@ -2291,8 +2291,8 @@ NARUCENE	O	O
 2	O	O
 PICE	U-FOOD	U-FOOD
 1	O	O
-KALZONE	U-FOOD	U-FOOD
-,	O	I-FOOD
+KALZONE	U-FOOD	O
+,	O	O
 VEGETARIJANA	U-FOOD	U-FOOD
 .	O	O
 
@@ -2349,7 +2349,7 @@ nutelom	I-FOOD	I-FOOD
 ,	I-FOOD	I-FOOD
 plazmom	I-FOOD	L-FOOD
 i	I-FOOD	O
-VISNJAMA	L-FOOD	O
+VISNJAMA	L-FOOD	U-FOOD
 .	O	O
 
 I	O	O
@@ -2492,7 +2492,7 @@ napitak	O	O
 
 -	O	O
 Mediteranski	B-FOOD	B-FOOD
-dorucak	L-FOOD	L-FOOD
+dorucak	L-FOOD	O
 sa	O	O
 naznakom	O	O
 """"	O	O
@@ -2679,7 +2679,7 @@ Narucili	O	O
 smo	O	O
 paste	U-FOOD	U-FOOD
 i	O	O
-pizzu	B-FOOD	B-FOOD
+pizzu	B-FOOD	U-FOOD
 kapricozu	L-FOOD	L-FOOD
 ...	O	O
 hrana	O	O
@@ -3051,8 +3051,8 @@ nona	U-FOOD	O
 nona	U-FOOD	O
 je	O	O
 tradicionalna	O	O
-pica	B-FOOD	U-FOOD
-pomodora	L-FOOD	O
+pica	B-FOOD	B-FOOD
+pomodora	L-FOOD	L-FOOD
 koja	O	O
 je	O	O
 jedno	O	O
@@ -3128,7 +3128,7 @@ moram	O	O
 da	O	O
 narucim	O	O
 kanelone	B-FOOD	O
-sanspanacem	L-FOOD	O
+sanspanacem	L-FOOD	L-FOOD
 ,	O	O
 savrseni	O	O
 su	O	O
@@ -3158,8 +3158,8 @@ ocekivanog	O	O
 
 Brusketi	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
-articokama	L-FOOD	I-FOOD
-pretvorili	O	O
+articokama	L-FOOD	L-FOOD
+pretvorili	O	L-FOOD
 su	O	O
 se	O	O
 u	O	O
@@ -3187,7 +3187,7 @@ Pasta	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
 tikvicama	I-FOOD	L-FOOD
 i	I-FOOD	O
-pekorino	I-FOOD	I-FOOD
+pekorino	I-FOOD	B-FOOD
 sirom	L-FOOD	L-FOOD
 takodje	O	O
 bezukusna	O	O
@@ -3207,7 +3207,7 @@ nisam	O	O
 trazio	O	O
 dodatnu	O	O
 kolicinu	O	O
-pekorina	U-FOOD	O
+pekorina	U-FOOD	U-FOOD
 ,	O	O
 bila	O	O
 bi	O	O
@@ -3872,8 +3872,8 @@ Sama	O	O
 pizza	U-FOOD	U-FOOD
 je	O	O
 prava	O	O
-italijnaska	O	O
-pizza	U-FOOD	U-FOOD
+italijnaska	O	B-FOOD
+pizza	U-FOOD	L-FOOD
 kakvu	O	O
 sam	O	O
 jeo	O	O
@@ -3919,9 +3919,9 @@ spanac	I-FOOD	I-FOOD
 sa	I-FOOD	I-FOOD
 fetom	L-FOOD	L-FOOD
 i	O	O
-salata	B-FOOD	U-FOOD
-sa	I-FOOD	O
-grejpfrutom	I-FOOD	O
+salata	B-FOOD	B-FOOD
+sa	I-FOOD	I-FOOD
+grejpfrutom	I-FOOD	L-FOOD
 i	I-FOOD	O
 Bri	I-FOOD	B-FOOD
 sirom	L-FOOD	L-FOOD
@@ -3932,7 +3932,7 @@ malo	O	O
 vise	O	O
 grejpfruta	U-FOOD	O
 i	O	O
-Bri	B-FOOD	O
+Bri	B-FOOD	B-FOOD
 sira	L-FOOD	L-FOOD
 da	O	O
 stave	O	O
@@ -4129,8 +4129,8 @@ mocarele	U-FOOD	U-FOOD
 Porucio	O	O
 sam	O	O
 dve	O	O
-pice	B-FOOD	U-FOOD
-Prosciutto	I-FOOD	I-FOOD
+pice	B-FOOD	B-FOOD
+Prosciutto	I-FOOD	B-FOOD
 Crudo	I-FOOD	I-FOOD
 e	I-FOOD	I-FOOD
 Pomodoro	L-FOOD	L-FOOD
@@ -4411,7 +4411,7 @@ iskustvo	O	O
 Pohovani	B-FOOD	B-FOOD
 Cikenita	I-FOOD	I-FOOD
 file	I-FOOD	I-FOOD
-obrok	L-FOOD	L-FOOD
+obrok	L-FOOD	O
 i	O	O
 dodaci	O	O
 
@@ -4534,13 +4534,13 @@ prijavim	O	O
 trzisnoj	O	O
 i	O	O
 finansijskoj	O	O
-inspekciji	O	O
+inspekciji	O	L-FOOD
 
 KRILCAAAAA	U-FOOD	O
 
-JOGURT	B-FOOD	U-FOOD
+JOGURT	B-FOOD	B-FOOD
 SOS	L-FOOD	I-FOOD
-MNJAM	O	O
+MNJAM	O	L-FOOD
 :)	O	O
 
 :((((	O	O
@@ -4617,7 +4617,7 @@ odlicno	O	O
 piletina	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
 kackavaljem	L-FOOD	L-FOOD
-i	O	I-FOOD
+i	O	O
 batak	U-FOOD	U-FOOD
 !	O	O
 fenomenalno	O	O
@@ -4671,7 +4671,7 @@ Vitaminska	U-FOOD	U-FOOD
 savrsena	O	O
 ,	O	O
 pecurke	B-FOOD	U-FOOD
-u	I-FOOD	I-FOOD
+u	I-FOOD	O
 pavlaci	L-FOOD	U-FOOD
 jos	O	O
 bolje	O	O
@@ -4932,8 +4932,8 @@ Ako	O	O
 vam	O	O
 se	O	O
 jedu	O	O
-kijevski	B-FOOD	U-FOOD
-pilici	L-FOOD	O
+kijevski	B-FOOD	B-FOOD
+pilici	L-FOOD	L-FOOD
 u	O	O
 pet	O	O
 izjutra	O	O
@@ -4963,8 +4963,8 @@ sadrzaja	O	O
 krije	O	O
 brdovitu	O	O
 pohovanu	O	B-FOOD
-planinicu	O	O
-pileceg	B-FOOD	B-FOOD
+planinicu	O	I-FOOD
+pileceg	B-FOOD	I-FOOD
 mesa	L-FOOD	L-FOOD
 .	O	O
 
@@ -5184,8 +5184,8 @@ pileci	B-FOOD	B-FOOD
 file	I-FOOD	I-FOOD
 sa	I-FOOD	I-FOOD
 kackavaljem	I-FOOD	L-FOOD
-i	I-FOOD	I-FOOD
-sunkom	L-FOOD	L-FOOD
+i	I-FOOD	O
+sunkom	L-FOOD	U-FOOD
 .	O	O
 
 Hrana	O	O
@@ -5536,7 +5536,7 @@ nemaju	O	O
 vise	O	O
 sendvica	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
-pecenicom	L-FOOD	U-FOOD
+pecenicom	L-FOOD	L-FOOD
 ,	O	O
 moze	O	O
 li	O	O
@@ -5674,7 +5674,7 @@ uredno	O	O
 naplacuju	O	O
 kao	O	O
 2	O	O
-paketa	O	U-FOOD
+paketa	O	O
 .	O	O
 
 Nisam	O	O
@@ -5962,7 +5962,7 @@ sam	O	O
 kg	O	O
 krilaca	U-FOOD	U-FOOD
 sa	O	O
-naznakom	O	O
+naznakom	O	L-FOOD
 da	O	O
 budu	O	O
 jako	O	O
@@ -6132,7 +6132,7 @@ a	O	O
 Pohovani	B-FOOD	B-FOOD
 Cikenita	I-FOOD	I-FOOD
 file	I-FOOD	I-FOOD
-obrok	L-FOOD	L-FOOD
+obrok	L-FOOD	O
 socan	O	O
 sve	O	O
 preporuke	O	O
@@ -6172,7 +6172,7 @@ uvili	O	O
 .	O	O
 
 Chickenita	B-FOOD	O
-file	I-FOOD	B-FOOD
+file	I-FOOD	I-FOOD
 obrok	L-FOOD	L-FOOD
 
 Kao	O	O
@@ -6415,7 +6415,7 @@ u	O	O
 kanti	O	O
 .	O	O
 ali	O	O
-cikenita	O	U-FOOD
+cikenita	O	O
 ,	O	O
 to	O	O
 je	O	O
@@ -6709,7 +6709,7 @@ topla	O	O
 preporuka	O	O
 za	O	O
 ljubitelje	O	O
-zacinjenog	O	U-FOOD
+zacinjenog	O	O
 
 Pomfrit	U-FOOD	U-FOOD
 i	O	O
@@ -6821,8 +6821,8 @@ dva	O	O
 sendvica	U-FOOD	U-FOOD
 i	O	O
 jedan	O	O
-Cikenita	B-FOOD	O
-pohovani	I-FOOD	B-FOOD
+Cikenita	B-FOOD	B-FOOD
+pohovani	I-FOOD	I-FOOD
 batak	L-FOOD	L-FOOD
 
 Dostava	O	O
@@ -6942,7 +6942,7 @@ Onako	O	O
 
 Pohovani	B-FOOD	B-FOOD
 batak	L-FOOD	I-FOOD
-obrok	O	L-FOOD
+obrok	O	O
 ..	O	O
 
 Prilicno	O	O
@@ -6982,7 +6982,7 @@ bila	O	O
 dobra	O	O
 medaljoni	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
-sirom	L-FOOD	U-FOOD
+sirom	L-FOOD	L-FOOD
 divni	O	O
 vreli	O	O
 pohovani	B-FOOD	B-FOOD
@@ -7103,8 +7103,8 @@ ali	O	O
 sa	O	O
 izuzetno	O	O
 ohladjenim	O	O
-punjenim	B-FOOD	O
-batkom	L-FOOD	O
+punjenim	B-FOOD	I-FOOD
+batkom	L-FOOD	L-FOOD
 sto	O	O
 nije	O	O
 u	O	O
@@ -7209,7 +7209,7 @@ rebraste	O	O
 na	O	O
 dnu	O	O
 ,	O	O
-ergo	O	U-FOOD
+ergo	O	O
 ako	O	O
 hocete	O	O
 da	O	O
@@ -7339,11 +7339,11 @@ sa	O	O
 kari	B-FOOD	B-FOOD
 sosom	L-FOOD	L-FOOD
 ,	O	O
-majonez	U-FOOD	U-FOOD
-umucen	O	O
+majonez	U-FOOD	B-FOOD
+umucen	O	I-FOOD
 sa	O	I-FOOD
 kari	B-FOOD	I-FOOD
-zacnom	L-FOOD	L-FOOD
+zacnom	L-FOOD	O
 ,	O	O
 meni	O	O
 odvratno	O	O
@@ -8227,7 +8227,7 @@ ponestaju	O	O
 .	O	O
 
 Doneti	O	O
-picu	U-FOOD	L-FOOD
+picu	U-FOOD	U-FOOD
 koja	O	O
 je	O	O
 """"	O	O
@@ -8291,8 +8291,8 @@ ali	O	O
 hladna	O	O
 pica	U-FOOD	U-FOOD
 sa	O	O
-stegnutim	O	O
-kackavaljem	U-FOOD	L-FOOD
+stegnutim	O	I-FOOD
+kackavaljem	U-FOOD	U-FOOD
 bas	O	O
 nije	O	O
 u	O	O
@@ -8753,7 +8753,7 @@ top	O	O
 
 Quattro	B-FOOD	B-FOOD
 stagioni	L-FOOD	L-FOOD
-&	O	I-FOOD
+&	O	O
 Vezuvio	U-FOOD	U-FOOD
 
 Pice	U-FOOD	U-FOOD
@@ -8822,7 +8822,7 @@ preporuke	O	O
 
 4	B-FOOD	B-FOOD
 godisnja	I-FOOD	I-FOOD
-doba	L-FOOD	O
+doba	L-FOOD	L-FOOD
 
 Najbolja	O	O
 pica	U-FOOD	U-FOOD
@@ -8986,8 +8986,8 @@ cine	O	O
 )	O	O
 .	O	O
 
-Palacinke	B-FOOD	U-FOOD
-eurokrem-plazma	L-FOOD	O
+Palacinke	B-FOOD	B-FOOD
+eurokrem-plazma	L-FOOD	L-FOOD
 prelepe	O	O
 ,	O	O
 tanke	O	O
@@ -9099,8 +9099,8 @@ hleb	U-FOOD	U-FOOD
 
 Preko	O	O
 musake	U-FOOD	O
-ide	O	I-FOOD
-pavlaka	U-FOOD	L-FOOD
+ide	O	O
+pavlaka	U-FOOD	U-FOOD
 ,	O	O
 uz	O	O
 punjene	B-FOOD	B-FOOD
@@ -9161,7 +9161,7 @@ cezar	U-FOOD	U-FOOD
 
 korektno	O	O
 
-Slane	O	U-FOOD
+Slane	O	O
 i	O	O
 slatke	B-FOOD	B-FOOD
 palacinke	L-FOOD	L-FOOD
@@ -9336,7 +9336,7 @@ Pica	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
 prsutom	I-FOOD	I-FOOD
 i	I-FOOD	I-FOOD
-rukolom	L-FOOD	L-FOOD
+rukolom	L-FOOD	U-FOOD
 
 Onako	O	O
 
@@ -9599,7 +9599,7 @@ predugo	O	O
 Sjajno	O	O
 
 Pica	B-FOOD	B-FOOD
-Napoli	L-FOOD	O
+Napoli	L-FOOD	L-FOOD
 5	O	O
 +	O	O
 
@@ -9628,7 +9628,7 @@ sam	O	O
 osetila	O	O
 samo	O	O
 neutralnu	B-FOOD	O
-pavlaku	L-FOOD	L-FOOD
+pavlaku	L-FOOD	U-FOOD
 
 Ubedljivo	O	O
 naaajbolje	O	O
@@ -9652,8 +9652,8 @@ Napoli	O	O
 bez	O	O
 greske	O	O
 
-Porodicne	O	B-FOOD
-pizze	U-FOOD	L-FOOD
+Porodicne	O	O
+pizze	U-FOOD	U-FOOD
 
 Fenomenalan	O	O
 kvalitet	O	O
@@ -10222,10 +10222,10 @@ but	O	O
 h	O	O
 narucio	O	O
 
-Kraljevska	B-FOOD	B-FOOD
--	I-FOOD	I-FOOD
-punjene	I-FOOD	I-FOOD
-korice	L-FOOD	L-FOOD
+Kraljevska	B-FOOD	U-FOOD
+-	I-FOOD	O
+punjene	I-FOOD	O
+korice	L-FOOD	O
 
 Pica	U-FOOD	U-FOOD
 je	O	O
@@ -10433,7 +10433,7 @@ OK	O	O
 Sto	O	O
 se	O	O
 same	O	O
-Karadjordjeve	U-FOOD	O
+Karadjordjeve	U-FOOD	U-FOOD
 tice	O	O
 ,	O	O
 dobra	O	O
@@ -10664,7 +10664,7 @@ sira	L-FOOD	L-FOOD
 a	O	O
 dobila	O	O
 sam	O	O
-testeninu	B-FOOD	B-FOOD
+testeninu	B-FOOD	U-FOOD
 u	I-FOOD	I-FOOD
 pavlaci	I-FOOD	I-FOOD
 za	I-FOOD	I-FOOD
@@ -10803,7 +10803,7 @@ kvalitet	O	O
 hrane	O	O
 
 Testo	B-FOOD	U-FOOD
-pice	L-FOOD	U-FOOD
+pice	L-FOOD	L-FOOD
 je	O	O
 po	O	O
 mom	O	O
@@ -11319,10 +11319,10 @@ restorana	O	O
 .	O	O
 :)	O	O
 
-Pizze	B-FOOD	U-FOOD
-Susam	L-FOOD	L-FOOD
+Pizze	B-FOOD	B-FOOD
+Susam	L-FOOD	U-FOOD
 i	O	O
-Napoli	U-FOOD	O
+Napoli	U-FOOD	L-FOOD
 
 Narucio	O	O
 sam	O	O
@@ -11835,7 +11835,7 @@ cast	O	O
 italijanski	B-FOOD	B-FOOD
 djevrek	L-FOOD	L-FOOD
 
-dere	O	U-FOOD
+dere	O	O
 
 Kapricoza	U-FOOD	U-FOOD
 i	O	O
@@ -11894,8 +11894,8 @@ kraljevska	U-FOOD	U-FOOD
 42	O	O
 cm	O	O
 sa	O	O
-punjenim	O	O
-koricama	O	O
+punjenim	O	B-FOOD
+koricama	O	L-FOOD
 uvece	O	O
 kasno	O	O
 .	O	O
@@ -12278,7 +12278,7 @@ kvalitetna	O	O
 dostava	O	O
 
 Pice	B-FOOD	B-FOOD
-Specijale	L-FOOD	L-FOOD
+Specijale	L-FOOD	U-FOOD
 i	O	O
 Sicilijana	U-FOOD	U-FOOD
 na	O	O
@@ -12330,7 +12330,7 @@ donesi.com	O	O
 Klub	B-FOOD	B-FOOD
 sendvic	L-FOOD	L-FOOD
 i	O	O
-pacinke	U-FOOD	U-FOOD
+pacinke	U-FOOD	O
 .	O	O
 
 Odlican	O	O
@@ -12353,7 +12353,7 @@ pizza	U-FOOD	U-FOOD
 odlicna	O	O
 ,	O	O
 knedle	U-FOOD	U-FOOD
-2.5	O	O
+2.5	O	L-FOOD
 
 Fantasticno	O	O
 
@@ -13839,9 +13839,9 @@ ukucno	O	O
 Narucena	O	O
 Margarita	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
-kulenom	I-FOOD	U-FOOD
+kulenom	I-FOOD	L-FOOD
 i	I-FOOD	O
-rukolim	L-FOOD	U-FOOD
+rukolim	L-FOOD	O
 .	O	O
 
 Najavljeno	O	O
@@ -13913,7 +13913,7 @@ Pica	U-FOOD	U-FOOD
 prvoklasna	O	O
 ,	O	O
 vremenski	O	O
-azurni	O	O
+azurni	O	U-FOOD
 citaju	O	O
 uputstva	O	O
 .	O	O
@@ -13975,7 +13975,7 @@ Pizza	U-FOOD	U-FOOD
 SUper	O	O
 !	O	O
 
-Pica	B-FOOD	U-FOOD
+Pica	B-FOOD	B-FOOD
 kapricoza	L-FOOD	L-FOOD
 
 Redovno	O	O
@@ -14353,7 +14353,7 @@ primedbi	O	O
 
 Lazanje	U-FOOD	U-FOOD
 
-Poboljsali	O	U-FOOD
+Poboljsali	O	O
 su	O	O
 lazanje	U-FOOD	U-FOOD
 u	O	O
@@ -14501,8 +14501,8 @@ najvise	O	O
 zbog	O	O
 dela	O	O
 pice	U-FOOD	B-FOOD
-sa	O	I-FOOD
-pecurkama	U-FOOD	L-FOOD
+sa	O	O
+pecurkama	U-FOOD	U-FOOD
 koji	O	O
 je	O	O
 neslan	O	O
@@ -14795,7 +14795,7 @@ Vrh	O	O
 Kapricoza	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
 punjenim	I-FOOD	I-FOOD
-ivicama	L-FOOD	O
+ivicama	L-FOOD	L-FOOD
 odlicna	O	O
 ,	O	O
 dostava	O	O
@@ -14913,8 +14913,8 @@ Mogu	O	O
 samo	O	O
 da	O	O
 preporucim	O	O
-pizzu	B-FOOD	U-FOOD
-Napoli	L-FOOD	O
+pizzu	B-FOOD	B-FOOD
+Napoli	L-FOOD	L-FOOD
 i	O	O
 da	O	O
 kazem	O	O
@@ -14970,8 +14970,8 @@ salata	U-FOOD	U-FOOD
 nista	O	O
 spec.	O	O
 Zato	O	O
-sendvic	U-FOOD	U-FOOD
-raaaazbija	O	O
+sendvic	U-FOOD	B-FOOD
+raaaazbija	O	L-FOOD
 .	O	O
 
 Obiman	O	O
@@ -15128,8 +15128,8 @@ u	O	O
 
 Obavezno	O	O
 sa	O	O
-punjenim	O	O
-ivicama	O	O
+punjenim	O	B-FOOD
+ivicama	O	L-FOOD
 uzmite	O	O
 !	O	O
 
@@ -15430,7 +15430,7 @@ porucila	O	O
 sam	O	O
 margaritu	U-FOOD	U-FOOD
 i	O	O
-vezuvio	B-FOOD	B-FOOD
+vezuvio	B-FOOD	U-FOOD
 pice	L-FOOD	L-FOOD
 ...	O	O
 kao	O	O
@@ -15706,7 +15706,7 @@ ivica	O	O
 
 pizza	U-FOOD	U-FOOD
 
-gorgonzola	U-FOOD	B-FOOD
+gorgonzola	U-FOOD	U-FOOD
 sa	O	I-FOOD
 stilom	O	L-FOOD
 
@@ -16356,8 +16356,8 @@ ukusno	O	O
 :)	O	O
 
 Prezadovoljni	O	O
-picom	B-FOOD	U-FOOD
-kapricoza	L-FOOD	U-FOOD
+picom	B-FOOD	B-FOOD
+kapricoza	L-FOOD	L-FOOD
 i	O	O
 sigurno	O	O
 cemo	O	O
@@ -16511,7 +16511,7 @@ kad	O	O
 je	O	O
 pica	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
-jajetom	L-FOOD	U-FOOD
+jajetom	L-FOOD	L-FOOD
 ,	O	O
 slobodno	O	O
 je	O	O
@@ -16794,7 +16794,7 @@ jaja	U-FOOD	U-FOOD
 dosla	O	O
 piza	B-FOOD	U-FOOD
 sa	I-FOOD	O
-jajejtom	L-FOOD	O
+jajejtom	L-FOOD	L-FOOD
 i	O	O
 jos	O	O
 vaznije	O	O
@@ -16903,7 +16903,7 @@ sam	O	O
 zadovoljan	O	O
 .	O	O
 
-Punjena	O	U-FOOD
+Punjena	O	O
 korica	O	O
 
 Jedini	O	O
@@ -17221,7 +17221,7 @@ kako	O	O
 treba	O	O
 .	O	O
 
-Punjena	O	U-FOOD
+Punjena	O	O
 ivica	O	O
 nije	O	O
 nesto	O	O
@@ -17238,10 +17238,10 @@ zaobidjite	O	O
 
 KAPRICOZA	U-FOOD	U-FOOD
 42	O	O
-CM	O	O
+CM	O	I-FOOD
 SA	O	I-FOOD
-PUNJENIM	O	O
-IVICAMA	O	O
+PUNJENIM	O	I-FOOD
+IVICAMA	O	L-FOOD
 I	O	O
 JAJETOM	U-FOOD	O
 
@@ -17836,7 +17836,7 @@ ja	O	O
 licno	O	O
 vise	O	O
 volim	O	O
-seckanu	O	U-FOOD
+seckanu	O	O
 na	O	O
 kockice	O	O
 ,	O	O
@@ -18099,9 +18099,9 @@ suvim	I-FOOD	I-FOOD
 vratom	I-FOOD	L-FOOD
 """"	L-FOOD	O
 i	O	O
-palacinka	B-FOOD	B-FOOD
+palacinka	B-FOOD	U-FOOD
 sa	I-FOOD	O
-evrokremom	L-FOOD	O
+evrokremom	L-FOOD	L-FOOD
 .	O	O
 
 Porudzbina	O	O
@@ -18138,7 +18138,7 @@ u	O	O
 tom	O	O
 sendvicu	U-FOOD	U-FOOD
 ima	O	O
-suvog	B-FOOD	U-FOOD
+suvog	B-FOOD	O
 vrata	L-FOOD	O
 ,	O	O
 a	O	O
@@ -18156,7 +18156,7 @@ mi	O	O
 salju	O	O
 shunku	U-FOOD	U-FOOD
 umesto	O	O
-suvog	B-FOOD	U-FOOD
+suvog	B-FOOD	O
 vrata	L-FOOD	O
 .	O	O
 
@@ -18204,7 +18204,7 @@ tabasko	U-FOOD	U-FOOD
 ,	O	O
 masline	U-FOOD	U-FOOD
 ,	O	O
-zacini	U-FOOD	O
+zacini	U-FOOD	U-FOOD
 
 Kulen	U-FOOD	U-FOOD
 je	O	O
@@ -18468,8 +18468,8 @@ nastavite	O	O
 .	O	O
 
 Uglavnom	O	O
-bezopasna	O	O
-Diavola	U-FOOD	U-FOOD
+bezopasna	O	B-FOOD
+Diavola	U-FOOD	L-FOOD
 
 Stigla	O	O
 za	O	O
@@ -18755,9 +18755,9 @@ sa	O	O
 salatom	U-FOOD	U-FOOD
 nekom	O	O
 
-pita	B-FOOD	O
-sa	I-FOOD	O
-jabukom	L-FOOD	O
+pita	B-FOOD	B-FOOD
+sa	I-FOOD	I-FOOD
+jabukom	L-FOOD	L-FOOD
 -	O	O
 njam	O	O
 njam	O	O
@@ -18810,7 +18810,7 @@ narucio	O	O
 svadbarski	B-FOOD	O
 kupus	L-FOOD	U-FOOD
 ,	O	O
-proju	U-FOOD	U-FOOD
+proju	U-FOOD	O
 i	O	O
 dve	O	O
 mesane	B-FOOD	B-FOOD
@@ -18902,8 +18902,8 @@ jako	O	O
 smo	O	O
 zadovoljni	O	O
 ...	O	O
-bechka	B-FOOD	O
-shnicla	L-FOOD	U-FOOD
+bechka	B-FOOD	B-FOOD
+shnicla	L-FOOD	L-FOOD
 ogromna	O	O
 ,	O	O
 prava	O	O
@@ -18914,7 +18914,7 @@ i	O	O
 vrlo	O	O
 ukusna	O	O
 ...	O	O
-pechurke	B-FOOD	U-FOOD
+pechurke	B-FOOD	O
 na	I-FOOD	O
 zharu	L-FOOD	O
 takodje	O	O
@@ -18979,7 +18979,7 @@ razocarali	O	O
 
 Narucena	O	O
 plava	B-FOOD	O
-traka	L-FOOD	O
+traka	L-FOOD	L-FOOD
 ,	O	O
 porcija	O	O
 pomfrita	U-FOOD	U-FOOD
@@ -19016,8 +19016,8 @@ pomfrita	U-FOOD	U-FOOD
 sto	O	O
 ide	O	O
 uz	O	O
-plavu	B-FOOD	O
-traku	L-FOOD	O
+plavu	B-FOOD	B-FOOD
+traku	L-FOOD	L-FOOD
 je	O	O
 bilo	O	O
 POTPUNO	O	O
@@ -19160,7 +19160,7 @@ i	O	O
 preterana	O	O
 
 Pohovan	B-FOOD	O
-kackavalj	L-FOOD	L-FOOD
+kackavalj	L-FOOD	U-FOOD
 dobar	O	O
 ,	O	O
 klasika	O	O
@@ -19638,7 +19638,7 @@ Indijskog	O	O
 stigao	O	O
 je	O	O
 Kineski	B-FOOD	O
-tanjir	L-FOOD	O
+tanjir	L-FOOD	U-FOOD
 ,	O	O
 a	O	O
 umesto	O	O
@@ -19758,7 +19758,7 @@ slucajno	O	O
 Eurokrem	U-FOOD	U-FOOD
 ,	O	O
 plazma	U-FOOD	U-FOOD
-,	O	I-FOOD
+,	O	O
 visnje	U-FOOD	U-FOOD
 
 Odlicne	O	O
@@ -19983,8 +19983,8 @@ prilicno	O	O
 masna	O	O
 ,	O	O
 ali	O	O
-fish	B-FOOD	U-FOOD
-&	I-FOOD	O
+fish	B-FOOD	B-FOOD
+&	I-FOOD	I-FOOD
 chips	L-FOOD	U-FOOD
 valjda	O	O
 i	O	O
@@ -20221,7 +20221,7 @@ lepinje	U-FOOD	U-FOOD
 
 testenina	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
-plodovima	I-FOOD	L-FOOD
+plodovima	I-FOOD	I-FOOD
 mora	L-FOOD	L-FOOD
 i	O	O
 kinder	B-FOOD	B-FOOD
@@ -20328,8 +20328,8 @@ za	O	O
 palacinke	U-FOOD	U-FOOD
 ,	O	O
 posebno	O	O
-kinder	B-FOOD	B-FOOD
-izdanje	L-FOOD	L-FOOD
+kinder	B-FOOD	U-FOOD
+izdanje	L-FOOD	O
 !	O	O
 
 pizza	U-FOOD	U-FOOD
@@ -20340,7 +20340,7 @@ Izvrsna	O	O
 pizza	U-FOOD	U-FOOD
 
 Pizza	B-FOOD	U-FOOD
-""""	I-FOOD	I-FOOD
+""""	I-FOOD	O
 The	I-FOOD	O
 Saint	I-FOOD	O
 """"	I-FOOD	O
@@ -20391,7 +20391,7 @@ Slatke	B-FOOD	B-FOOD
 palachinke	I-FOOD	I-FOOD
 sa	I-FOOD	I-FOOD
 nutelom	I-FOOD	L-FOOD
-i	I-FOOD	I-FOOD
+i	I-FOOD	O
 vishnjom	L-FOOD	U-FOOD
 ;	O	O
 tople	O	O
@@ -20859,7 +20859,7 @@ x	O	O
 pohovanu	B-FOOD	B-FOOD
 poletinu	L-FOOD	I-FOOD
 sa	O	I-FOOD
-pavlakom	U-FOOD	U-FOOD
+pavlakom	U-FOOD	L-FOOD
 i	O	O
 kackavaljem	U-FOOD	U-FOOD
 od	O	O
@@ -21468,9 +21468,9 @@ napisali	O	O
 
 Jeli	O	O
 smo	O	O
-romanu	U-FOOD	U-FOOD
+romanu	U-FOOD	O
 i	O	O
-dijablo	U-FOOD	U-FOOD
+dijablo	U-FOOD	O
 .	O	O
 
 Pice	U-FOOD	U-FOOD
@@ -21568,8 +21568,8 @@ ali	O	O
 ok	O	O
 .	O	O
 
-NAJ	O	B-FOOD
-SENDVICI	U-FOOD	L-FOOD
+NAJ	O	O
+SENDVICI	U-FOOD	O
 U	O	O
 GRADU	O	O
 
@@ -21590,7 +21590,7 @@ min	O	O
 Vruci	O	O
 ,	O	O
 u	O	O
-domacoj	O	B-FOOD
+domacoj	O	O
 lepinji	U-FOOD	L-FOOD
 ,	O	O
 stvarno	O	O
@@ -21706,7 +21706,7 @@ bilo	O	O
 bolje	O	O
 da	O	O
 je	O	O
-pica	U-FOOD	U-FOOD
+pica	U-FOOD	B-FOOD
 slagana	O	O
 drugacije	O	O
 i	O	O
@@ -21967,7 +21967,7 @@ pivce	U-FOOD	U-FOOD
 ,	O	O
 rezanci	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
-plodovima	L-FOOD	L-FOOD
+plodovima	L-FOOD	I-FOOD
 mora	O	O
 odlicni	O	O
 ,	O	O
@@ -21985,7 +21985,7 @@ Piletina	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
 crnim	I-FOOD	I-FOOD
 pecurkama	L-FOOD	L-FOOD
-fantasnicna	O	O
+fantasnicna	O	L-FOOD
 ,	O	O
 stvarno	O	O
 je	O	O
@@ -22401,11 +22401,11 @@ priliku	O	O
 sigurno	O	O
 .	O	O
 
-Maxi	B-FOOD	O
+Maxi	B-FOOD	B-FOOD
 pljeskavica	L-FOOD	L-FOOD
 
-Maxi	B-FOOD	O
-pljeskavica	L-FOOD	U-FOOD
+Maxi	B-FOOD	B-FOOD
+pljeskavica	L-FOOD	L-FOOD
 je	O	O
 unikatna	O	O
 u	O	O
@@ -22520,8 +22520,8 @@ tim	O	O
 i	O	O
 nesto	O	O
 manje	O	O
-slana	O	O
-pica	U-FOOD	U-FOOD
+slana	O	B-FOOD
+pica	U-FOOD	L-FOOD
 .	O	O
 
 Stavljaju	O	O
@@ -22616,7 +22616,7 @@ vidljiv	O	O
 Pizza	B-FOOD	B-FOOD
 4	I-FOOD	I-FOOD
 godisnja	I-FOOD	I-FOOD
-doba	L-FOOD	O
+doba	L-FOOD	L-FOOD
 
 Vrhunski	O	O
 !	O	O
@@ -22803,7 +22803,7 @@ vruce	O	O
 Ni	O	O
 masne	O	O
 ni	O	O
-slane	O	U-FOOD
+slane	O	O
 ,	O	O
 testo	U-FOOD	U-FOOD
 tanko	O	O
@@ -23081,8 +23081,8 @@ odlican	O	O
 Pasta	U-FOOD	U-FOOD
 !	O	O
 
-Prusta	B-FOOD	O
-pasta	L-FOOD	U-FOOD
+Prusta	B-FOOD	B-FOOD
+pasta	L-FOOD	L-FOOD
 je	O	O
 bila	O	O
 predobra	O	O
@@ -23128,7 +23128,7 @@ OK	O	O
 
 SASVIM	O	O
 KOREKTNA	O	O
-PIZZA	U-FOOD	L-FOOD
+PIZZA	U-FOOD	U-FOOD
 
 Izvrsno	O	O
 ...	O	O
@@ -23539,7 +23539,7 @@ mi	O	O
 je	O	O
 poznata	O	O
 srpska	O	O
-stedljiva	O	O
+stedljiva	O	L-FOOD
 varijanta	O	O
 po	O	O
 kojoj	O	O
@@ -23620,9 +23620,9 @@ vrha	O	O
 sa	O	O
 slagom	U-FOOD	U-FOOD
 i	O	O
-prelivom	B-FOOD	O
-od	I-FOOD	I-FOOD
-jagode	L-FOOD	L-FOOD
+prelivom	B-FOOD	B-FOOD
+od	I-FOOD	O
+jagode	L-FOOD	U-FOOD
 odozgo	O	O
 ,	O	O
 sveza	O	O
@@ -23971,8 +23971,8 @@ jako	O	O
 dobri	O	O
 .	O	O
 
-Mexican	B-FOOD	O
-pizza	L-FOOD	U-FOOD
+Mexican	B-FOOD	B-FOOD
+pizza	L-FOOD	L-FOOD
 
 nemam	O	O
 reci	O	O
@@ -24028,7 +24028,7 @@ razocarao	O	O
 .	O	O
 
 marko	B-FOOD	O
-polo	L-FOOD	U-FOOD
+polo	L-FOOD	O
 bez	O	O
 priloga	O	O
 
@@ -24134,7 +24134,7 @@ odete	O	O
 .	O	O
 
 Palacinke-euro	B-FOOD	B-FOOD
-krem	I-FOOD	L-FOOD
+krem	I-FOOD	U-FOOD
 i	I-FOOD	O
 keks	L-FOOD	U-FOOD
 
@@ -24257,9 +24257,9 @@ norme	O	O
 tj.	O	O
 zadrzala	O	O
 ukus	O	O
-vesalice	U-FOOD	U-FOOD
+vesalice	U-FOOD	B-FOOD
 na	O	I-FOOD
-rostilju	O	U-FOOD
+rostilju	O	L-FOOD
 a	O	O
 obogatila	O	O
 ga	O	O
@@ -24469,7 +24469,7 @@ ponovo	O	O
 dam	O	O
 sansu	O	O
 Marku	O	O
-Polu	O	O
+Polu	O	L-FOOD
 .	O	O
 
 Sad	O	O
@@ -24555,9 +24555,9 @@ da	O	O
 se	O	O
 zove	O	O
 Italijanska	O	B-FOOD
-lopta	O	O
-od	O	O
-tjesta	L-FOOD	O
+lopta	O	I-FOOD
+od	O	I-FOOD
+tjesta	L-FOOD	L-FOOD
 !	O	O
 
 2	O	O
@@ -24687,7 +24687,7 @@ od	O	I-FOOD
 kackavalja	U-FOOD	L-FOOD
 )	O	O
 natopljenu	O	B-FOOD
-picu	U-FOOD	L-FOOD
+picu	U-FOOD	U-FOOD
 !!!	O	O
 
 Razocarenje	O	O
@@ -24705,8 +24705,8 @@ DIAVOLO	B-FOOD	B-FOOD
 picu	L-FOOD	L-FOOD
 i	O	O
 savrsen	O	O
-ITALIJANSKI	B-FOOD	O
-DJEVREK	L-FOOD	O
+ITALIJANSKI	B-FOOD	U-FOOD
+DJEVREK	L-FOOD	L-FOOD
 !	O	O
 
 Mislim	O	O
@@ -25136,7 +25136,7 @@ je	O	O
 dosta	O	O
 ,	O	O
 ali	O	O
-hej	O	O
+hej	O	U-FOOD
 ,	O	O
 jedini	O	O
 su	O	O
@@ -25170,8 +25170,8 @@ Solidno	O	O
 ...	O	O
 
 Marko	O	O
-Polo	O	O
-Palacinke	U-FOOD	U-FOOD
+Polo	O	I-FOOD
+Palacinke	U-FOOD	L-FOOD
 ..	O	O
 
 relativno	O	O
@@ -25390,10 +25390,10 @@ dosta	O	O
 ...	O	O
 
 Marko	B-FOOD	O
-Polo	I-FOOD	O
-Pica	L-FOOD	U-FOOD
+Polo	I-FOOD	I-FOOD
+Pica	L-FOOD	L-FOOD
 
-Dosada	O	O
+Dosada	O	U-FOOD
 najbolja	O	O
 pica	U-FOOD	U-FOOD
 od	O	O
@@ -26126,7 +26126,7 @@ je	O	O
 Specijal	B-FOOD	B-FOOD
 pizza	L-FOOD	L-FOOD
 i	O	O
-taljatele	B-FOOD	U-FOOD
+taljatele	B-FOOD	B-FOOD
 Pomodoro	L-FOOD	L-FOOD
 .	O	O
 
@@ -26394,7 +26394,7 @@ ukusna	O	O
 ali	O	O
 je	O	O
 porcija	O	O
-taljatela	U-FOOD	B-FOOD
+taljatela	U-FOOD	U-FOOD
 DUPLO	O	O
 manja	O	O
 od	O	O
@@ -26560,7 +26560,7 @@ i	O	O
 na	O	O
 lagano	O	O
 presusenoj	O	O
-piletini	U-FOOD	U-FOOD
+piletini	U-FOOD	L-FOOD
 ,	O	O
 no	O	O
 srecom	O	O
@@ -27046,8 +27046,8 @@ lazanje	U-FOOD	U-FOOD
 su	O	O
 fenomenalne	O	O
 ,	O	O
-pasta	B-FOOD	B-FOOD
-bolognjese	L-FOOD	O
+pasta	B-FOOD	U-FOOD
+bolognjese	L-FOOD	L-FOOD
 onako	O	O
 .	O	O
 
@@ -27173,7 +27173,7 @@ videli	O	O
 pogledali	O	O
 smo	O	O
 seu	O	O
-neverici	O	O
+neverici	O	L-FOOD
 i	O	O
 umalo	O	O
 da	O	O
@@ -27295,7 +27295,7 @@ nakrivo	O	O
 stajale	O	O
 i	O	O
 svi	O	O
-zacini	O	O
+zacini	O	U-FOOD
 su	O	O
 pobegli	O	O
 na	O	O
@@ -27328,7 +27328,7 @@ sto	O	O
 je	O	O
 pizza	U-FOOD	U-FOOD
 bila	O	O
-nakrivljena	O	O
+nakrivljena	O	U-FOOD
 i	O	O
 gnjecava	O	O
 ,	O	O
@@ -27944,7 +27944,7 @@ mene	O	O
 bio	O	O
 dan	O	O
 sa	O	O
-lignjama	U-FOOD	O
+lignjama	U-FOOD	U-FOOD
 :-)	O	O
 
 Naime	O	O
@@ -28039,7 +28039,7 @@ lignje	L-FOOD	L-FOOD
 ,	O	O
 iako	O	O
 preferiram	O	O
-punjene	O	O
+punjene	O	B-FOOD
 sa	O	I-FOOD
 prsutom	U-FOOD	L-FOOD
 i	O	O
@@ -28511,7 +28511,7 @@ prijateljima	O	O
 Na	O	O
 slici	O	O
 je	O	O
-kalcona	U-FOOD	B-FOOD
+kalcona	U-FOOD	U-FOOD
 presecena	O	O
 na	O	O
 pola	O	O
@@ -28808,7 +28808,7 @@ jela	O	O
 Cak	O	O
 ni	O	O
 poklonjeni	O	O
-kolachi	U-FOOD	O
+kolachi	U-FOOD	U-FOOD
 (	O	O
 vrlo	O	O
 ukusni	O	O
@@ -28879,13 +28879,13 @@ na	O	O
 sastojcima	O	O
 .	O	O
 
-Pogledajte	O	U-FOOD
+Pogledajte	O	O
 i	O	O
 sami	O	O
 na	O	O
 slici	O	O
 ,	O	O
-prebrojte	O	B-FOOD
+prebrojte	O	O
 parcice	O	O
 sunke	U-FOOD	U-FOOD
 (	O	O
@@ -29492,8 +29492,8 @@ coveka	O	O
 Narucili	O	O
 smo	O	O
 2	O	O
-maxi	B-FOOD	O
-pizze-jednu	L-FOOD	O
+maxi	B-FOOD	B-FOOD
+pizze-jednu	L-FOOD	I-FOOD
 kapricozu	U-FOOD	U-FOOD
 sa	O	O
 extra	O	O
@@ -29713,7 +29713,7 @@ kutiju	O	O
 cokoladnog	B-FOOD	B-FOOD
 keksa	L-FOOD	L-FOOD
 :)	O	O
-JEEEEJ	O	U-FOOD
+JEEEEJ	O	O
 .	O	O
 
 Taman	O	O
@@ -29870,7 +29870,7 @@ zagorela	O	O
 neke	O	O
 od	O	O
 susenih	B-FOOD	O
-pecuraka	L-FOOD	L-FOOD
+pecuraka	L-FOOD	U-FOOD
 nedovoljno	O	O
 omeksale	O	O
 ,	O	O
@@ -30180,8 +30180,8 @@ socna	O	O
 a	O	O
 salata	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
-plodovima	I-FOOD	U-FOOD
-mora	L-FOOD	O
+plodovima	I-FOOD	I-FOOD
+mora	L-FOOD	L-FOOD
 je	O	O
 super	O	O
 .	O	O
@@ -30275,7 +30275,7 @@ iz	O	O
 kraja	O	O
 """"	O	O
 pomenutih	O	O
-povrcki	O	U-FOOD
+povrcki	O	L-FOOD
 ima	O	O
 cele	O	O
 godine	O	O
@@ -30421,7 +30421,7 @@ da	O	O
 ste	O	O
 je	O	O
 nazvali	O	O
-con	B-FOOD	B-FOOD
+con	B-FOOD	O
 cipolle	L-FOOD	O
 .	O	O
 
@@ -30451,7 +30451,7 @@ u	O	O
 gradu	O	O
 
 Sjajan	O	O
-tanjir	B-FOOD	O
+tanjir	B-FOOD	B-FOOD
 prsute	I-FOOD	U-FOOD
 i	I-FOOD	O
 sira	L-FOOD	U-FOOD
@@ -30490,8 +30490,8 @@ u	O	O
 komentarima	O	O
 uzeo	O	O
 sam	O	O
-4	B-FOOD	O
-sira	L-FOOD	U-FOOD
+4	B-FOOD	B-FOOD
+sira	L-FOOD	L-FOOD
 i	O	O
 pokajao	O	O
 se	O	O
@@ -30781,7 +30781,7 @@ fantasticna	O	O
 
 Bogata	O	O
 raznim	O	O
-povrcem	U-FOOD	L-FOOD
+povrcem	U-FOOD	U-FOOD
 ,	O	O
 divni	O	O
 rastopljeni	O	B-FOOD
@@ -30865,8 +30865,8 @@ malo	O	O
 masnije	O	O
 slanine	U-FOOD	U-FOOD
 i	O	O
-crnog	B-FOOD	B-FOOD
-luka	L-FOOD	L-FOOD
+crnog	B-FOOD	O
+luka	L-FOOD	U-FOOD
 .	O	O
 
 Mozda	O	O
@@ -31059,7 +31059,7 @@ sa	I-FOOD	I-FOOD
 vrste	I-FOOD	I-FOOD
 mesa	L-FOOD	L-FOOD
 i	O	O
-Campagna	U-FOOD	O
+Campagna	U-FOOD	U-FOOD
 ,	O	O
 sa	O	O
 cherry	B-FOOD	B-FOOD
@@ -31079,7 +31079,7 @@ odusevljen	O	O
 Nema	O	O
 kraja	O	O
 pozitivnim	O	O
-iznenadjenjima	O	O
+iznenadjenjima	O	U-FOOD
 od	O	O
 strane	O	O
 ljudi	O	O
@@ -31106,8 +31106,8 @@ Narucili	O	O
 smo	O	O
 """"	O	O
 Tortellini	B-FOOD	U-FOOD
-,	I-FOOD	I-FOOD
-panna	I-FOOD	I-FOOD
+,	I-FOOD	O
+panna	I-FOOD	B-FOOD
 e	I-FOOD	I-FOOD
 prosciutto	L-FOOD	L-FOOD
 """"	O	O
@@ -31401,12 +31401,12 @@ Hvala	O	O
 Miodrag	O	O
 Mitrovic	O	O
 ,	O	O
-direktor	O	U-FOOD
+direktor	O	O
 
 Funkcija	O	O
 za	O	O
 pravne	O	O
-poslove	O	L-FOOD
+poslove	O	O
 
 Telekom	O	O
 Srbija	O	O
@@ -31856,8 +31856,8 @@ povrca	U-FOOD	U-FOOD
 .	O	O
 
 """"	O	O
-Salsiccia	B-FOOD	U-FOOD
-,	I-FOOD	O
+Salsiccia	B-FOOD	B-FOOD
+,	I-FOOD	I-FOOD
 scamorza	I-FOOD	I-FOOD
 affumicata	I-FOOD	I-FOOD
 ,	I-FOOD	I-FOOD
@@ -32012,7 +32012,7 @@ koju	O	O
 je	O	O
 pica	U-FOOD	U-FOOD
 isecena	O	O
-odvojila	O	O
+odvojila	O	U-FOOD
 su	O	O
 se	O	O
 ,	O	O
@@ -32109,7 +32109,7 @@ smisliti	O	O
 
 ODLICNA	O	O
 PIZZA	U-FOOD	U-FOOD
---	O	I-FOOD
+--	O	O
 EXCELLENT	O	L-FOOD
 
 PIZZA	U-FOOD	U-FOOD
@@ -32118,9 +32118,9 @@ IZUZETNO	O	O
 KVALITETNA	O	O
 .	O	O
 
-PIZZA	U-FOOD	U-FOOD
+PIZZA	U-FOOD	B-FOOD
 IS	O	I-FOOD
-GOURMET	O	O
+GOURMET	O	I-FOOD
 QUALITY	O	L-FOOD
 .	O	O
 
@@ -32172,7 +32172,7 @@ opada	O	O
 ...	O	O
 
 Spanski	B-FOOD	O
-prsti	L-FOOD	O
+prsti	L-FOOD	L-FOOD
 
 Sasvim	O	O
 pristojna	O	O
@@ -32239,8 +32239,8 @@ Bravo	O	O
 
 Odlicno	O	O
 
-Piza	B-FOOD	U-FOOD
-Meksikana	L-FOOD	O
+Piza	B-FOOD	B-FOOD
+Meksikana	L-FOOD	L-FOOD
 je	O	O
 odlicna	O	O
 ,	O	O
@@ -32294,8 +32294,8 @@ je	O	O
 falila	O	O
 jos	O	O
 koja	O	O
-ljuta	B-FOOD	O
-papricica	L-FOOD	U-FOOD
+ljuta	B-FOOD	B-FOOD
+papricica	L-FOOD	L-FOOD
 bila	O	O
 bi	O	O
 najbolja	O	O
@@ -32687,7 +32687,7 @@ min	O	O
 
 Svaka	O	O
 cast	O	O
-Tokyo	O	U-FOOD
+Tokyo	O	O
 !	O	O
 
 Stvarno	O	O
@@ -32748,7 +32748,7 @@ Vrlo	O	O
 dobar	O	O
 2	O	O
 
-Losos	U-FOOD	O
+Losos	U-FOOD	B-FOOD
 upecan	O	L-FOOD
 pre	O	O
 2	O	O
@@ -32819,7 +32819,7 @@ sa	I-FOOD	I-FOOD
 sosom	I-FOOD	I-FOOD
 od	I-FOOD	I-FOOD
 plodova	I-FOOD	I-FOOD
-mora	L-FOOD	O
+mora	L-FOOD	L-FOOD
 (	O	O
 opet	O	O
 po	O	O
@@ -32874,8 +32874,8 @@ sto	O	O
 je	O	O
 najvaznije	O	O
 bogat	O	O
-plodovima	B-FOOD	U-FOOD
-mora	L-FOOD	O
+plodovima	B-FOOD	B-FOOD
+mora	L-FOOD	L-FOOD
 i	O	O
 sve	O	O
 je	O	O
@@ -33133,7 +33133,7 @@ pripremljeno	O	O
 +	O	O
 
 Dobar	O	O
-Indijski	B-FOOD	O
+Indijski	B-FOOD	B-FOOD
 Orah	L-FOOD	L-FOOD
 
 Odlicna	O	O
@@ -33177,9 +33177,9 @@ Porucene	O	O
 2	O	O
 porcije	O	O
 :	O	O
-slatko	B-FOOD	O
-kisela	I-FOOD	O
-svinjetina	I-FOOD	B-FOOD
+slatko	B-FOOD	B-FOOD
+kisela	I-FOOD	I-FOOD
+svinjetina	I-FOOD	I-FOOD
 sa	I-FOOD	I-FOOD
 nudlama	L-FOOD	L-FOOD
 -	O	O
@@ -33722,8 +33722,8 @@ se	O	O
 jede	O	O
 ,	O	O
 a	O	O
-piletina	B-FOOD	U-FOOD
-sa	I-FOOD	O
+piletina	B-FOOD	B-FOOD
+sa	I-FOOD	I-FOOD
 indijakim	I-FOOD	I-FOOD
 orahom	L-FOOD	L-FOOD
 je	O	O
@@ -33778,13 +33778,13 @@ prolecne	B-FOOD	B-FOOD
 rolnice	I-FOOD	I-FOOD
 sa	I-FOOD	I-FOOD
 povrcem	L-FOOD	L-FOOD
-i	O	I-FOOD
+i	O	O
 kari	B-FOOD	B-FOOD
 pirinac	I-FOOD	L-FOOD
 preukusno	L-FOOD	O
 !	O	O
 
-Rolnica	B-FOOD	O
+Rolnica	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
 fetom	L-FOOD	L-FOOD
 
@@ -34037,7 +34037,7 @@ odgovara	O	O
 kao	O	O
 i	O	O
 njihove	O	O
-kiselo	B-FOOD	U-FOOD
+kiselo	B-FOOD	B-FOOD
 /	I-FOOD	O
 ljute	I-FOOD	B-FOOD
 corbe	L-FOOD	L-FOOD
@@ -34188,7 +34188,7 @@ dosta	O	O
 tvrd	O	O
 .	O	O
 
-Teletine	U-FOOD	U-FOOD
+Teletine	U-FOOD	O
 jako	O	O
 malo	O	O
 .	O	O
@@ -34201,7 +34201,7 @@ solidan	O	O
 piletina	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
 kikirikijem	I-FOOD	L-FOOD
-,	I-FOOD	I-FOOD
+,	I-FOOD	O
 sa	I-FOOD	O
 ananasom	L-FOOD	U-FOOD
 i	O	O
@@ -34241,15 +34241,15 @@ smo	O	O
 se	O	O
 .	O	O
 
-slatko	B-FOOD	I-FOOD
+slatko	B-FOOD	O
 kiselo	I-FOOD	I-FOOD
 secuan	I-FOOD	I-FOOD
 piletina	L-FOOD	L-FOOD
 
-slatko	B-FOOD	I-FOOD
+slatko	B-FOOD	O
 kiselo	I-FOOD	I-FOOD
-blago	I-FOOD	O
-ljuti	I-FOOD	O
+blago	I-FOOD	I-FOOD
+ljuti	I-FOOD	I-FOOD
 secuan	I-FOOD	I-FOOD
 piletina	L-FOOD	L-FOOD
 ,	O	O
@@ -34395,7 +34395,7 @@ totalno	O	O
 .	O	O
 
 Fale	O	O
-zacini	O	O
+zacini	O	U-FOOD
 definitivno	O	O
 .	O	O
 
@@ -34524,12 +34524,12 @@ nisu	O	O
 duplirali	O	O
 pa	O	O
 je	O	O
-sirce	U-FOOD	U-FOOD
+sirce	U-FOOD	O
 iscurelo	O	O
 .	O	O
 
 Bilo	O	O
-di	O	O
+di	O	U-FOOD
 odlicno	O	O
 kad	O	O
 bi	O	O
@@ -34659,8 +34659,8 @@ pirinca	U-FOOD	U-FOOD
 i	O	O
 jednu	O	O
 porciju	O	O
-pohovanih	B-FOOD	O
-banana	L-FOOD	U-FOOD
+pohovanih	B-FOOD	B-FOOD
+banana	L-FOOD	L-FOOD
 .	O	O
 
 Hrana	O	O
@@ -34774,7 +34774,7 @@ cena	O	O
 .	O	O
 
 Umesto	O	O
-pohovanih	B-FOOD	O
+pohovanih	B-FOOD	B-FOOD
 banana	L-FOOD	U-FOOD
 smo	O	O
 dobili	O	O
@@ -34859,8 +34859,8 @@ szechuan	O	O
 
 Narucio	O	O
 sam	O	O
-sezchuan	B-FOOD	O
-piletinu	L-FOOD	U-FOOD
+sezchuan	B-FOOD	B-FOOD
+piletinu	L-FOOD	L-FOOD
 velicina	O	O
 porcije	O	O
 dobra	O	O
@@ -34912,7 +34912,7 @@ Cena	O	O
 480.00	O	O
 RSD	O	O
 
-----------	O	U-FOOD
+----------	O	O
 Dobra	O	O
 je	O	O
 ,	O	O
@@ -34935,12 +34935,12 @@ pirinac	U-FOOD	U-FOOD
 Ocena	O	O
 3	O	O
 +	O	O
------------------	O	U-FOOD
+-----------------	O	O
 
 1	O	O
 x	O	O
 Pirinac	B-FOOD	U-FOOD
-,	I-FOOD	I-FOOD
+,	I-FOOD	O
 krastavac	I-FOOD	U-FOOD
 ,	I-FOOD	O
 sargarepa	I-FOOD	U-FOOD
@@ -34961,7 +34961,7 @@ Cena	O	O
 70.00	O	O
 RSD	O	O
 
------------	O	B-FOOD
+-----------	O	O
 Pirinac	U-FOOD	U-FOOD
 ispunjava	O	O
 standarde	O	O
@@ -34988,7 +34988,7 @@ Cena	O	O
 150.00	O	O
 RSD	O	O
 
------------	O	U-FOOD
+-----------	O	O
 Zaista	O	O
 odlicna	O	O
 i	O	O
@@ -35029,7 +35029,7 @@ Cena	O	O
 150.00	O	O
 RSD	O	O
 
----------	O	U-FOOD
+---------	O	O
 Jedna	O	O
 banana	U-FOOD	U-FOOD
 isecena	O	O
@@ -35053,7 +35053,7 @@ ukusne	O	O
 
 Ocena	O	O
 3	O	O
--------------	O	U-FOOD
+-------------	O	O
 
 Dostava	O	O
 je	O	O
@@ -35210,7 +35210,7 @@ takodje	O	O
 Mogla	O	O
 bi	O	O
 neka	O	O
-pecurkica	U-FOOD	U-FOOD
+pecurkica	U-FOOD	O
 vise	O	O
 ,	O	O
 ali	O	O
@@ -35636,7 +35636,7 @@ sjajne	O	O
 Piletina	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
 indijskim	I-FOOD	I-FOOD
-orahom-Malo	L-FOOD	L-FOOD
+orahom-Malo	L-FOOD	O
 slanija	O	O
 ,	O	O
 ali	O	O
@@ -36162,8 +36162,8 @@ svemu	O	O
 cista	O	O
 petica	O	O
 
-Mini	O	B-FOOD
-jubilej	O	L-FOOD
+Mini	O	O
+jubilej	O	O
 
 Danas	O	O
 smo	O	O
@@ -36246,9 +36246,9 @@ sam	O	O
 uspeo	O	O
 pojesti	O	O
 carsku	B-FOOD	B-FOOD
-piletinu	I-FOOD	L-FOOD
+piletinu	I-FOOD	I-FOOD
 sa	I-FOOD	I-FOOD
-pirincem	L-FOOD	U-FOOD
+pirincem	L-FOOD	L-FOOD
 odjednom	O	O
 .	O	O
 
@@ -36406,12 +36406,12 @@ jako	O	O
 ukusna	O	O
 ali	O	O
 budite	O	O
-obazrivi	O	O
+obazrivi	O	B-FOOD
 sa	O	I-FOOD
 ljutim	O	L-FOOD
 ...	O	O
 
-Zamenite	O	B-FOOD
+Zamenite	O	O
 pirinac	U-FOOD	L-FOOD
 
 Chaos	O	O
@@ -36545,8 +36545,8 @@ piletine	U-FOOD	U-FOOD
 i	O	O
 teletine	U-FOOD	U-FOOD
 dobili	O	O
-dvije	O	O
-piletine	U-FOOD	L-FOOD
+dvije	O	B-FOOD
+piletine	U-FOOD	U-FOOD
 .	O	O
 
 Al	O	O
@@ -36680,7 +36680,7 @@ EXTRA	O	O
 Moglo	O	O
 je	O	O
 bez	O	O
-kineskog	B-FOOD	O
+kineskog	B-FOOD	B-FOOD
 hleba	L-FOOD	L-FOOD
 (	O	O
 u	O	O
@@ -36992,8 +36992,8 @@ prolecne	B-FOOD	B-FOOD
 rolnice	I-FOOD	I-FOOD
 sa	I-FOOD	I-FOOD
 povrcem	L-FOOD	L-FOOD
-i	O	I-FOOD
-sa	O	I-FOOD
+i	O	O
+sa	O	O
 mesom	U-FOOD	U-FOOD
 ,	O	O
 i	O	O
@@ -37113,7 +37113,7 @@ pecurkama	L-FOOD	L-FOOD
 (	O	O
 bambus	U-FOOD	U-FOOD
 trenutno	O	O
-nemaju-javili	O	O
+nemaju-javili	O	L-FOOD
 nakon	O	O
 prijema	O	O
 porudzbune	O	O
@@ -37165,7 +37165,7 @@ kasnije	O	O
 poziv	O	O
 ,	O	O
 nemaju	O	O
-racice	U-FOOD	U-FOOD
+racice	U-FOOD	O
 .	O	O
 
 Ok	O	O
@@ -37292,8 +37292,8 @@ Ukus	O	O
 su	O	O
 malo	O	O
 pokvarile	O	O
-rolnice	U-FOOD	B-FOOD
-(	O	I-FOOD
+rolnice	U-FOOD	U-FOOD
+(	O	O
 sa	O	O
 povrcem	U-FOOD	U-FOOD
 i	O	O
@@ -37879,7 +37879,7 @@ sedam	I-FOOD	I-FOOD
 zacina	L-FOOD	L-FOOD
 
 -	O	O
-Pirinac	B-FOOD	U-FOOD
+Pirinac	B-FOOD	B-FOOD
 beli	L-FOOD	L-FOOD
 .	O	O
 
@@ -38334,14 +38334,14 @@ porudzbine	O	O
 pacetina	B-FOOD	O
 u	I-FOOD	O
 slatko-kis-ljutom	I-FOOD	O
-sosu	L-FOOD	L-FOOD
+sosu	L-FOOD	U-FOOD
 ,	O	O
 mala	O	O
 porcija	O	O
 i	O	O
 pirinac	U-FOOD	U-FOOD
 -	O	O
-PRVOKLASNO	O	U-FOOD
+PRVOKLASNO	O	O
 i	O	O
 u	O	O
 skladu	O	O
@@ -38757,7 +38757,7 @@ stapice	O	O
 i	O	O
 salvete	O	O
 i	O	O
-viljuskice	O	U-FOOD
+viljuskice	O	O
 ...	O	O
 
 Mislim	O	O
@@ -39080,8 +39080,8 @@ veoma	O	O
 debelo	O	O
 i	O	O
 seceno	O	U-FOOD
-na	O	O
-uzasavajuce	O	O
+na	O	I-FOOD
+uzasavajuce	O	L-FOOD
 velike	O	O
 komade	O	O
 !	O	O
@@ -39240,9 +39240,9 @@ su	O	O
 super	O	O
 !	O	O
 
-Paun	O	O
-Lira	B-FOOD	O
-Pizza	L-FOOD	U-FOOD
+Paun	O	B-FOOD
+Lira	B-FOOD	I-FOOD
+Pizza	L-FOOD	L-FOOD
 
 Prelepa	O	O
 taman	O	O
@@ -39275,7 +39275,7 @@ vocnu	B-FOOD	B-FOOD
 salatu	L-FOOD	L-FOOD
 sa	O	O
 dodatkom	O	O
-samk	B-FOOD	O
+samk	B-FOOD	B-FOOD
 cimeta	L-FOOD	L-FOOD
 ,	O	O
 a	O	O
@@ -39284,8 +39284,8 @@ mi	O	O
 pored	O	O
 cimeta	U-FOOD	B-FOOD
 sa	O	I-FOOD
-slagom	U-FOOD	I-FOOD
-i	O	I-FOOD
+slagom	U-FOOD	L-FOOD
+i	O	O
 orasima	U-FOOD	U-FOOD
 .	O	O
 
@@ -39635,8 +39635,8 @@ put	O	O
 Svaka	O	O
 cast	O	O
 
-pica	B-FOOD	U-FOOD
-kapricoza	L-FOOD	U-FOOD
+pica	B-FOOD	B-FOOD
+kapricoza	L-FOOD	L-FOOD
 
 Pica	U-FOOD	U-FOOD
 je	O	O
@@ -39705,7 +39705,7 @@ i	O	O
 velika	O	O
 je	O	O
 muka	O	O
-objasniti	O	O
+objasniti	O	U-FOOD
 ljudima	O	O
 sta	O	O
 hocu	O	O
@@ -40014,8 +40014,8 @@ te	O	O
 savrseno	O	O
 -	O	O
 pravo	O	O
-pizzza	B-FOOD	O
-testo	L-FOOD	U-FOOD
+pizzza	B-FOOD	B-FOOD
+testo	L-FOOD	L-FOOD
 .	O	O
 
 Fil	O	O
@@ -40413,7 +40413,7 @@ mesano	B-FOOD	B-FOOD
 meso	L-FOOD	L-FOOD
 i	O	O
 rolovano	B-FOOD	B-FOOD
-prase	L-FOOD	O
+prase	L-FOOD	L-FOOD
 
 Sta	O	O
 reci	O	O
@@ -40582,7 +40582,7 @@ od	O	O
 -	O	O
 3	O	O
 preostale	O	O
-rolovane	O	U-FOOD
+rolovane	O	O
 .	O	O
 
 Sve	O	O
@@ -40726,7 +40726,7 @@ Narucili	O	O
 smo	O	O
 juce	O	O
 jedno	O	O
-gedzovalce	U-FOOD	U-FOOD
+gedzovalce	U-FOOD	O
 ,	O	O
 sada	O	O
 opet	O	O
@@ -40784,7 +40784,7 @@ veliko	O	O
 ali	O	O
 ima	O	O
 dosta	O	O
-lufta	O	O
+lufta	O	U-FOOD
 izmedju	O	O
 mesa	U-FOOD	U-FOOD
 i	O	O
@@ -40879,7 +40879,7 @@ dvoje	O	O
 
 Sugestija	O	O
 :	O	O
-produzite	O	U-FOOD
+produzite	O	O
 leti	O	O
 radno	O	O
 vreme	O	O
@@ -41009,9 +41009,9 @@ kvalitetno	O	O
 !	O	O
 
 Gedzino	B-FOOD	B-FOOD
-ovalce	L-FOOD	L-FOOD
-zasluzuje	O	O
-pohvalce	O	O
+ovalce	L-FOOD	I-FOOD
+zasluzuje	O	I-FOOD
+pohvalce	O	L-FOOD
 
 Sve	O	O
 pohvale	O	O
@@ -41028,8 +41028,8 @@ odnos	O	O
 prema	O	O
 nama	O	O
 korisnicima	O	O
-4	O	O
-vrste	O	O
+4	O	B-FOOD
+vrste	O	I-FOOD
 mesa	U-FOOD	L-FOOD
 potpuno	O	O
 jednaka	O	O
@@ -41479,8 +41479,8 @@ bila	O	O
 gomila	O	O
 pirinca	U-FOOD	U-FOOD
 i	O	O
-crnog	B-FOOD	B-FOOD
-luka	L-FOOD	L-FOOD
+crnog	B-FOOD	O
+luka	L-FOOD	U-FOOD
 sa	O	O
 par	O	O
 zrna	O	O
@@ -41686,7 +41686,7 @@ hrana	O	O
 ima	O	O
 mnogo	O	O
 divnih	O	O
-zacina	U-FOOD	O
+zacina	U-FOOD	U-FOOD
 i	O	O
 soseva	U-FOOD	U-FOOD
 ,	O	O
@@ -42188,7 +42188,7 @@ mesu	U-FOOD	U-FOOD
 u	O	O
 burrito	U-FOOD	U-FOOD
 i	O	O
-quesadillama	U-FOOD	O
+quesadillama	U-FOOD	U-FOOD
 ali	O	O
 su	O	O
 im	O	O
@@ -42355,10 +42355,10 @@ sa	I-FOOD	I-FOOD
 bananom	I-FOOD	I-FOOD
 ,	I-FOOD	I-FOOD
 medom	I-FOOD	L-FOOD
-,	I-FOOD	I-FOOD
+,	I-FOOD	O
 cimetom	I-FOOD	U-FOOD
 ,	I-FOOD	I-FOOD
-secerom	I-FOOD	I-FOOD
+secerom	I-FOOD	U-FOOD
 i	I-FOOD	I-FOOD
 cokoladom	L-FOOD	L-FOOD
 PREUKUSNO	O	O
@@ -42383,7 +42383,7 @@ konacno	O	O
 dobio	O	O
 i	O	O
 sve	O	O
-soseve	U-FOOD	U-FOOD
+soseve	U-FOOD	O
 (	O	O
 tj	O	O
 salsu	U-FOOD	U-FOOD
@@ -42482,7 +42482,7 @@ Mesa	U-FOOD	U-FOOD
 nigde	O	O
 ,	O	O
 a	O	O
-palacinci	U-FOOD	O
+palacinci	U-FOOD	U-FOOD
 siromasno	O	O
 nafilovani	O	O
 .	O	O
@@ -42711,8 +42711,8 @@ Olee	L-FOOD	L-FOOD
 
 Narucena	O	O
 dva	O	O
-Spicy	B-FOOD	U-FOOD
-mix-a	L-FOOD	O
+Spicy	B-FOOD	B-FOOD
+mix-a	L-FOOD	L-FOOD
 i	O	O
 jedan	O	O
 Nachos	B-FOOD	B-FOOD
@@ -42836,8 +42836,8 @@ ljudi	O	O
 STA	O	O
 JE	O	O
 TO	O	O
-SA	O	U-FOOD
-KACKAVALJEM	U-FOOD	O
+SA	O	B-FOOD
+KACKAVALJEM	U-FOOD	L-FOOD
 ???	O	O
 
 Bilo	O	O
@@ -43223,7 +43223,7 @@ Standardno	O	O
 dobro	O	O
 ...	O	O
 
-City	B-FOOD	O
+City	B-FOOD	B-FOOD
 pizza	L-FOOD	U-FOOD
 
 Ok	O	O
@@ -43482,7 +43482,7 @@ kecap	U-FOOD	U-FOOD
 umesto	O	O
 pelata	U-FOOD	U-FOOD
 (	O	O
-iseckani	O	O
+iseckani	O	U-FOOD
 oljusteni	O	O
 paradajz	U-FOOD	U-FOOD
 iz	O	O
@@ -44310,7 +44310,7 @@ palacinke	L-FOOD	L-FOOD
 #1	O	O
 i	O	O
 palacinke	B-FOOD	U-FOOD
-nutela-plazma-visnja	L-FOOD	L-FOOD
+nutela-plazma-visnja	L-FOOD	O
 .	O	O
 
 Tuna	B-FOOD	B-FOOD
@@ -44436,13 +44436,13 @@ bih	O	O
 ga	O	O
 .	O	O
 
-Grilovani	B-FOOD	O
+Grilovani	B-FOOD	U-FOOD
 parcici	I-FOOD	O
 piletine	L-FOOD	U-FOOD
 ,	O	O
 grilovano	B-FOOD	B-FOOD
-povrce	L-FOOD	I-FOOD
-(	O	I-FOOD
+povrce	L-FOOD	L-FOOD
+(	O	O
 paprika	U-FOOD	U-FOOD
 ,	O	O
 krastavac	U-FOOD	U-FOOD
@@ -44709,7 +44709,7 @@ cheesburgera	L-FOOD	O
 i	O	O
 dobili	O	O
 dve	O	O
-pleljskavice	U-FOOD	U-FOOD
+pleljskavice	U-FOOD	O
 na	O	O
 sprat	O	O
 sa	O	O
@@ -44775,11 +44775,11 @@ svemu	O	O
 preporuka	O	O
 !	O	O
 
-Cizburger	U-FOOD	U-FOOD
+Cizburger	U-FOOD	O
 i	O	O
 palacinie	U-FOOD	O
 
-Dupli	B-FOOD	O
+Dupli	B-FOOD	B-FOOD
 cizburger	L-FOOD	L-FOOD
 odlican	O	O
 ,	O	O
@@ -44953,8 +44953,8 @@ Zelena	B-FOOD	B-FOOD
 salata	L-FOOD	L-FOOD
 gnjecava	O	O
 ,	O	O
-paradajz	U-FOOD	B-FOOD
-nezreo	O	L-FOOD
+paradajz	U-FOOD	U-FOOD
+nezreo	O	O
 .	O	O
 
 Sve	O	O
@@ -45578,7 +45578,7 @@ ljubazni	O	O
 dostavljac	O	O
 saopstio	O	O
 da	O	O
-cezar	U-FOOD	U-FOOD
+cezar	U-FOOD	O
 nije	O	O
 u	O	O
 paketu	O	O
@@ -45801,7 +45801,7 @@ sada	O	O
 
 Spagete	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
-plodovima	I-FOOD	L-FOOD
+plodovima	I-FOOD	I-FOOD
 mora	L-FOOD	L-FOOD
 takodje	O	O
 .	O	O
@@ -46066,8 +46066,8 @@ vama	O	O
 utiske	O	O
 o	O	O
 dimljenim	B-FOOD	B-FOOD
-krilcima	I-FOOD	O
-na	I-FOOD	I-FOOD
+krilcima	I-FOOD	I-FOOD
+na	I-FOOD	O
 zaru	L-FOOD	U-FOOD
 .	O	O
 
@@ -46246,7 +46246,7 @@ ne	O	O
 peceno	O	O
 i	O	O
 puno	O	O
-kozice	O	U-FOOD
+kozice	O	O
 i	O	O
 neke	O	O
 hrakavice	O	O
@@ -46301,7 +46301,7 @@ SAVRSENEEE	O	O
 .	O	O
 
 Testo	U-FOOD	U-FOOD
-tamman	O	O
+tamman	O	L-FOOD
 kako	O	O
 treba	O	O
 bez	O	O
@@ -46347,7 +46347,7 @@ akciju	O	O
 Beli	B-FOOD	B-FOOD
 luk	L-FOOD	L-FOOD
 u	O	O
-kapricozi	U-FOOD	U-FOOD
+kapricozi	U-FOOD	L-FOOD
 ,	O	O
 ja	O	O
 nzm	O	O
@@ -47334,8 +47334,8 @@ Poruceno	O	O
 2	O	O
 x	O	O
 Pileci	B-FOOD	B-FOOD
-giros	I-FOOD	L-FOOD
-mali	L-FOOD	O
+giros	I-FOOD	I-FOOD
+mali	L-FOOD	L-FOOD
 
 1	O	O
 x	O	O
@@ -47761,7 +47761,7 @@ U	O	O
 proseku	O	O
 po	O	O
 10-tak	O	O
-velikih	B-FOOD	O
+velikih	B-FOOD	B-FOOD
 girosa	L-FOOD	L-FOOD
 .	O	O
 
@@ -47843,7 +47843,7 @@ Promasaj	O	O
 
 Piletina	U-FOOD	U-FOOD
 u	O	O
-girosu	U-FOOD	U-FOOD
+girosu	U-FOOD	L-FOOD
 kao	O	O
 i	O	O
 uvek	O	O
@@ -48188,7 +48188,7 @@ Ljudi	O	O
 ,	O	O
 narucite	O	O
 hot	B-FOOD	O
-dog	L-FOOD	U-FOOD
+dog	L-FOOD	L-FOOD
 da	O	O
 se	O	O
 nacudite	O	O
@@ -48205,7 +48205,7 @@ dinara	O	O
 sendvici	U-FOOD	U-FOOD
 i	O	O
 hot	B-FOOD	B-FOOD
-dog	L-FOOD	U-FOOD
+dog	L-FOOD	L-FOOD
 idu	O	O
 u	O	O
 istoj	O	O
@@ -48366,9 +48366,9 @@ pecurkama	L-FOOD	L-FOOD
 ,	O	O
 tofu	B-FOOD	B-FOOD
 sa	I-FOOD	I-FOOD
-povrcem	L-FOOD	I-FOOD
-i	O	I-FOOD
-oslic	U-FOOD	L-FOOD
+povrcem	L-FOOD	L-FOOD
+i	O	O
+oslic	U-FOOD	U-FOOD
 .	O	O
 
 Kineske	B-FOOD	B-FOOD
@@ -48386,10 +48386,10 @@ u	O	O
 nekim	O	O
 kockama	O	O
 sa	O	O
-preslatkim	O	B-FOOD
-sosom	U-FOOD	L-FOOD
-i	O	I-FOOD
-povrcem	U-FOOD	L-FOOD
+preslatkim	O	O
+sosom	U-FOOD	U-FOOD
+i	O	O
+povrcem	U-FOOD	U-FOOD
 u	O	O
 tragovima	O	O
 .	O	O
